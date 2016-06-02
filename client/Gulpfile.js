@@ -17,11 +17,10 @@ var browserSync = require('browser-sync');
 
 // compile sass
 gulp.task('sass', function(){
-	console.log('Compiling scss...');
 	return gulp.src('app/styles/**/*.scss').
 		pipe(sass()).
 		// send to production dist dir
-		pipe(gulp.dest('../server/dist/styles')).
+		pipe(gulp.dest('app/styles')).
 		pipe(browserSync.reload({
 			stream: true
 		}));
@@ -29,7 +28,6 @@ gulp.task('sass', function(){
 
 // concatenate and minify scripts
 gulp.task('useref', function(){
-	console.log('Concatenating html and scripts...');
 	// only applies to top level html
 	// so that views and partials don't
 	// get tossed into /dist
@@ -52,7 +50,6 @@ gulp.task('browserSync', function(){
 });
 
 gulp.task('clean:dist', function(){
-	console.log('Cleaning server/dist directory...');
 	return del.sync('../server/dist');
 });
 
@@ -63,7 +60,6 @@ gulp.task('clean:dist', function(){
 // ==================
 
 gulp.task('watch', ['browserSync','sass'], function(){
-	console.log('Watching for changes...');
 	gulp.watch('app/styles/**/*.scss', ['sass']);
 	gulp.watch('app/scripts/**/*.js', browserSync.reload);
 	gulp.watch('app/*.html', browserSync.reload);
@@ -75,7 +71,7 @@ gulp.task('build', function(callback){
 	runSequence('clean:dist', ['sass','useref'], callback );
 });
 
-// compile sass, sync browser, and watch
+// compile sass, launch server, and watch
 gulp.task('default', function(callback){
 	runSequence( ['sass','browserSync','watch'], callback);
 });
