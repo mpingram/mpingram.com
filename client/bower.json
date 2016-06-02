@@ -1,0 +1,21 @@
+{
+  "name": "mpingram.com-client",
+  "description": "personal website",
+  "main": "",
+  "authors": [
+    "Michael Ingram"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mpingram/mpingram.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}

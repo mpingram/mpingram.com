@@ -57,5 +57,5 @@ var routes = require('./router/index.js');
 var router = require('./router')(app);
 
 // when booted:
-console.log('App running in ' + app.settings.env + "mode.");
+console.log('App running in ' + app.settings.env + ' mode.');
 module.exports = app;

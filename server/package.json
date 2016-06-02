@@ -1,5 +1,6 @@
 {
   "name": "mpingram.com-server",
+  "private":true,
   "version": "1.0.0",
   "description": "personal website",
   "main": "",
@@ -8,7 +9,7 @@
   },
   "author": "Michael Ingram",
   "license": "ISC",
-  "repository": "",
+  "repository": "https://github.com/mpingram/mpingram.com.git",
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
