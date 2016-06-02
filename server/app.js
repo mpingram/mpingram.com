@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-// If in development
+// in development
 // -----------------------
 if (app.get('env') === 'development'){
 
@@ -33,7 +33,7 @@ if (app.get('env') === 'development'){
 }
 
 
-// If in production
+// in production
 // -----------------------
 if (app.get('env') === 'production'){
 

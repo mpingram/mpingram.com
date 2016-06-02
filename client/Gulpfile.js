@@ -5,9 +5,9 @@ var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var sass = require('gulp-sass');
-var browserSync = require('browserSync');
+var browserSync = require('browser-sync');
 
-var karma = require('karma');
+//var karma = require('karma');
 // other test deps needed? probably
 
 
@@ -17,6 +17,7 @@ var karma = require('karma');
 
 // compile sass
 gulp.task('sass', function(){
+	console.log('Compiling scss...');
 	return gulp.src('app/styles/**/*.scss').
 		pipe(sass()).
 		// send to production dist dir
@@ -28,6 +29,7 @@ gulp.task('sass', function(){
 
 // concatenate and minify scripts
 gulp.task('useref', function(){
+	console.log('Concatenating html and scripts...');
 	// only applies to top level html
 	// so that views and partials don't
 	// get tossed into /dist
@@ -44,12 +46,13 @@ gulp.task('browserSync', function(){
 	browserSync.init({
 		server: {
 			// development server
-			baseDir: 'app'
+			baseDir: './app'
 		}
 	});
 });
 
 gulp.task('clean:dist', function(){
+	console.log('Cleaning server/dist directory...');
 	return del.sync('../server/dist');
 });
 
@@ -60,9 +63,10 @@ gulp.task('clean:dist', function(){
 // ==================
 
 gulp.task('watch', ['browserSync','sass'], function(){
+	console.log('Watching for changes...');
 	gulp.watch('app/styles/**/*.scss', ['sass']);
 	gulp.watch('app/scripts/**/*.js', browserSync.reload);
-	gulp.watch('app/**/*.html', browserSync.reload);
+	gulp.watch('app/*.html', browserSync.reload);
 });
 
 
