@@ -1,0 +1,14 @@
+{
+  "name": "mpingram.com-client",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Ingram",
+  "license": "ISC",
+  "repository":"",
+}
+
+
