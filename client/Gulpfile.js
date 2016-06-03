@@ -2,14 +2,14 @@ var gulp = require('gulp');
 var gulpIf = require('gulp-if');
 var del = require('del');
 var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
+var autoprefixer = require('gulp-autoprefixer');
 
 //var karma = require('karma');
 // other test deps needed? probably
-
 
 
 // low-level tasks
@@ -19,6 +19,14 @@ var browserSync = require('browser-sync');
 gulp.task('sass', function(){
 	return gulp.src('app/styles/**/*.scss').
 		pipe(sass()).
+		on('error', function(err){
+			console.log(err.toString());
+			browserSync.notify(err.message, 3000);
+			this.emit('end');
+		}).
+		pipe(autoprefixer({
+			browsers:['last 2 versions']
+		})).
 		// send to production dist dir
 		pipe(gulp.dest('app/styles')).
 		pipe(browserSync.reload({

@@ -1,5 +1,55 @@
-p{
-	width: percentage(5/7);
-	font-family: sans-serif;
-	background-color: green;
+@import 'variables';
+
+// remove styling from link tags
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body{
+
+	width:100%;
+	height:100%;
+
+	background-color: $col-bg;
+
+	font-size: 100%;
+	font-family: $sans;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.centerpiece{
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 7%;
+}
+// image
+.headshot {
+	width: 9.5em;
+}
+
+.and-his-name-is{
+	font-weight: 300;
+}
+
+.contact{
+	font-size:75%;
+	font-weight: 300;
+}
+a.contact:hover{
+	color: darken($col-highlight,20%);
+}
+
+.title{
+	font-size: 90%;
+	line-height: 90%
 }
