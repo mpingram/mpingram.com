@@ -58,6 +58,7 @@ a.contact:hover {
 
 .toybox {
   width: 100%;
+  margin-top: 2%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -68,4 +69,8 @@ a.contact:hover {
       justify-content: center; }
 
 .toy {
-  margin: 10px 2%; }
+  margin: 10px 2%;
+  text-align: center; }
+
+.toy-icon {
+  width: 9.5em; }
