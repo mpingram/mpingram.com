@@ -17,7 +17,7 @@ body{
 	font-family: $sans;
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -46,7 +46,6 @@ body{
 .contact{
 	font-size:80%;
 	font-weight: 400;
-	align-self: flex-start;
 }
 a.contact:hover{
 	color: darken($col-highlight,20%);
@@ -57,4 +56,16 @@ a.contact:hover{
 	line-height: 90%;
 	font-weight: 300;
 	margin-bottom: 2px;
+}
+
+.toybox{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.toy{
+	margin: 10px 2%;
 }

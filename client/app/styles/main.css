@@ -10,8 +10,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
       align-items: center; }
 
@@ -39,9 +39,7 @@ body {
 
 .contact {
   font-size: 80%;
-  font-weight: 400;
-  -ms-flex-item-align: start;
-      align-self: flex-start; }
+  font-weight: 400; }
 
 a.contact:hover {
   color: #ff854b; }
@@ -51,3 +49,17 @@ a.contact:hover {
   line-height: 90%;
   font-weight: 300;
   margin-bottom: 2px; }
+
+.toybox {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.toy {
+  margin: 10px 2%; }
