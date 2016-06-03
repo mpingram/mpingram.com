@@ -73,4 +73,10 @@ a.contact:hover {
   text-align: center; }
 
 .toy-icon {
-  width: 9.5em; }
+  position: relative;
+  width: 9.5em;
+  padding-bottom: 1em; }
+
+.toy-link {
+  display: block;
+  position: relative; }
