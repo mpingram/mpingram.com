@@ -17,8 +17,7 @@ body{
 	font-family: $sans;
 
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
 	align-items: center;
 }
 
@@ -26,11 +25,12 @@ body{
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	flex-wrap: wrap;
 	align-items: center;
+
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 7%;
+	margin-top: 3%;
 }
 // image
 .headshot {
@@ -38,12 +38,15 @@ body{
 }
 
 .and-his-name-is{
+	margin: 10px 0 0 0;
+	font-size: 175%;
 	font-weight: 300;
 }
 
 .contact{
-	font-size:75%;
-	font-weight: 300;
+	font-size:80%;
+	font-weight: 400;
+	align-self: flex-start;
 }
 a.contact:hover{
 	color: darken($col-highlight,20%);
@@ -51,5 +54,7 @@ a.contact:hover{
 
 .title{
 	font-size: 90%;
-	line-height: 90%
+	line-height: 90%;
+	font-weight: 300;
+	margin-bottom: 2px;
 }

@@ -10,10 +10,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-align: center;
       align-items: center; }
 
@@ -23,27 +21,33 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-align: center;
       align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 7%; }
+  margin-top: 3%; }
 
 .headshot {
   width: 9.5em; }
 
 .and-his-name-is {
+  margin: 10px 0 0 0;
+  font-size: 175%;
   font-weight: 300; }
 
 .contact {
-  font-size: 75%;
-  font-weight: 300; }
+  font-size: 80%;
+  font-weight: 400;
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
 
 a.contact:hover {
   color: #ff854b; }
 
 .title {
   font-size: 90%;
-  line-height: 90%; }
+  line-height: 90%;
+  font-weight: 300;
+  margin-bottom: 2px; }
