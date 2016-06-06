@@ -4,6 +4,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
 var useref = require('gulp-useref');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
@@ -47,6 +48,12 @@ gulp.task('useref', function(){
 		pipe(gulp.dest('../server/dist'));
 });
 
+gulp.task('imagemin', function(){
+	return gulp.src('app/images/*').
+		pipe(imagemin()).
+		pipe(gulp.dest('../server/dist'));
+});
+
 // live reload browser
 gulp.task('browserSync', function(){
 	browserSync.init({
@@ -58,7 +65,7 @@ gulp.task('browserSync', function(){
 });
 
 gulp.task('clean:dist', function(){
-	return del.sync('../server/dist');
+	return del.sync('../server/dist', {force:true});
 });
 
 
@@ -76,7 +83,7 @@ gulp.task('watch', ['browserSync','sass'], function(){
 
 // build production dist dir
 gulp.task('build', function(callback){
-	runSequence('clean:dist', ['sass','useref'], callback );
+	runSequence('clean:dist', ['sass','imagemin','useref'], callback );
 });
 
 // compile sass, launch server, and watch

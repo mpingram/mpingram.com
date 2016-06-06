@@ -27,6 +27,7 @@ body{
 
 .centerpiece{
 	font-weight: 400;
+	font-size: 110%;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -34,7 +35,7 @@ body{
 
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 3%;
+	margin-top: 5%;
 }
 // image
 .headshot {
@@ -48,7 +49,7 @@ body{
 }
 
 .contact{
-	font-size:80%;
+	font-size:85%;
 	font-weight: 400;
 }
 a.contact:hover{
@@ -59,12 +60,13 @@ a.contact:hover{
 	font-size: 90%;
 	line-height: 90%;
 	font-weight: 300;
-	margin-bottom: 2px;
+
+	margin-bottom: 5px;
 }
 
 .toybox{
 	width: 100%;
-	margin-top: 2%;
+	margin-top: 3%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -72,13 +74,13 @@ a.contact:hover{
 }
 
 .toy{
-	margin: 10px 2%;	
+	margin: 10px 3.5%;	
 	text-align: center;
 }
 
 .toy-icon{
 	position: relative;
-	width: 9.5em;
+	width: 14em;
 	padding-bottom: 1em;
 }
 
