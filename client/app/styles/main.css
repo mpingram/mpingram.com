@@ -41,21 +41,21 @@ body {
 
 .and-his-name-is {
   margin: 10px 0 0 0;
-  font-size: 175%;
+  font-size: 200%;
   font-weight: 300; }
 
+.title {
+  font-size: 110%;
+  line-height: 90%;
+  font-weight: 300;
+  margin-bottom: 5px; }
+
 .contact {
-  font-size: 85%;
+  font-size: 90%;
   font-weight: 400; }
 
 a.contact:hover {
   color: #ff854b; }
-
-.title {
-  font-size: 90%;
-  line-height: 90%;
-  font-weight: 300;
-  margin-bottom: 5px; }
 
 .toybox {
   width: 100%;
@@ -75,9 +75,10 @@ a.contact:hover {
 
 .toy-icon {
   position: relative;
-  width: 14em;
+  width: 12em;
   padding-bottom: 1em; }
 
 .toy-link {
+  font-size: 120%;
   display: block;
   position: relative; }
