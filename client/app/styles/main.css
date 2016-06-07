@@ -6,6 +6,14 @@ a {
   text-decoration: none;
   color: inherit; }
 
+button {
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
 body {
   margin: 0;
   width: 100%;
@@ -13,13 +21,14 @@ body {
   background: #F6F6F0;
   background: linear-gradient(#F6F6F0 40%, #ffede4);
   font-size: 100%;
-  font-family: "Source Sans Pro", sans-serif;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center; }
+  font-family: "Source Sans Pro", sans-serif; }
+  body .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center; }
 
 .centerpiece {
   font-weight: 400;
@@ -74,6 +83,7 @@ a.contact:hover {
   text-align: center; }
 
 .toy-icon {
+  pointer-events: none;
   position: relative;
   width: 12em;
   padding-bottom: 1em; }
@@ -82,3 +92,9 @@ a.contact:hover {
   font-size: 120%;
   display: block;
   position: relative; }
+
+#box-about {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 10%; }

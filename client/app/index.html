@@ -6,50 +6,59 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 </head>
 
+
+
 <body>
 
-	<div class='centerpiece'>
+	<div class='container'>
 
-		<img class='headshot' src='images/headshot.png' alt='Michael Ingram'>
-		<span class='and-his-name-is'>Michael Ingram</span>
-		<span class='title'>Full Stack Web Developer</span>
-		<span class='contact'>
-			<a target="_blank" class='contact contact-github' href='https://github.com/mpingram'>github.com/mpingram</a> ||
-			 <a class='contact contact-email' href='mailto:mpingram92@gmail.com'>mpingram92@gmail.com</a>
-		</span>
+		<div class='centerpiece'>
+
+			<img class='headshot' src='images/headshot.png' alt='Michael Ingram'>
+			<span class='and-his-name-is'>Michael Ingram</span>
+			<span class='title'>Full Stack Web Developer</span>
+			<span class='contact'>
+				<a target="_blank" class='contact contact-github' href='https://github.com/mpingram'>github.com/mpingram</a> ||
+				 <a class='contact contact-email' href='mailto:mpingram92@gmail.com'>mpingram92@gmail.com</a>
+			</span>
+		</div>
+
+		<div class='toybox'>
+
+			<button id='about' class='toy'>
+				<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
+				</object>
+				<span class='toy-link'>about</span>
+			</button>
+
+			<div id='music' class='toy'>
+				<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
+				</object>
+				
+				<a class='toy-link' href=''>music</a>
+			</div>
+
+			<div id='websites' class='toy'>
+				<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
+				</object>
+				<a class = 'toy-link' href=''> websites </a>
+			</div>
+
+			<div id='projects' class='toy'>
+				<!-- TODO: stick to css for this one -->
+				<object class='toy-icon' type='image/svg+xml' data='images/toy-template.svg'>
+				</object>
+				<a class = 'toy-link' href=''>projects</a>
+			</div>
+		</div>
 	</div>
 
-
-	<div class='toybox'>
-
-		<div id='about' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
-			</object>
-			<a class='toy-link' href=''>about</a>
-		</div>
-
-		<div id='music' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
-			</object>
-			
-			<a class='toy-link' href=''>music</a>
-		</div>
-
-		<div id='websites' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
-			</object>
-			<a class = 'toy-link' href=''> websites </a>
-		</div>
-
-		<div id='projects' class='toy'>
-			<!-- TODO: stick to css for this one -->
-			<object class='toy-icon' type='image/svg+xml' data='images/toy-template.svg'>
-			</object>
-			<a class = 'toy-link' href=''>projects</a>
-		</div>
-
+	<div id='box-about'>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</div>
-
 
 <script src='bower_components/jquery/dist/jquery.js'></script>
 <script src='scripts/toys.js'></script>
