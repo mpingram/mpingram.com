@@ -79,6 +79,7 @@ a.contact:hover {
       justify-content: center; }
 
 .toy {
+  outline-style: none;
   margin: 10px 3.5%;
   text-align: center; }
 
