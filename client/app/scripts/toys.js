@@ -1,5 +1,4 @@
-$(document).on('click touchend', 
-	'#about, #music, #websites, #projects',
+$(document).on('click touchend', '#about, #music, #websites, #projects',
 	function(event){
 		var id = event.currentTarget.id;
 		// identify id of popin box
