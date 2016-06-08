@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 width="650" height="650" viewBox="-0.5 -0.5 650 650" enable-background="new -0.5 -0.5 650 650" xml:space="preserve">
-<style>
-	.toy-about-head:hover {
-		fill:#000;
-		fill-opacity:0.5;
-	}
-</style>
-<ellipse class='toy-about-head' fill="#FFF" fill-opacity="0.0" stroke="#000000" cx="324.167" cy="214.97" rx="126.333" ry="124.47"/>
-<path fill="none" stroke="#000000" d="M139.408,492.713 M83.954,648.5c12.917-57.36,31.899-110.043,56.334-155.313
-	c23.906-44.292,51.739-79.061,82.724-103.342C255.058,364.733,289.091,352,324.167,352"/>
-<path fill="none" stroke="#000000" d="M509.259,492.713 M324.5,352c35.074,0,69.107,12.733,101.154,37.846
-	c30.986,24.281,58.818,59.05,82.725,103.342c24.435,45.27,43.416,97.952,56.334,155.313"/>
-<path fill="none" stroke="#000000" d="M648.5,636.5c0,6.627-5.373,12-12,12h-624c-6.627,0-12-5.373-12-12v-624
-	c0-6.627,5.373-12,12-12h624c6.627,0,12,5.373,12,12V636.5z"/>
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="146" height="146" viewBox="-0.579 -0.579 146 146" enable-background="new -0.579 -0.579 146 146" xml:space="preserve">
+<defs>
+</defs>
+<path fill="none" stroke="#636466" stroke-width="0.5" d="M144.593,141.919c0,1.477-1.197,2.674-2.674,2.674H2.923
+	c-1.476,0-2.673-1.197-2.673-2.674V2.923c0-1.476,1.198-2.673,2.673-2.673h138.996c1.477,0,2.674,1.198,2.674,2.673V141.919z"/>
+<path fill="none" stroke="#636466" stroke-width="0.5" d="M31.193,109.892 M18.839,144.593c2.878-12.778,7.106-24.514,12.549-34.596
+	c5.325-9.867,11.524-17.611,18.427-23.02c7.139-5.595,14.72-8.431,22.532-8.431"/>
+<path fill="none" stroke="#636466" stroke-width="0.5" d="M113.576,109.892 M72.421,78.547c7.813,0,15.395,2.836,22.532,8.431
+	c6.902,5.408,13.102,13.152,18.428,23.02c5.442,10.082,9.671,21.817,12.548,34.596"/>
+<ellipse fill="none" stroke="#636466" stroke-width="0.5" cx="72.347" cy="48.024" rx="28.141" ry="27.726"/>
 </svg>
