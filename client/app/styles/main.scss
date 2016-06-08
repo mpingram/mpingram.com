@@ -24,7 +24,7 @@ body{
 	height:100%;
 
 	background: $col-bg;
-	background: linear-gradient($col-bg 40%, lighten($col-highlight,10%));
+	background: linear-gradient($col-bg 50%, lighten($col-highlight,7%));
 
 	font-size: 100%;
 	font-family: $sans;
@@ -45,10 +45,13 @@ body{
 .centerpiece{
 	font-weight: 400;
 	font-size: 110%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-items: center;
+
+	padding-bottom:2%;
 }
 // image
 .headshot {
@@ -109,16 +112,44 @@ a.contact:hover{
 // ----------
 
 // ----------
+.text{
+
+}
+
 #box-about{
 	position: absolute;
-	top: 50%;
-	// vv -- wow
-	transform: translateY(-50%);
-	left:-10%;
-	width: 10%;
+	visibility: hidden;
+	left:-50%;
+	top: 0%;
+	width: 15%;
+	height:100%;
 }
 #box-about.active{
+	visibility:visible;
 	left:0%;
 }
+.about-text{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	padding: 1%;
+}
+
+#box-music{
+}
+#box-music.active{
+}
+
+#box-websites{
+}
+#box-websites.active{
+}
+
+#box-projects{
+}
+#box-projects.active{
+}
+
+
 
 
