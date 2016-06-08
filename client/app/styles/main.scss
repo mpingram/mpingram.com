@@ -36,16 +36,25 @@ body{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-items: space-between;
 }
 
 
 //----------
 .centerpiece{
+	width: 100%;
 	font-weight: 400;
 	font-size: 110%;
 	position: relative;
+
+	// child flex properties
+	flex-shrink: 0;
+
+	// parent flex properties
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -87,6 +96,7 @@ a.contact:hover{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	//transform: translateY(-50%);
 	// use wrapper around two of
 	// the buttons to get them to stack into a square?
 }

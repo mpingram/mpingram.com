@@ -28,15 +28,24 @@ body {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: space-between;
+      align-items: space-between; }
 
 .centerpiece {
+  width: 100%;
   font-weight: 400;
   font-size: 110%;
   position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
