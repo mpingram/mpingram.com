@@ -28,19 +28,15 @@ body {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-align: space-between;
-      align-items: space-between; }
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  transform: translateY(-10%); }
 
 .centerpiece {
-  width: 100%;
   font-weight: 400;
   font-size: 110%;
   position: relative;
@@ -54,6 +50,7 @@ body {
       flex-wrap: nowrap;
   -ms-flex-align: center;
       align-items: center;
+  padding-top: 2%;
   padding-bottom: 2%; }
 
 .headshot {

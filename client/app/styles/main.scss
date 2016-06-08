@@ -36,17 +36,16 @@ body{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
-	align-items: space-between;
+	flex-flow: column nowrap;
+
+	transform: translateY(-10%);
 }
 
 
 //----------
 .centerpiece{
-	width: 100%;
 	font-weight: 400;
 	font-size: 110%;
 	position: relative;
@@ -60,6 +59,7 @@ body{
 	flex-wrap: nowrap;
 	align-items: center;
 
+	padding-top:2%;
 	padding-bottom:2%;
 }
 // image
