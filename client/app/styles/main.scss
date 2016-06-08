@@ -96,7 +96,6 @@ a.contact:hover{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	//transform: translateY(-50%);
 	// use wrapper around two of
 	// the buttons to get them to stack into a square?
 }
@@ -111,7 +110,7 @@ a.contact:hover{
 	pointer-events: none;
 	position: relative;
 	padding-bottom: 1em;
-	width: 9em;
+	width: 12em;
 }
 
 .toy-link{
