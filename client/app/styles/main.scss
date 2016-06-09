@@ -109,8 +109,9 @@ a.contact:hover{
 .toy-icon{
 	pointer-events: none;
 	position: relative;
-	padding-bottom: 1em;
+	margin-bottom: 1em;
 	width: 12em;
+	box-shadow: 1px 4px 4px -4px grey;
 }
 
 .toy-link{
