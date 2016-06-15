@@ -82,7 +82,9 @@ a.contact:hover {
   -ms-flex-direction: row;
       flex-direction: row;
   -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
 
 .toy {
   outline-style: none;
@@ -94,23 +96,26 @@ a.contact:hover {
   position: relative;
   margin-bottom: 1em;
   width: 12em;
-  box-shadow: 1px 4px 4px -4px grey; }
+  box-shadow: 1px 7px 5px -4px grey;
+  border: 1px solid grey;
+  border-radius: 3px; }
 
 .toy-link {
   font-size: 120%;
   display: block;
   position: relative; }
 
-#box-about {
+#about-box {
   position: absolute;
-  visibility: hidden;
+  display: none;
   left: -50%;
   top: 0%;
   width: 15%;
-  height: 100%; }
+  height: 100%;
+  border-right: 1px solid #bfbfbf; }
 
-#box-about.active {
-  visibility: visible;
+#about-box.active {
+  display: initial;
   left: 0%; }
 
 .about-text {
@@ -118,3 +123,40 @@ a.contact:hover {
   top: 50%;
   transform: translateY(-50%);
   padding: 1%; }
+
+#music-box {
+  position: absolute;
+  display: none;
+  bottom: -50%;
+  width: 100%;
+  height: 33%;
+  border-top: 1px solid #bfbfbf; }
+
+#music-box.active {
+  display: initial;
+  bottom: 0%; }
+
+#websites-box {
+  position: absolute;
+  display: none;
+  top: -50%;
+  width: 100%;
+  height: 33%;
+  border-bottom: 1px solid #bfbfbf; }
+
+#websites-box.active {
+  display: initial;
+  top: 0%; }
+
+#projects-box {
+  position: absolute;
+  display: none;
+  right: -50%;
+  top: 0%;
+  width: 15%;
+  height: 100%;
+  border-left: 1px solid #bfbfbf; }
+
+#projects-box.active {
+  display: initial;
+  right: 0%; }

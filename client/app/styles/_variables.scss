@@ -11,3 +11,6 @@ $col-bg-alt:		#ECDCB0;
 $col-highlight:		#FFCAB1;
 $col-dark:			#000100;
 $col-accent: 		#C1D7AE;		
+
+$grey-base:			#000;
+$light-grey: 		lighten($grey-base, 75%);
