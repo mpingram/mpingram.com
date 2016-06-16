@@ -1,26 +1,34 @@
-// resets boxes and icons to neutral
-function resetPage(boxId){
-
-}
-
-// moves boxes and icons according
-// to which corner of the screen they're in
-function moveBoxes(boxId){
-
-}
-
-
 // click event handler for all four icons
 $(document).on('click touchend', '#about, #music, #websites, #projects',
 	function(event){
 		var id = event.currentTarget.id;
-		console.log(event.currentTarget.id);
 		var box = $('#'+id+'-box'); 
-		// if box is already open, close it
+		var center = $('#center-container');
+
+		// stores where center should move
+		var location;
+		switch(id){
+			case 'about':
+				location='right';
+				break;
+			case 'music':
+				location='top';
+				break;
+			case 'websites':
+				location='bottom';
+				break;
+			case 'projects':
+				location='left';
+				break;
+		}
+
+		// if box is already open, close it and move the center back to neutral
 		if(box.hasClass('active')){
+			center.removeClass(location);
 			box.removeClass('active');
-		// else close any open boxes and open the selected box
+		// else move the center and slide in the box
 		} else {
+			center.addClass(location);
 			box.addClass('active').siblings().removeClass('active');
 		}
 	}
