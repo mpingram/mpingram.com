@@ -3,7 +3,7 @@ $(document).on('click touchend', '#about, #music, #websites, #projects',
 	function(event){
 		var id = event.currentTarget.id;
 		var box = $('#'+id+'-box'); 
-		var center = $('#center-container');
+		var toybox = $('#toybox');
 
 		// stores where center should move
 		var location;
@@ -24,11 +24,11 @@ $(document).on('click touchend', '#about, #music, #websites, #projects',
 
 		// if box is already open, close it and move the center back to neutral
 		if(box.hasClass('active')){
-			center.removeClass(location);
+			toybox.removeClass(location);
 			box.removeClass('active');
 		// else move the center and slide in the box
 		} else {
-			center.addClass(location);
+			toybox.removeClass().addClass(location);
 			box.addClass('active').siblings().removeClass('active');
 		}
 	}
