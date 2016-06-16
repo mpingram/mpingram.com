@@ -32,16 +32,19 @@ body {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-flow: column nowrap;
-      flex-flow: column nowrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
   transform: translateY(-10%); }
 
 .centerpiece {
   font-weight: 400;
   font-size: 110%;
   position: relative;
+  width: 100%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -81,6 +84,8 @@ a.contact:hover {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
@@ -95,7 +100,7 @@ a.contact:hover {
   pointer-events: none;
   position: relative;
   margin-bottom: 1em;
-  width: 12em;
+  width: 7em;
   box-shadow: 1px 7px 5px -4px grey;
   border: 1px solid grey;
   border-radius: 3px; }
@@ -160,3 +165,24 @@ a.contact:hover {
 #projects-box.active {
   display: initial;
   right: 0%; }
+
+@media (max-width: 600px) {
+  .toybox {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .toy {
+    width: 7.5em; }
+  .toy-icon {
+    width: 6em; }
+  #about {
+    -ms-flex-order: 1;
+        order: 1; }
+  #music {
+    -ms-flex-order: 3;
+        order: 3; }
+  #websites {
+    -ms-flex-order: 2;
+        order: 2; }
+  #projects {
+    -ms-flex-order: 4;
+        order: 4; } }
