@@ -4,6 +4,7 @@ $(document).on('click touchend', '#about, #music, #websites, #projects',
 		var id = event.currentTarget.id;
 		var box = $('#'+id+'-box'); 
 		var toybox = $('#toybox');
+		var centerpiece = $('#centerpiece');
 
 		// stores where center should move
 		var location;
@@ -26,9 +27,11 @@ $(document).on('click touchend', '#about, #music, #websites, #projects',
 		if(box.hasClass('active')){
 			toybox.removeClass(location);
 			box.removeClass('active');
+			centerpiece.removeClass('slideup').addClass('slidedown');
 		// else move the center and slide in the box
 		} else {
 			toybox.removeClass().addClass(location);
+			centerpiece.addClass('slideup');
 			box.addClass('active').siblings().removeClass('active');
 		}
 	}

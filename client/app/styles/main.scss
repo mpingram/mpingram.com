@@ -22,7 +22,7 @@ body{
 	margin: 0;
 	width: 100%;
 	height:100%;
-
+	overflow-x: hidden;
 
 	background: $col-bg;
 	background: linear-gradient($col-bg 50%, lighten($col-highlight,7%));
@@ -49,11 +49,13 @@ body{
 
 
 //----------
-.centerpiece{
+#centerpiece{
 	font-weight: 400;
 	font-size: 110%;
 	position: relative;
 	width: 100%;
+
+	max-height: 5%;
 
 	// child flex properties
 	flex-shrink: 0;
@@ -68,33 +70,37 @@ body{
 	margin-bottom:1.5em;
 }
 
-
-
 // image
 .headshot {
 	width: 9.5em;
 }
 
-.and-his-name-is{
+#name{
 	margin: 10px 0 0 0;
 	font-size: 190%;
 	font-weight: 300;
 }
 
-.title{
+#title{
 	font-size: 110%;
 	line-height: 90%;
 	font-weight: 300;
 	margin-bottom: 5px;
 }
 
-.contact{
+#contact{
 	font-size:90%;
 	font-weight: 400;
+	z-index: -1;
+
+	border-top: 1px solid $light-grey;
+
+
 }
-a.contact:hover{
+a#contact:hover{
 	color: darken($col-highlight,20%);
 }
+
 // ---------
 
 // ---------
@@ -105,17 +111,15 @@ a.contact:hover{
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: center;
+
 }
 #toybox.left{
-	width: 33%;
-	transform: translateX(-100%);
-	justify-content: space-between;
+	transform: translateX(-50%);
+	width: 50%;
 }
 #toybox.right{
-	width: 33%;
-	transform: translateX(100%);
-	justify-content: space-between;
+	transform: translateX(50%);
+	width: 50%;
 }
 #toybox.bottom{
 	transform: translateY(100%);
@@ -167,12 +171,7 @@ a.contact:hover{
 	display: initial;
 	left:0%;
 }
-.about-text{
-	position: absolute;
-	top:50%;
-	transform: translateY(-50%);
-	padding: 1%;
-}
+
 
 #music-box{
 	position: absolute;
@@ -248,7 +247,7 @@ a.contact:hover{
 	}
 
 	// adjust text size
-	.centerpiece{
+	#centerpiece{
 		font-size: 90%;
 		//margin-bottom: 5%;
 	}
