@@ -61,8 +61,7 @@ body{
 	flex-wrap: nowrap;
 	align-items: center;
 
-	padding-top:2%;
-	padding-bottom:2%;
+	margin-bottom:1.5em;
 }
 
 
@@ -74,7 +73,7 @@ body{
 
 .and-his-name-is{
 	margin: 10px 0 0 0;
-	font-size: 200%;
+	font-size: 190%;
 	font-weight: 300;
 }
 
@@ -115,9 +114,7 @@ a.contact:hover{
 	pointer-events: none;
 	position: relative;
 	margin-bottom: 1em;
-	width: 7em;
 	box-shadow: 1px 7px 5px -4px grey;
-
 	border: 1px solid grey;
 	border-radius: 3px;
 }
@@ -205,9 +202,9 @@ a.contact:hover{
 
 
 // TODO: refine breakpoint
-@media(max-width: 600px){
-	// icons should shrink and sort
-	// themselves into a square.
+@media(max-width: 767px){
+	// shrink icons and sort
+	// thems into a square.
 	.toybox{
 		flex-wrap: wrap;
 	}
@@ -228,5 +225,11 @@ a.contact:hover{
 	}
 	#projects{
 		order: 4;
+	}
+
+	// adjust text size
+	.centerpiece{
+		font-size: 90%;
+		//margin-bottom: 5%;
 	}
 }
