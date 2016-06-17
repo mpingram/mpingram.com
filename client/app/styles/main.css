@@ -24,6 +24,12 @@ body {
   font-size: 100%;
   font-family: "Source Sans Pro", sans-serif; }
 
+.body-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed; }
+
 .center-container {
   width: 100%;
   height: 100%;
@@ -129,12 +135,12 @@ a#contact:hover {
   position: relative; }
 
 .box {
+  position: absolute;
   background-color: #bfbfbf;
   opacity: 0.05;
   transition: transform 1.5s 0.1s ease; }
 
 #about-box {
-  position: absolute;
   left: -50%;
   top: 0%;
   width: 50%;
@@ -145,7 +151,6 @@ a#contact:hover {
   transform: translateX(100%); }
 
 #music-box {
-  position: absolute;
   bottom: -50%;
   width: 100%;
   height: 50%;
@@ -155,7 +160,6 @@ a#contact:hover {
   transform: translateY(-100%); }
 
 #websites-box {
-  position: absolute;
   top: -50%;
   width: 100%;
   height: 50%;
@@ -165,7 +169,6 @@ a#contact:hover {
   transform: translateY(95%); }
 
 #projects-box {
-  position: absolute;
   right: -50%;
   top: 0%;
   width: 50%;

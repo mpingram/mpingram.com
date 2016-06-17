@@ -32,8 +32,19 @@ body{
 
 }
 
+.body-wrapper{
+	// mobile browsers ignore
+	// overflow tags on html and body
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+}
+
 
 .center-container{
+
+
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -162,6 +173,7 @@ a#contact:hover{
 
 
 .box{
+	position: absolute;
 
 	background-color: $light-grey;
 	opacity: 0.05;
@@ -173,7 +185,6 @@ a#contact:hover{
 }
 
 #about-box{
-	position: absolute;
 	left:-50%;
 	top: 0%;
 	width: 50%;
@@ -187,7 +198,6 @@ a#contact:hover{
 
 
 #music-box{
-	position: absolute;
 	bottom: -50%;
 
 	width: 100%;
@@ -201,7 +211,6 @@ a#contact:hover{
 }
 
 #websites-box{
-	position: absolute;
 	top: -50%;
 
 	width: 100%;
@@ -216,7 +225,6 @@ a#contact:hover{
 }
 
 #projects-box{
-	position: absolute;
 	right: -50%;
 	top: 0%;
 
@@ -226,7 +234,6 @@ a#contact:hover{
 	border-left: 1px solid $light-grey;
 }
 #projects-box.active{
-	
 	transform: translateX(-100%);
 }
 
