@@ -22,7 +22,7 @@ body{
 	margin: 0;
 	width: 100%;
 	height:100%;
-	overflow-x: hidden;
+	overflow: hidden;
 
 	background: $col-bg;
 	background: linear-gradient($col-bg 50%, lighten($col-highlight,7%));
@@ -117,17 +117,18 @@ a#contact:hover{
 	flex-wrap: nowrap;
 	justify-content: center;
 
-	-webkit-transition: all 1.5s 0.1s ease;
-			transition: all 1.5s 0.1s ease;
+
+	-webkit-transition: transform 1.5s 0.1s ease;
+			transition: transform 1.5s 0.1s ease;
 }
 #toybox.left{
-	width: 50%;
-	transform: translateX(-50%);
+	//width: 50%;
+	transform: translate3d(-33.333%,0,0);
 
 }
 #toybox.right{
-	width: 50%;
-	transform: translateX(50%);
+	//width: 50%;
+	transform: translateX(33.333%);
 }
 #toybox.bottom{
 	transform: translateY(100%);
@@ -138,11 +139,14 @@ a#contact:hover{
 
 .toy{
 	outline-style: none;
-	margin: 10px 3.5%;	
+	margin: 10px 1.5%;	
 	text-align: center;
 }
 
 .toy-icon{
+
+	width: 8em;
+
 	pointer-events: none;
 	position: relative;
 	margin-bottom: 1em;
@@ -159,15 +163,21 @@ a#contact:hover{
 // ----------
 
 // ----------
-.text{
+
+
+
+.box{
+	background-color: $light-grey;
+	opacity: 0.2;
+
+
+	-webkit-transition: transform 1.5s 0.1s ease;
+	transition: transform 1.5s 0.1s ease;
 
 }
 
-
-
 #about-box{
 	position: absolute;
-	display: none;
 	left:-50%;
 	top: 0%;
 	width: 50%;
@@ -176,14 +186,12 @@ a#contact:hover{
 
 }
 #about-box.active{
-	display: initial;
-	left:0%;
+	transform: translateX(100%);
 }
 
 
 #music-box{
 	position: absolute;
-	display: none;
 	bottom: -50%;
 
 	width: 100%;
@@ -192,13 +200,12 @@ a#contact:hover{
 	border-top: 1px solid $light-grey;
 }
 #music-box.active{
-	display: initial;
-	bottom: 0%;
+	
+	transform: translateY(-100%);
 }
 
 #websites-box{
 	position: absolute;
-	display: none;
 	top: -50%;
 
 	width: 100%;
@@ -207,13 +214,12 @@ a#contact:hover{
 	border-bottom: 1px solid $light-grey;
 }
 #websites-box.active{
-	display: initial;
-	top: 0%;
+	
+	transform: translateY(100%);
 }
 
 #projects-box{
 	position: absolute;
-	display: none;
 	right: -50%;
 	top: 0%;
 
@@ -223,12 +229,12 @@ a#contact:hover{
 	border-left: 1px solid $light-grey;
 }
 #projects-box.active{
-	display: initial;
-	right: 0%;
+	
+	transform: translateX(-100%);
 }
 
 
-// TODO: refine breakpoint
+// breakpoint below tablet
 @media(max-width: 767px){
 	// shrink icons and sort
 	// thems into a square.
