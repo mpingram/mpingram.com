@@ -1,5 +1,5 @@
 // click event handler for all four icons
-$(document).on('click touchend', '#about, #music, #websites, #projects',
+$(document).on('click', '#about, #music, #websites, #projects',
 	function(event){
 		var id = event.currentTarget.id;
 		var box = $('#'+id+'-box'); 
