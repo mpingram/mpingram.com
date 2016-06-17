@@ -50,6 +50,8 @@ body{
 
 //----------
 #centerpiece{
+	visibility: visible;
+
 	font-weight: 400;
 	font-size: 110%;
 	position: relative;
@@ -68,6 +70,9 @@ body{
 	align-items: center;
 
 	margin-bottom:1.5em;
+}
+#centerpiece.collapsed{
+	visibility: hidden;
 }
 
 // image
@@ -112,14 +117,17 @@ a#contact:hover{
 	flex-wrap: nowrap;
 	justify-content: center;
 
+	-webkit-transition: all 1.5s 0.1s ease;
+			transition: all 1.5s 0.1s ease;
 }
 #toybox.left{
-	transform: translateX(-50%);
 	width: 50%;
+	transform: translateX(-50%);
+
 }
 #toybox.right{
-	transform: translateX(50%);
 	width: 50%;
+	transform: translateX(50%);
 }
 #toybox.bottom{
 	transform: translateY(100%);
@@ -162,7 +170,7 @@ a#contact:hover{
 	display: none;
 	left:-50%;
 	top: 0%;
-	width: 15%;
+	width: 50%;
 	height:100%;
 	border-right: 1px solid $light-grey;
 
@@ -179,7 +187,7 @@ a#contact:hover{
 	bottom: -50%;
 
 	width: 100%;
-	height: 33%;
+	height: 50%;
 
 	border-top: 1px solid $light-grey;
 }
@@ -194,7 +202,7 @@ a#contact:hover{
 	top: -50%;
 
 	width: 100%;
-	height: 33%;
+	height: 50%;
 
 	border-bottom: 1px solid $light-grey;
 }
@@ -209,7 +217,7 @@ a#contact:hover{
 	right: -50%;
 	top: 0%;
 
-	width: 15%;
+	width: 50%;
 	height: 100%;
 
 	border-left: 1px solid $light-grey;
