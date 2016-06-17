@@ -96,11 +96,6 @@ body{
 #contact{
 	font-size:90%;
 	font-weight: 400;
-	z-index: -1;
-
-	border-top: 1px solid $light-grey;
-
-
 }
 a#contact:hover{
 	color: darken($col-highlight,20%);
@@ -167,8 +162,9 @@ a#contact:hover{
 
 
 .box{
+
 	background-color: $light-grey;
-	opacity: 0.2;
+	opacity: 0.05;
 
 
 	-webkit-transition: transform 1.5s 0.1s ease;
@@ -214,8 +210,9 @@ a#contact:hover{
 	border-bottom: 1px solid $light-grey;
 }
 #websites-box.active{
-	
-	transform: translateY(100%);
+	// slight adjustment to accomodate for
+	// slightly up-shifted icons
+	transform: translateY(95%);
 }
 
 #projects-box{

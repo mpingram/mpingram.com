@@ -79,9 +79,7 @@ body {
 
 #contact {
   font-size: 90%;
-  font-weight: 400;
-  z-index: -1;
-  border-top: 1px solid #bfbfbf; }
+  font-weight: 400; }
 
 a#contact:hover {
   color: #ff854b; }
@@ -132,7 +130,7 @@ a#contact:hover {
 
 .box {
   background-color: #bfbfbf;
-  opacity: 0.2;
+  opacity: 0.05;
   transition: transform 1.5s 0.1s ease; }
 
 #about-box {
@@ -164,7 +162,7 @@ a#contact:hover {
   border-bottom: 1px solid #bfbfbf; }
 
 #websites-box.active {
-  transform: translateY(100%); }
+  transform: translateY(95%); }
 
 #projects-box {
   position: absolute;
