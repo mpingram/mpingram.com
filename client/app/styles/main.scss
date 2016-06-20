@@ -90,7 +90,6 @@ body{
 	visibility: hidden;
 	-webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 	transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-
 }
 
 // image
@@ -112,6 +111,7 @@ body{
 }
 
 #contact{
+	text-align: center;
 	font-size:90%;
 	font-weight: 400;
 }
@@ -135,7 +135,6 @@ body{
 			transition: transform 1.5s 0.1s ease;
 }
 #toybox.left{
-	//width: 50%;
 	transform: translate3d(-33.333%,0,0);
 
 }
@@ -152,13 +151,13 @@ body{
 
 .toy{
 	outline-style: none;
-	margin: 10px 1.5%;	
+	margin: 10px 2%;	
 	text-align: center;
 }
 
 .toy-icon{
 
-	width: 8em;
+	width: 9em;
 
 	pointer-events: none;
 	position: relative;
@@ -181,7 +180,7 @@ body{
 
 .box{
 	position: absolute;
-	//height: 100%;
+	overflow: auto;
 
 	// TODO: shim for ie8 and below with filter
 	background-color: rgba(213, 213, 213, 0.10);
@@ -269,7 +268,7 @@ body{
 		flex-wrap: wrap;
 	}
 	.toy{
-		width: 7.5em;
+		width: 8em;
 	}
 	.toy-icon{
 		width: 6em;
@@ -287,9 +286,14 @@ body{
 		order: 4;
 	}
 
-	// adjust text size
+	// adjust text size and spacing
 	#centerpiece{
 		font-size: 90%;
 		//margin-bottom: 5%;
 	}
+
+	#contact > a{
+		margin: 0 2%;
+	}
+
 }
