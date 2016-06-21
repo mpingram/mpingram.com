@@ -121,6 +121,19 @@ body{
 
 // ---------
 
+
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
 // ---------
 #toybox{
 	width: 100%;
@@ -129,17 +142,15 @@ body{
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-
+	z-index: 1;
 
 	-webkit-transition: transform 1.5s 0.1s ease;
 			transition: transform 1.5s 0.1s ease;
 }
 #toybox.left{
-	transform: translate3d(-33.333%,0,0);
-
+	transform: translateX(-33.333%);
 }
 #toybox.right{
-	//width: 50%;
 	transform: translateX(33.333%);
 }
 #toybox.bottom{
@@ -202,15 +213,18 @@ body{
 	top: 0%;
 	width: 50%;
 	height:100%;
-	border-right: 1px solid $light-grey;
+	//border-right: 1px solid $light-grey;
 
 }
 #about-box.active{
 	transform: translateX(100%);
 }
 
-.about-text{
-	margin: 0 auto;
+.bubble{
+	border: 1px solid $light-grey;
+	border-radius: 5px;
+	float: right;
+	margin: 0 1%;
 	width: 60%;
 	top: 25%;
 	transform: translateY(-50%);
@@ -223,7 +237,7 @@ body{
 	width: 100%;
 	height: 50%;
 
-	border-top: 1px solid $light-grey;
+	//border-top: 1px solid $light-grey;
 }
 #music-box.active{
 	
@@ -236,7 +250,7 @@ body{
 	width: 100%;
 	height: 50%;
 
-	border-bottom: 1px solid $light-grey;
+	//border-bottom: 1px solid $light-grey;
 }
 #websites-box.active{
 	// slight adjustment to accomodate for
@@ -251,7 +265,7 @@ body{
 	width: 50%;
 	height: 100%;
 
-	border-left: 1px solid $light-grey;
+	//border-left: 1px solid $light-grey;
 }
 #projects-box.active{
 	transform: translateX(-100%);
@@ -261,17 +275,22 @@ body{
 
 
 // breakpoint below tablet
+// 1px below iPad
 @media(max-width: 767px){
+
 	// shrink icons and sort
-	// thems into a square.
+	// them into a square.
 	#toybox{
 		flex-wrap: wrap;
+
+	
 	}
 	.toy{
-		width: 8em;
+		margin-right: 2em;
+		margin-left: 2em;
 	}
 	.toy-icon{
-		width: 6em;
+		width: 5.5em;
 	}
 	#about{
 		order: 1;
@@ -286,6 +305,50 @@ body{
 		order: 4;
 	}
 
+	// stack icons when they move.
+	#tobyox.stack{
+	}
+	#toybox.left{
+		transform: translateX(-55%);
+	}
+	#toybox.right{
+		transform: translateX(55%);
+	}
+	#toybox.bottom{
+		transform: translateY(50%);
+	}
+	#toybox.top{
+		transform: translateY(-50%);
+	}
+
+
+	// -------------
+	#about-box{
+		left:-100%;
+		width: 75%;
+	}
+	#about-box.active{
+		transform: translateX(125%);
+	}
+	#projects-box{
+		right: -100%;
+		width: 75%;
+	}
+	#projects-box.active{
+		transform: translateX(-125%);
+	}
+	
+	#music-box.active{
+
+	}
+	
+	#websites-box.active{
+
+	}
+	
+
+	// ------------
+
 	// adjust text size and spacing
 	#centerpiece{
 		font-size: 90%;
@@ -293,7 +356,15 @@ body{
 	}
 
 	#contact > a{
-		margin: 0 2%;
+		margin: 0 1.5%;
 	}
 
+}
+// breakpoint for smaller phone screens
+// 1px above iPhone 5
+@media(max-width: 321px){
+	.toy{
+		margin-left: 1.3em;
+		margin-right: 1.3em;
+	}
 }

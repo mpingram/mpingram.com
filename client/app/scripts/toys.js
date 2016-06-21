@@ -26,7 +26,7 @@ $(document).on('click', '#about, #music, #websites, #projects',
 		// if box is already open, close it and move the center back to neutral
 		if(box.hasClass('active')){
 			centerpiece.removeClass('collapsed');
-			toybox.removeClass(location);
+			toybox.removeClass();
 			box.removeClass('active');
 		// else move the center and slide in the box
 		} else {

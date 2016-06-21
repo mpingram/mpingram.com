@@ -95,6 +95,14 @@ body {
 #contact > a:hover {
   color: #ff854b; }
 
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
 #toybox {
   width: 100%;
   margin-top: 3%;
@@ -106,10 +114,11 @@ body {
       flex-wrap: nowrap;
   -ms-flex-pack: center;
       justify-content: center;
+  z-index: 1;
   transition: transform 1.5s 0.1s ease; }
 
 #toybox.left {
-  transform: translate3d(-33.333%, 0, 0); }
+  transform: translateX(-33.333%); }
 
 #toybox.right {
   transform: translateX(33.333%); }
@@ -153,14 +162,16 @@ body {
   left: -50%;
   top: 0%;
   width: 50%;
-  height: 100%;
-  border-right: 1px solid #bfbfbf; }
+  height: 100%; }
 
 #about-box.active {
   transform: translateX(100%); }
 
-.about-text {
-  margin: 0 auto;
+.bubble {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  float: right;
+  margin: 0 1%;
   width: 60%;
   top: 25%;
   transform: translateY(-50%); }
@@ -168,8 +179,7 @@ body {
 #music-box {
   bottom: -50%;
   width: 100%;
-  height: 50%;
-  border-top: 1px solid #bfbfbf; }
+  height: 50%; }
 
 #music-box.active {
   transform: translateY(-100%); }
@@ -177,8 +187,7 @@ body {
 #websites-box {
   top: -50%;
   width: 100%;
-  height: 50%;
-  border-bottom: 1px solid #bfbfbf; }
+  height: 50%; }
 
 #websites-box.active {
   transform: translateY(95%); }
@@ -187,8 +196,7 @@ body {
   right: -50%;
   top: 0%;
   width: 50%;
-  height: 100%;
-  border-left: 1px solid #bfbfbf; }
+  height: 100%; }
 
 #projects-box.active {
   transform: translateX(-100%); }
@@ -198,9 +206,10 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .toy {
-    width: 8em; }
+    margin-right: 2em;
+    margin-left: 2em; }
   .toy-icon {
-    width: 6em; }
+    width: 5.5em; }
   #about {
     -ms-flex-order: 1;
         order: 1; }
@@ -213,7 +222,30 @@ body {
   #projects {
     -ms-flex-order: 4;
         order: 4; }
+  #toybox.left {
+    transform: translateX(-55%); }
+  #toybox.right {
+    transform: translateX(55%); }
+  #toybox.bottom {
+    transform: translateY(50%); }
+  #toybox.top {
+    transform: translateY(-50%); }
+  #about-box {
+    left: -100%;
+    width: 75%; }
+  #about-box.active {
+    transform: translateX(125%); }
+  #projects-box {
+    right: -100%;
+    width: 75%; }
+  #projects-box.active {
+    transform: translateX(-125%); }
   #centerpiece {
     font-size: 90%; }
   #contact > a {
-    margin: 0 2%; } }
+    margin: 0 1.5%; } }
+
+@media (max-width: 321px) {
+  .toy {
+    margin-left: 1.3em;
+    margin-right: 1.3em; } }
