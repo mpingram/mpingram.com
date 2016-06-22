@@ -37,6 +37,14 @@ $(document).on('click', '#about, #music, #websites, #projects',
 	}
 );
 
-
-
-
+// hammer.js touch event handler
+var body = document.getElementById('body-wrapper');
+var hammer = new Hammer(body);
+var hammerManager = new Hammer.Manager(body,{
+	recognizers: [
+		[Hammer.Swipe, {directon: Hammer.DIRECTION_ALL}]
+	]
+});
+hammerManager.on('swipe', function(ev){
+	console.log(ev);
+});

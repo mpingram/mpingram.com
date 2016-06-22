@@ -32,7 +32,7 @@ body{
 
 }
 
-.body-wrapper{
+#body-wrapper{
 	// mobile browsers ignore
 	// overflow tags on html and body
 	width: 100%;
@@ -273,7 +273,8 @@ body{
 
 
 
-
+// BREAKPOINTS
+// ======================
 // breakpoint below tablet
 // 1px below iPad
 @media(max-width: 767px){
@@ -281,9 +282,8 @@ body{
 	// shrink icons and sort
 	// them into a square.
 	#toybox{
+		transition: transform 1s ease;
 		flex-wrap: wrap;
-
-	
 	}
 	.toy{
 		margin-right: 2em;
@@ -305,53 +305,59 @@ body{
 		order: 4;
 	}
 
-	// stack icons when they move.
-	#tobyox.stack{
-	}
 	#toybox.left{
-		transform: translateX(-55%);
+		transform: translateX(-100%);
 	}
 	#toybox.right{
-		transform: translateX(55%);
+		transform: translateX(100%);
 	}
 	#toybox.bottom{
-		transform: translateY(50%);
+		transform: translateY(200%);
 	}
 	#toybox.top{
-		transform: translateY(-50%);
+		transform: translateY(-200%);
 	}
 
 
 	// -------------
+	.box{
+		transition: transform 1s ease;
+	}
 	.bubble{
 		width: 90%;
 	}
 	#about-box{
 		left:-100%;
-		width: 75%;
+		width: 100%;
 	}
 	#about-box.active{
-		transform: translateX(125%);
+		transform: translateX(100%);
 	}
 	#projects-box{
 		right: -100%;
-		width: 75%;
+		width: 100%;
 	}
 	#projects-box.active{
-		transform: translateX(-125%);
+		transform: translateX(-100%);
 	}
 	
+	#music-box{
+		bottom: -100%;
+		height: 100%;
+	}
 	#music-box.active{
-
+		transform: translateY(-100%);
 	}
-	
+	#websites-box{
+		top: -100%;
+		height: 100%;
+	}
 	#websites-box.active{
-
+		transform: translateY(100%);
 	}
 	
 
 	// ------------
-
 	// adjust text size and spacing
 	#centerpiece{
 		font-size: 90%;

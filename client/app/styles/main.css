@@ -24,7 +24,7 @@ body {
   font-size: 100%;
   font-family: "Source Sans Pro", sans-serif; }
 
-.body-wrapper {
+#body-wrapper {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -203,6 +203,7 @@ body {
 
 @media (max-width: 767px) {
   #toybox {
+    transition: transform 1s ease;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .toy {
@@ -223,25 +224,37 @@ body {
     -ms-flex-order: 4;
         order: 4; }
   #toybox.left {
-    transform: translateX(-55%); }
+    transform: translateX(-100%); }
   #toybox.right {
-    transform: translateX(55%); }
+    transform: translateX(100%); }
   #toybox.bottom {
-    transform: translateY(50%); }
+    transform: translateY(200%); }
   #toybox.top {
-    transform: translateY(-50%); }
+    transform: translateY(-200%); }
+  .box {
+    transition: transform 1s ease; }
   .bubble {
     width: 90%; }
   #about-box {
     left: -100%;
-    width: 75%; }
+    width: 100%; }
   #about-box.active {
-    transform: translateX(125%); }
+    transform: translateX(100%); }
   #projects-box {
     right: -100%;
-    width: 75%; }
+    width: 100%; }
   #projects-box.active {
-    transform: translateX(-125%); }
+    transform: translateX(-100%); }
+  #music-box {
+    bottom: -100%;
+    height: 100%; }
+  #music-box.active {
+    transform: translateY(-100%); }
+  #websites-box {
+    top: -100%;
+    height: 100%; }
+  #websites-box.active {
+    transform: translateY(100%); }
   #centerpiece {
     font-size: 90%; }
   #contact > a {
