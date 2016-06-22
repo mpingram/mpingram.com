@@ -213,7 +213,6 @@ body{
 	top: 0%;
 	width: 50%;
 	height:100%;
-	//border-right: 1px solid $light-grey;
 
 }
 #about-box.active{
@@ -223,11 +222,12 @@ body{
 .bubble{
 	border: 1px solid $light-grey;
 	border-radius: 5px;
-	float: right;
+	//float: right;
 	margin: 0 1%;
 	width: 60%;
-	top: 25%;
-	transform: translateY(-50%);
+}
+.bubble-left{
+	float: right;
 }
 
 
@@ -323,6 +323,9 @@ body{
 
 
 	// -------------
+	.bubble{
+		width: 90%;
+	}
 	#about-box{
 		left:-100%;
 		width: 75%;
@@ -352,7 +355,6 @@ body{
 	// adjust text size and spacing
 	#centerpiece{
 		font-size: 90%;
-		//margin-bottom: 5%;
 	}
 
 	#contact > a{
@@ -366,5 +368,8 @@ body{
 	.toy{
 		margin-left: 1.3em;
 		margin-right: 1.3em;
+	}
+	.toy-link{
+		font-size: 90%;
 	}
 }

@@ -170,11 +170,11 @@ body {
 .bubble {
   border: 1px solid #bfbfbf;
   border-radius: 5px;
-  float: right;
   margin: 0 1%;
-  width: 60%;
-  top: 25%;
-  transform: translateY(-50%); }
+  width: 60%; }
+
+.bubble-left {
+  float: right; }
 
 #music-box {
   bottom: -50%;
@@ -230,6 +230,8 @@ body {
     transform: translateY(50%); }
   #toybox.top {
     transform: translateY(-50%); }
+  .bubble {
+    width: 90%; }
   #about-box {
     left: -100%;
     width: 75%; }
@@ -248,4 +250,6 @@ body {
 @media (max-width: 321px) {
   .toy {
     margin-left: 1.3em;
-    margin-right: 1.3em; } }
+    margin-right: 1.3em; }
+  .toy-link {
+    font-size: 90%; } }
