@@ -2,6 +2,11 @@
 html{
 	width:100%;
 	height: 100%;
+
+	box-sizing: border-box;
+}
+*,*:before,*:after{
+	box-sizing: inherit;
 }
 // remove styling from link elements
 a {
@@ -16,6 +21,16 @@ button{
 	padding: 0;
 	font-size:100%;
 	vertical-align: baseline;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 body{
@@ -123,15 +138,6 @@ body{
 
 
 
-.unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
 
 
 // ---------
@@ -173,7 +179,7 @@ body{
 	pointer-events: none;
 	position: relative;
 	margin-bottom: 1em;
-	box-shadow: 1px 7px 5px -4px grey;
+	//box-shadow: 1px 7px 5px -4px grey;
 	border: 1px solid grey;
 	border-radius: 3px;
 }
@@ -190,24 +196,36 @@ body{
 
 
 .box{
+	// allows hammerjs swipe events to work properly
+	// TODO: altho this might not work on surface ie11 and below
+	// and maybe putting the hammer listener on the body isn't a great idea?
+	pointer-events: none;
+
 	position: absolute;
 	overflow: auto;
 
 	// TODO: shim for ie8 and below with filter
 	background-color: rgba(213, 213, 213, 0.10);
-
 	text-align: center;
 
 	-webkit-transition: transform 1.5s 0.1s ease;
 	transition: transform 1.5s 0.1s ease;
-
 }
 
-.box-text{
+.bubble-text{
+	font-weight: 300;
 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
 }
 
+.bubble{
+	border: 1px solid $light-grey;
+	border-radius: 5px;
+}
 
+// about window
 #about-box{
 	left:-50%;
 	top: 0%;
@@ -219,18 +237,35 @@ body{
 	transform: translateX(100%);
 }
 
-.bubble{
-	border: 1px solid $light-grey;
-	border-radius: 5px;
-	//float: right;
-	margin: 0 1%;
-	width: 60%;
+.bubble-about-top{
+	background: rgba(193,204,174,0.5);
+	//background-color: #C1CCAE;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 33%;
+	width: 50%;
 }
-.bubble-left{
-	float: right;
+.bubble-about-mid{
+	background: rgba(255,202,177,0.5);
+	//background-color: #FFCAB1;
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	height: 33%;
+	float: left;
+	width: 50%;
+
+}
+.bubble-about-bottom{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 33%;
+	width: 50%;
 }
 
-
+// music window
 #music-box{
 	bottom: -50%;
 
@@ -265,7 +300,6 @@ body{
 	width: 50%;
 	height: 100%;
 
-	//border-left: 1px solid $light-grey;
 }
 #projects-box.active{
 	transform: translateX(-100%);
@@ -282,7 +316,7 @@ body{
 	// shrink icons and sort
 	// them into a square.
 	#toybox{
-		transition: transform 1s ease;
+		transition: transform 1.25s ease;
 		flex-wrap: wrap;
 	}
 	.toy{
@@ -321,10 +355,11 @@ body{
 
 	// -------------
 	.box{
-		transition: transform 1s ease;
+		-webkit-transition: transform 1.25s ease;
+		transition: transform 1.25s ease;
 	}
 	.bubble{
-		width: 90%;
+		//width: 90%;
 	}
 	#about-box{
 		left:-100%;

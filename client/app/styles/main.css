@@ -1,6 +1,10 @@
 html {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
 
 a {
   text-decoration: none;
@@ -13,6 +17,14 @@ button {
   padding: 0;
   font-size: 100%;
   vertical-align: baseline; }
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
 
 body {
   margin: 0;
@@ -95,14 +107,6 @@ body {
 #contact > a:hover {
   color: #ff854b; }
 
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none; }
-
 #toybox {
   width: 100%;
   margin-top: 3%;
@@ -139,7 +143,6 @@ body {
   pointer-events: none;
   position: relative;
   margin-bottom: 1em;
-  box-shadow: 1px 7px 5px -4px grey;
   border: 1px solid grey;
   border-radius: 3px; }
 
@@ -149,14 +152,23 @@ body {
   position: relative; }
 
 .box {
+  pointer-events: none;
   position: absolute;
   overflow: auto;
   background-color: rgba(213, 213, 213, 0.1);
   text-align: center;
   transition: transform 1.5s 0.1s ease; }
 
-.box-text {
-  position: relative; }
+.bubble-text {
+  font-weight: 300;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto; }
+
+.bubble {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px; }
 
 #about-box {
   left: -50%;
@@ -167,14 +179,29 @@ body {
 #about-box.active {
   transform: translateX(100%); }
 
-.bubble {
-  border: 1px solid #bfbfbf;
-  border-radius: 5px;
-  margin: 0 1%;
-  width: 60%; }
+.bubble-about-top {
+  background: rgba(193, 204, 174, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 33%;
+  width: 50%; }
 
-.bubble-left {
-  float: right; }
+.bubble-about-mid {
+  background: rgba(255, 202, 177, 0.5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 33%;
+  float: left;
+  width: 50%; }
+
+.bubble-about-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 33%;
+  width: 50%; }
 
 #music-box {
   bottom: -50%;
@@ -203,7 +230,7 @@ body {
 
 @media (max-width: 767px) {
   #toybox {
-    transition: transform 1s ease;
+    transition: transform 1.25s ease;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .toy {
@@ -232,9 +259,7 @@ body {
   #toybox.top {
     transform: translateY(-200%); }
   .box {
-    transition: transform 1s ease; }
-  .bubble {
-    width: 90%; }
+    transition: transform 1.25s ease; }
   #about-box {
     left: -100%;
     width: 100%; }
