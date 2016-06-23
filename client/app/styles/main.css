@@ -127,10 +127,10 @@ body {
 #toybox.right {
   transform: translateX(33.333%); }
 
-#toybox.bottom {
+#toybox.down {
   transform: translateY(100%); }
 
-#toybox.top {
+#toybox.up {
   transform: translateY(-100%); }
 
 .toy {
@@ -180,7 +180,7 @@ body {
   transform: translateX(100%); }
 
 .bubble-about-top {
-  background: rgba(193, 204, 174, 0.5);
+  background-color: #CFF18D;
   position: absolute;
   top: 0;
   right: 0;
@@ -254,9 +254,9 @@ body {
     transform: translateX(-100%); }
   #toybox.right {
     transform: translateX(100%); }
-  #toybox.bottom {
+  #toybox.down {
     transform: translateY(200%); }
-  #toybox.top {
+  #toybox.up {
     transform: translateY(-200%); }
   .box {
     transition: transform 1.25s ease; }
@@ -282,6 +282,8 @@ body {
     transform: translateY(100%); }
   #centerpiece {
     font-size: 90%; }
+  #centerpiece.collapsed {
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear; }
   #contact > a {
     margin: 0 1.5%; } }
 

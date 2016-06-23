@@ -159,10 +159,10 @@ body{
 #toybox.right{
 	transform: translateX(33.333%);
 }
-#toybox.bottom{
+#toybox.down{
 	transform: translateY(100%);
 }
-#toybox.top{
+#toybox.up{
 	transform: translateY(-100%);
 }
 
@@ -238,8 +238,9 @@ body{
 }
 
 .bubble-about-top{
-	background: rgba(193,204,174,0.5);
+	//background: rgba(193,204,174,0.5);
 	//background-color: #C1CCAE;
+	background-color: #CFF18D;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -345,10 +346,10 @@ body{
 	#toybox.right{
 		transform: translateX(100%);
 	}
-	#toybox.bottom{
+	#toybox.down{
 		transform: translateY(200%);
 	}
-	#toybox.top{
+	#toybox.up{
 		transform: translateY(-200%);
 	}
 
@@ -395,7 +396,12 @@ body{
 	// ------------
 	// adjust text size and spacing
 	#centerpiece{
+		// TODO: adjust animation time?
 		font-size: 90%;
+	}
+	#centerpiece.collapsed{
+		-webkit-transition: visibility 0s linear 0.25s, opacity 0.25s linear;
+		transition: visibility 0s linear 0.25s, opacity 0.25s linear;
 	}
 
 	#contact > a{
