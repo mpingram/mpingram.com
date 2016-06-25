@@ -86,7 +86,10 @@ body {
   transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
 
 .headshot {
-  width: 9.5em; }
+  border: 10px solid #C1D7AE;
+  border-radius: 50%;
+  margin-top: 1em;
+  width: 10em; }
 
 #name {
   margin: 10px 0 0 0;
@@ -167,8 +170,9 @@ body {
   margin: 0 auto; }
 
 .bubble {
-  border: 1px solid #bfbfbf;
-  border-radius: 5px; }
+  border-bottom: 1px solid #bfbfbf;
+  width: 60%;
+  margin: 0 auto; }
 
 #about-box {
   left: -50%;
@@ -260,6 +264,8 @@ body {
     transform: translateY(-200%); }
   .box {
     transition: transform 1.25s ease; }
+  .bubble {
+    width: 90%; }
   #about-box {
     left: -100%;
     width: 100%; }

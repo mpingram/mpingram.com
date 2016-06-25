@@ -109,7 +109,10 @@ body{
 
 // image
 .headshot {
-	width: 9.5em;
+	border: 10px solid $col-accent;
+	border-radius: 50%;
+	margin-top: 1em;
+	width: 10em;
 }
 
 #name{
@@ -221,8 +224,9 @@ body{
 }
 
 .bubble{
-	border: 1px solid $light-grey;
-	border-radius: 5px;
+	border-bottom: 1px solid $light-grey;
+	width: 60%;
+	margin: 0 auto;
 }
 
 // about window
@@ -360,7 +364,7 @@ body{
 		transition: transform 1.25s ease;
 	}
 	.bubble{
-		//width: 90%;
+		width: 90%;
 	}
 	#about-box{
 		left:-100%;
