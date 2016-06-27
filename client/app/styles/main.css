@@ -89,7 +89,7 @@ body {
   border: 10px solid #C1D7AE;
   border-radius: 50%;
   margin-top: 1em;
-  width: 10em; }
+  width: 11em; }
 
 #name {
   margin: 10px 0 0 0;
@@ -183,29 +183,9 @@ body {
 #about-box.active {
   transform: translateX(100%); }
 
-.bubble-about-top {
-  background-color: #CFF18D;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 33%;
-  width: 50%; }
-
-.bubble-about-mid {
-  background: rgba(255, 202, 177, 0.5);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 33%;
-  float: left;
-  width: 50%; }
-
-.bubble-about-bottom {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 33%;
-  width: 50%; }
+.about-text-bubble {
+  margin-top: 5%;
+  height: 30%; }
 
 #music-box {
   bottom: -50%;
