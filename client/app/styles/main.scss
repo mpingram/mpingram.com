@@ -33,6 +33,8 @@ button{
     user-select: none;
 }
 
+
+
 body{
 	margin: 0;
 	width: 100%;
@@ -54,6 +56,19 @@ body{
 	height: 100%;
 	overflow: hidden;
 	position: fixed;
+}
+
+
+.heading{
+	margin: 0 auto;
+	font-size: 190%;
+	font-weight: 300;
+}
+
+.subheading{
+	font-size: 110%;
+	line-height: 90%;
+	font-weight: 300;
 }
 
 
@@ -107,24 +122,12 @@ body{
 	transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
-// image
-.headshot {
-	border: 10px solid $col-accent;
-	border-radius: 50%;
-	margin-top: 1em;
-	width: 11em;
-}
 
 #name{
 	margin: 10px 0 0 0;
-	font-size: 190%;
-	font-weight: 300;
 }
 
 #title{
-	font-size: 110%;
-	line-height: 90%;
-	font-weight: 300;
 	margin-bottom: 5px;
 }
 
@@ -133,7 +136,7 @@ body{
 	font-size:90%;
 	font-weight: 400;
 }
-#contact > a:hover{
+.link:hover{
 	color: darken($col-highlight,20%);
 }
 
@@ -215,18 +218,14 @@ body{
 	transition: transform 1.5s 0.1s ease;
 }
 
-.bubble-text{
-	font-weight: 300;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: 0 auto;
-}
-
 .bubble{
-	border-bottom: 1px solid $light-grey;
+	//border-bottom: 1px solid $light-grey;
+
+	// overrides pointer-events: none on parent
+	pointer-events: auto;
 	width: 60%;
-	margin: 0 auto;
+	//margin: 0 auto;
+	font-weight: 300;
 }
 
 // about window
@@ -241,9 +240,48 @@ body{
 	transform: translateX(100%);
 }
 
+.about-headshot {
+	border: 10px solid $col-about-accent;
+	border-radius: 50%;
+	margin-top: 1em;
+	width: 11em;
+}
 .about-text-bubble{
-	margin-top: 5%;
-	height: 30%;
+	margin: 0 auto;
+	margin-top: 2%;
+	height: 25%;
+}
+
+.about-skills-bubble{
+	margin: 0;
+	width: 50%;
+	height: 25%;
+	float: left;
+}
+.about-experience-bubble{
+	margin: 0;
+	width: 50%;
+	height: 25%;
+	float: left;
+	border-right: 1px solid $light-grey;
+}
+
+// TODO: move
+.button{
+	display: block;
+	padding: 2%;
+	border: 1px solid $light-grey;
+	border-radius: 5px;
+}
+.about-button{
+	width: 40%;
+	margin: 5% auto;
+	background-color: $col-about-accent;
+}
+.about-buttons-wrapper{
+	position: relative;
+	top: 0%;
+	//transform: translateY(-25%);
 }
 
 

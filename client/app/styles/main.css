@@ -42,6 +42,16 @@ body {
   overflow: hidden;
   position: fixed; }
 
+.heading {
+  margin: 0 auto;
+  font-size: 190%;
+  font-weight: 300; }
+
+.subheading {
+  font-size: 110%;
+  line-height: 90%;
+  font-weight: 300; }
+
 .center-container {
   width: 100%;
   height: 100%;
@@ -85,21 +95,10 @@ body {
   visibility: hidden;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
 
-.headshot {
-  border: 10px solid #C1D7AE;
-  border-radius: 50%;
-  margin-top: 1em;
-  width: 11em; }
-
 #name {
-  margin: 10px 0 0 0;
-  font-size: 190%;
-  font-weight: 300; }
+  margin: 10px 0 0 0; }
 
 #title {
-  font-size: 110%;
-  line-height: 90%;
-  font-weight: 300;
   margin-bottom: 5px; }
 
 #contact {
@@ -107,7 +106,7 @@ body {
   font-size: 90%;
   font-weight: 400; }
 
-#contact > a:hover {
+.link:hover {
   color: #ff854b; }
 
 #toybox {
@@ -162,17 +161,10 @@ body {
   text-align: center;
   transition: transform 1.5s 0.1s ease; }
 
-.bubble-text {
-  font-weight: 300;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 auto; }
-
 .bubble {
-  border-bottom: 1px solid #bfbfbf;
+  pointer-events: auto;
   width: 60%;
-  margin: 0 auto; }
+  font-weight: 300; }
 
 #about-box {
   left: -50%;
@@ -183,9 +175,44 @@ body {
 #about-box.active {
   transform: translateX(100%); }
 
+.about-headshot {
+  border: 10px solid #C1D7AE;
+  border-radius: 50%;
+  margin-top: 1em;
+  width: 11em; }
+
 .about-text-bubble {
-  margin-top: 5%;
-  height: 30%; }
+  margin: 0 auto;
+  margin-top: 2%;
+  height: 25%; }
+
+.about-skills-bubble {
+  margin: 0;
+  width: 50%;
+  height: 25%;
+  float: left; }
+
+.about-experience-bubble {
+  margin: 0;
+  width: 50%;
+  height: 25%;
+  float: left;
+  border-right: 1px solid #bfbfbf; }
+
+.button {
+  display: block;
+  padding: 2%;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px; }
+
+.about-button {
+  width: 40%;
+  margin: 5% auto;
+  background-color: #C1D7AE; }
+
+.about-buttons-wrapper {
+  position: relative;
+  top: 0%; }
 
 #music-box {
   bottom: -50%;

@@ -16,12 +16,10 @@
 		<div>
 		<div id='centerpiece'>
 	
-			<span id='name'>Michael Ingram</span>
-			<span id='title'>Full Stack Web Developer</span>
+			<span id='name' class='heading'>Michael Ingram</span>
+			<span id='title' class='subheading'>Full Stack Web Developer</span>
 			<span id='contact'>
-				<a target="_blank" href='https://github.com/mpingram'>github.com/mpingram</a> ||
-				 <a href='mailto:mpingram92@gmail.com'>mpingram92@gmail.com</a>
-			</span>
+			<a href='https://github.com/mpingram' class='link'>github.com/mpingram</a> || <a href='mailto:mpingram92@gmail.com' target='_blank' class='link'>mpingram92@gmail.com</a>
 		</div>
 		</div>
 
@@ -44,11 +42,10 @@
 			<button id='websites' class='toy unselectable'>
 				<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
 				</object>
-				<span class='toy-link'> websites </span>
+				<span class='toy-link'>websites</span>
 			</button>
 
 			<button id='projects' class='toy unselectable'>
-				<!-- TODO: stick to css for this one -->
 				<object class='toy-icon' type='image/svg+xml' data='images/toy-template.svg'>
 				</object>
 				<span class='toy-link'>projects</span>
@@ -58,10 +55,43 @@
 
 
 	<div class='box' id='about-box'>
-		<img class='headshot' src='images/headshot.png'/>
-		<h3>Hi!</h3>
+		<img class='about-headshot' src='images/headshot.png'/>
+		<h3 class='heading'>Hi!</h3>
+
 		<div class='bubble about-text-bubble'>
-		<p> I'm an innovator ninja with 1,337 pirate skills.</p>
+			<p>I'm Michael, a self-taught web developer with a strong Javascript background and a neverending hunger for new problems. I started a year ago knowing nothing, and now I'm here.</p>
+			<p>When I'm not working, I'm making music, writing fiction, or job hunting. <a class='link' href=''>Want to help me out with that last one?</a></p>
+		</div>
+
+		<h4 class='heading'>What can I do?</h4>
+
+		<div class='bubble about-experience-bubble'>
+			<div class='about-buttons-wrapper'>
+			<button class='button about-button'>view my websites</button>
+			<button class='button about-button'>view my projects</button>
+			<button class='button about-button'>view my resume</button>
+			</div>
+		</div>
+
+		<div class='bubble about-skills-bubble'>
+			<ul class='about-skills-list'>
+				<li>Frontend
+					<ul>
+						<li>Node.js</li>
+						<li>Express.js</li>
+						<li>AngularJS</li>
+						<li>jQuery</li>
+						<li>Illustrator</li>
+						<li>SEO</li>
+					</ul>
+				</li>
+				<li>Backend</li> 
+			</ul>
+		</div>
+
+		<div class='bubble about-contact-bubble'>
+			<h4 class='subheading'>Want to hire me?</h4>
+			<h3>Contact me</h3>
 		</div>
 	</div>
 	<div class='box' id='music-box'>
