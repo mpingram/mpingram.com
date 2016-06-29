@@ -224,20 +224,21 @@ body {
   border-right: 1px solid #bfbfbf; }
 
 .button {
+  font-family: "Source Sans Pro", sans-serif;
   outline: none;
   display: block;
   padding: 2%;
   width: auto;
-  border-radius: 5px; }
-
-.button:focus {
-  background-color: #C1D7AE; }
-
-.about-experience-button {
+  border-radius: 5px;
   color: #f7f7f7;
   width: 10em;
-  margin: 5% auto;
+  margin: 5% auto; }
+
+.about-experience-button {
   background-color: #a9c88f; }
+
+.about-experience-button:focus {
+  background-color: #C1D7AE; }
 
 .about-experience-button:hover {
   background-color: #C1D7AE; }
@@ -250,13 +251,14 @@ body {
 .about-contact-button {
   margin: 0 auto;
   font-weight: 300;
-  border: 2px solid #a9c88f; }
+  border: 3px solid #a9c88f; }
 
 .about-contact-button:hover {
   background-color: #a9c88f;
   color: #f7f7f7; }
 
 .about-contact-button:focus {
+  border-color: #C1D7AE;
   background-color: #C1D7AE;
   color: #f7f7f7; }
 
@@ -267,6 +269,34 @@ body {
 
 #music-box.active {
   transform: translateY(-100%); }
+
+.music-heading {
+  display: block;
+  margin: 2% auto; }
+
+.music-content-wrapper {
+  display: block;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto; }
+
+.music-player-container {
+  width: 50%;
+  float: left;
+  height: 310px;
+  background: url("images/loading.svg"); }
+
+.music-player {
+  margin: 0 auto; }
+
+.music-link-button {
+  width: 15em;
+  background-color: #DC4747;
+  margin: 5% auto;
+  font-weight: 300; }
+
+.music-link-button:focus, .music-link-button:hover {
+  background-color: #e05c5c; }
 
 #websites-box {
   top: -50%;
