@@ -11,7 +11,8 @@ $col-bg-alt:		#ECDCB0;
 $col-highlight:		#FFCAB1;
 $col-dark:			#000100;
 
-$col-about-accent: 		#C1D7AE;
+$col-about-accent: 		darken(#C1D7AE, 9%);
+$col-about-accent-light: #C1D7AE;
 $col-music-accent:  	#FFF;
 $col-websites-accent:	#FFF;
 $col-projects-accent: 	#FFF;	
@@ -19,3 +20,4 @@ $col-projects-accent: 	#FFF;
 $grey-base:			#000;
 $light-grey: 		lighten($grey-base, 75%);
 $lighter-grey: 		lighten($grey-base, 85%);
+$lightest-grey: 	lighten($grey-base, 97%);

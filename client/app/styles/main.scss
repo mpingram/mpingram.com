@@ -136,6 +136,9 @@ body{
 	font-size:90%;
 	font-weight: 400;
 }
+.link{
+	font-weight: 400;
+}
 .link:hover{
 	color: darken($col-highlight,20%);
 }
@@ -178,10 +181,12 @@ body{
 	text-align: center;
 }
 
+.toy:focus, .toy:hover{
+	text-decoration: underline;
+}
+
 .toy-icon{
-
 	width: 9em;
-
 	pointer-events: none;
 	position: relative;
 	margin-bottom: 1em;
@@ -205,7 +210,7 @@ body{
 	// allows hammerjs swipe events to work properly
 	// TODO: altho this might not work on surface ie11 and below
 	// and maybe putting the hammer listener on the body isn't a great idea?
-	pointer-events: none;
+	//pointer-events: none;
 
 	position: absolute;
 	overflow: auto;
@@ -241,7 +246,7 @@ body{
 }
 
 .about-headshot {
-	border: 10px solid $col-about-accent;
+	border: 10px solid $col-about-accent-light;
 	border-radius: 50%;
 	margin-top: 1em;
 	width: 11em;
@@ -253,10 +258,29 @@ body{
 }
 
 .about-skills-bubble{
+
 	margin: 0;
 	width: 50%;
 	height: 25%;
 	float: left;
+}
+.about-skills-list{
+	text-align: left;
+	list-style: none;
+}
+.nested-list{
+	font-size: 85%;
+	list-style: none;
+}
+.nested-list > li{
+	display: inline;
+	margin-right: 1em;
+}
+.nested-list > li:before{
+	content: '• ';
+	line-height: 0;
+	font-size: 1.5em;
+	color: $col-about-accent;
 }
 .about-experience-bubble{
 	margin: 0;
@@ -268,22 +292,48 @@ body{
 
 // TODO: move
 .button{
+	outline: none;
 	display: block;
 	padding: 2%;
-	border: 1px solid $light-grey;
+	width: auto;
+	//border: 1px solid $light-grey;
 	border-radius: 5px;
+
 }
-.about-button{
-	width: 40%;
+.button:focus{
+	// replaces button outline
+	// with bg color change, maintaining accessibility
+	background-color: $col-about-accent-light;
+}
+.about-experience-button{
+	color: $lightest-grey;
+	width: 10em;
 	margin: 5% auto;
 	background-color: $col-about-accent;
 }
-.about-buttons-wrapper{
+.about-experience-button:hover{
+	background-color: $col-about-accent-light;
+}
+.about-experience-buttons-wrapper{
+	// TODO: consider flex here?
 	position: relative;
-	top: 0%;
-	//transform: translateY(-25%);
+	top: 50%;
+	transform: translateY(-75%);
 }
 
+.about-contact-button{
+	margin: 0 auto;
+	font-weight: 300;
+	border: 2px solid $col-about-accent;
+}
+.about-contact-button:hover{
+	background-color: $col-about-accent;
+	color: $lightest-grey;											
+}
+.about-contact-button:focus{
+	background-color: $col-about-accent-light;
+	color: $lightest-grey;
+}
 
 // music window
 #music-box{
