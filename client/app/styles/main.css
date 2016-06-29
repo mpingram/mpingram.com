@@ -44,6 +44,7 @@ body {
   position: fixed; }
 
 .heading {
+  display: block;
   margin: 0 auto;
   font-size: 190%;
   font-weight: 300; }
@@ -249,8 +250,10 @@ body {
   transform: translateY(-75%); }
 
 .about-contact-button {
+  color: #8fb76d;
   margin: 0 auto;
-  font-weight: 300;
+  font-size: 130%;
+  font-weight: 400;
   border: 3px solid #a9c88f; }
 
 .about-contact-button:hover {
@@ -314,6 +317,23 @@ body {
 
 #projects-box.active {
   transform: translateX(-100%); }
+
+.projects-heading {
+  margin: 1% 2%;
+  text-align: left;
+  width: 100%; }
+
+.projects-thumbnail {
+  margin: 2%;
+  float: right; }
+
+.projects-bubble {
+  border: 1px solid #bfbfbf;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 5% 5% 0;
+  width: 90%;
+  height: 42.5%; }
 
 @media (max-width: 767px) {
   #toybox {

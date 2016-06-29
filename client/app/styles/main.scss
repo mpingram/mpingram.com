@@ -60,6 +60,7 @@ body{
 
 
 .heading{
+	display: block;
 	margin: 0 auto;
 	font-size: 190%;
 	font-weight: 300;
@@ -73,8 +74,6 @@ body{
 
 
 .center-container{
-
-
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -324,8 +323,10 @@ body{
 }
 
 .about-contact-button{
+	color: darken($col-about-accent, 10%);
 	margin: 0 auto;
-	font-weight: 300;
+	font-size: 130%;
+	font-weight: 400;
 	border: 3px solid $col-about-accent;
 }
 .about-contact-button:hover{
@@ -381,12 +382,13 @@ body{
 .music-link-button:focus, .music-link-button:hover{
 	background-color: $col-music-accent-light;
 }
+
+
+
 #websites-box{
 	top: -50%;
-
 	width: 100%;
 	height: 50%;
-
 	//border-bottom: 1px solid $light-grey;
 }
 #websites-box.active{
@@ -394,6 +396,7 @@ body{
 	// slightly up-shifted icons
 	transform: translateY(95%);
 }
+
 
 #projects-box{
 	right: -50%;
@@ -406,6 +409,27 @@ body{
 #projects-box.active{
 	transform: translateX(-100%);
 }
+.projects-heading{
+	margin: 1% 2%;
+	text-align: left;
+	width: 100%;
+}
+.projects-thumbnail{
+	margin: 2%;
+	float: right;
+}
+.projects-bubble{
+	border: 1px solid $light-grey;
+	border-radius: 12px;
+	display: inline-block;
+	margin: 5% 5% 0;
+	width: 90%;
+	height: 42.5%;
+	//background-color: $col-projects-accent;
+
+}
+
+
 
 
 
