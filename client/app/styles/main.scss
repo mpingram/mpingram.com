@@ -245,7 +245,7 @@ body{
 }
 
 .about-headshot {
-	border: 10px solid $col-about-accent-light;
+	border: 10px solid $col-about-accent;
 	border-radius: 50%;
 	margin-top: 1em;
 	width: 11em;
@@ -257,22 +257,31 @@ body{
 }
 
 .about-skills-bubble{
-
 	margin: 0;
 	width: 50%;
 	height: 25%;
 	float: left;
 }
 .about-skills-list{
+	margin-top: 0;
+	margin-bottom: 0;
+	display: block;
+	height: 100%;
+	font-weight: 300;
 	text-align: left;
 	list-style: none;
 }
+.about-skills-list-item{
+	// TODO: consider flexbox here
+	//margin: 5% 0;
+}
 .nested-list{
+	font-weight: 400;
 	font-size: 85%;
 	list-style: none;
 }
 .nested-list > li{
-	display: inline;
+	display: inline-block;
 	margin-right: 1em;
 }
 .nested-list > li:before{
@@ -281,10 +290,17 @@ body{
 	font-size: 1.5em;
 	color: $col-about-accent;
 }
+
+
+.about-experience-skills-wrapper{
+	width: 100%;
+	height: 25%;
+}
 .about-experience-bubble{
+	display: inline-block;
 	margin: 0;
 	width: 50%;
-	height: 25%;
+	height: 100%;
 	float: left;
 	border-right: 1px solid $light-grey;
 }
@@ -317,11 +333,11 @@ body{
 }
 .about-experience-buttons-wrapper{
 	// TODO: consider flex here?
-	position: relative;
-	top: 50%;
-	transform: translateY(-75%);
 }
-
+.about-contact-wrapper{
+	position: relative;
+	margin-top: 2%;
+}
 .about-contact-button{
 	color: darken($col-about-accent, 10%);
 	margin: 0 auto;
