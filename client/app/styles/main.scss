@@ -245,10 +245,8 @@ body{
 }
 
 .about-headshot {
-	border: 10px solid $col-about-accent;
-	border-radius: 50%;
 	margin-top: 1em;
-	width: 11em;
+	width: 9.5em;
 }
 .about-text-bubble{
 	margin: 0 auto;
@@ -259,7 +257,7 @@ body{
 .about-skills-bubble{
 	margin: 0;
 	width: 50%;
-	height: 25%;
+	height: 100%;
 	float: left;
 }
 .about-skills-list{
@@ -294,7 +292,7 @@ body{
 
 .about-experience-skills-wrapper{
 	width: 100%;
-	height: 25%;
+	height: 35%;
 }
 .about-experience-bubble{
 	display: inline-block;
@@ -341,6 +339,7 @@ body{
 .about-contact-button{
 	color: darken($col-about-accent, 10%);
 	margin: 0 auto;
+	padding: 1% 2%;
 	font-size: 130%;
 	font-weight: 400;
 	border: 3px solid $col-about-accent;
