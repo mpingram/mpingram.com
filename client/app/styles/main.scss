@@ -149,7 +149,7 @@ body{
 
 
 // ---------
-#toybox{
+#icons{
 	width: 100%;
 	margin-top: 3%;
 	display: flex;
@@ -161,16 +161,16 @@ body{
 	-webkit-transition: transform 1.5s 0.1s ease;
 			transition: transform 1.5s 0.1s ease;
 }
-#toybox.left{
+#icons.left{
 	transform: translateX(-33.333%);
 }
-#toybox.right{
+#icons.right{
 	transform: translateX(33.333%);
 }
-#toybox.down{
+#icons.down{
 	transform: translateY(100%);
 }
-#toybox.up{
+#icons.up{
 	transform: translateY(-100%);
 }
 
@@ -492,7 +492,7 @@ body{
 
 	// shrink icons and sort
 	// them into a square.
-	#toybox{
+	#icons{
 		transition: transform 1.25s ease;
 		flex-wrap: wrap;
 	}
@@ -516,16 +516,16 @@ body{
 		order: 4;
 	}
 
-	#toybox.left{
+	#icons.left{
 		transform: translateX(-100%);
 	}
-	#toybox.right{
+	#icons.right{
 		transform: translateX(100%);
 	}
-	#toybox.down{
+	#icons.down{
 		transform: translateY(200%);
 	}
-	#toybox.up{
+	#icons.up{
 		transform: translateY(-200%);
 	}
 
