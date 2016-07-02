@@ -7,7 +7,8 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var useref = require('gulp-useref');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
 //var karma = require('karma');
 // other test deps needed? probably
@@ -25,9 +26,7 @@ gulp.task('sass', function(){
 			browserSync.notify(err.message, 3000);
 			this.emit('end');
 		}).
-		pipe(autoprefixer({
-			browsers:['last 2 versions']
-		})).
+		pipe( postcss ([ autoprefixer ({ browsers: ['last 2 versions'] }) ]) ).
 		// send to production dist dir
 		pipe(gulp.dest('app/styles')).
 		pipe(browserSync.reload({

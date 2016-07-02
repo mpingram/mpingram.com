@@ -187,17 +187,21 @@ body {
   width: 9.5em; }
 
 .about-text-bubble {
+  display: block;
   margin: 0 auto;
   margin-top: 2%;
   height: 25%; }
 
 .about-skills-bubble {
+  display: block;
   margin: 0;
   width: 50%;
   height: 100%;
   float: left; }
 
 .about-experience-skills-wrapper {
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 35%; }
 
