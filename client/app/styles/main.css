@@ -201,8 +201,9 @@ body {
       flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 100%;
-  height: 35%; }
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%; }
 
 .about-skills-bubble {
   -ms-flex-order: 2;
@@ -218,7 +219,7 @@ body {
       order: 1;
   margin-top: 0;
   margin-bottom: 0;
-  display: block;
+  display: inline-block;
   height: 100%;
   font-weight: 300;
   text-align: left;
@@ -240,11 +241,12 @@ body {
   color: #a9c88f; }
 
 .about-experience-bubble {
+  -ms-flex-order: 2;
+      order: 2;
   display: inline-block;
   margin: 0;
   width: 50%;
   height: 100%;
-  float: left;
   border-right: 1px solid #bfbfbf; }
 
 .button {
@@ -268,8 +270,6 @@ body {
   background-color: #C1D7AE; }
 
 .about-contact-wrapper {
-  display: block;
-  position: relative;
   margin-top: 2%; }
 
 .about-contact-button {
@@ -423,11 +423,18 @@ body {
     transition: transform 1.25s ease; }
   .bubble {
     width: 90%; }
+  .button {
+    margin: 7% auto; }
   #about-box {
     left: -100%;
     width: 100%; }
   #about-box.active {
     transform: translateX(100%); }
+  .about-experience-bubble {
+    border-right: none; }
+  .about-experience-button {
+    width: 13em;
+    height: 3em; }
   #projects-box {
     right: -100%;
     width: 100%; }
