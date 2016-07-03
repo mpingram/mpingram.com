@@ -23,6 +23,20 @@ button{
 	vertical-align: baseline;
 }
 
+// TODO: move
+.button{
+	font-family: $sans;
+	outline: none;
+	display: block;
+	padding: 2%;
+	//border: 1px solid $light-grey;
+	border-radius: 5px;
+
+	color: $lightest-grey;
+	width: 10em;
+	margin: 5% auto;
+}
+
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -260,21 +274,17 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-
 	width: 100%;
 }
 .about-skills-bubble{
-	order: 2;
 	display: block;
 	margin: 0;
 	width: 50%;
 	height: 100%;
-	float: left;
 }
 
 
 .about-skills-list{
-	order: 1;
 	margin-top: 0;
 	margin-bottom: 0;
 	display: inline-block;
@@ -308,7 +318,6 @@ body{
 
 
 .about-experience-bubble{
-	order: 2;
 	display: inline-block;
 	margin: 0;
 	width: 50%;
@@ -316,20 +325,12 @@ body{
 	border-right: 1px solid $light-grey;
 }
 
-// TODO: move
-.button{
-	font-family: $sans;
-	outline: none;
-	display: block;
-	padding: 2%;
-	width: auto;
-	//border: 1px solid $light-grey;
-	border-radius: 5px;
-
-	color: $lightest-grey;
-	width: 10em;
-	margin: 5% auto;
+.about-experience-buttons-wrapper{
+	display: flex;
+	flex-direction: column;
 }
+
+
 
 .about-experience-button{
 	background-color: $col-about-accent;
@@ -342,9 +343,7 @@ body{
 .about-experience-button:hover{
 	background-color: $col-about-accent-light;
 }
-.about-experience-buttons-wrapper{
-	// TODO: consider flex here?
-}
+
 .about-contact-wrapper{
 	margin-top: 2%;
 }
@@ -556,6 +555,7 @@ body{
 		transform: translateX(100%);
 	}
 	.about-experience-bubble{
+		height: 100%;
 		border-right: none;
 	}
 	.about-experience-button{

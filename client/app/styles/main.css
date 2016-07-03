@@ -19,6 +19,16 @@ button {
   font-size: 100%;
   vertical-align: baseline; }
 
+.button {
+  font-family: "Source Sans Pro", sans-serif;
+  outline: none;
+  display: block;
+  padding: 2%;
+  border-radius: 5px;
+  color: #f7f7f7;
+  width: 10em;
+  margin: 5% auto; }
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -206,17 +216,12 @@ body {
   width: 100%; }
 
 .about-skills-bubble {
-  -ms-flex-order: 2;
-      order: 2;
   display: block;
   margin: 0;
   width: 50%;
-  height: 100%;
-  float: left; }
+  height: 100%; }
 
 .about-skills-list {
-  -ms-flex-order: 1;
-      order: 1;
   margin-top: 0;
   margin-bottom: 0;
   display: inline-block;
@@ -241,24 +246,17 @@ body {
   color: #a9c88f; }
 
 .about-experience-bubble {
-  -ms-flex-order: 2;
-      order: 2;
   display: inline-block;
   margin: 0;
   width: 50%;
   height: 100%;
   border-right: 1px solid #bfbfbf; }
 
-.button {
-  font-family: "Source Sans Pro", sans-serif;
-  outline: none;
-  display: block;
-  padding: 2%;
-  width: auto;
-  border-radius: 5px;
-  color: #f7f7f7;
-  width: 10em;
-  margin: 5% auto; }
+.about-experience-buttons-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
 
 .about-experience-button {
   background-color: #a9c88f; }
@@ -431,6 +429,7 @@ body {
   #about-box.active {
     transform: translateX(100%); }
   .about-experience-bubble {
+    height: 100%;
     border-right: none; }
   .about-experience-button {
     width: 13em;
