@@ -60,6 +60,7 @@ body{
 	font-size: 100%;
 	font-family: $sans;
 
+	-webkit-text-size-adjust: 100%;
 }
 
 #body-wrapper{
@@ -235,6 +236,8 @@ body{
 
 // about window
 #about-box{
+
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
