@@ -254,11 +254,19 @@ body{
 #about-box.active{
 	transform: translateX(100%);
 }
-
-.about-headshot {
-	margin-top: 1em;
+.about-image-wrapper{
+	margin-top: 1.5em;
 	width: 9.5em;
+	height: 9.5em;
+	box-sizing: content-box;
 }
+.about-headshot {
+	//box-sizing: content-box;
+	//margin-top: 1em;
+	width: 9.5em;
+	height: auto !important;
+}
+
 .about-text-bubble{
 	display: block;
 	width: 90%;
