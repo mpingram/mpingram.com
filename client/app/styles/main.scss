@@ -81,6 +81,7 @@ body{
 }
 
 .subheading{
+	display: block;
 	font-size: 110%;
 	line-height: 90%;
 	font-weight: 300;
@@ -235,6 +236,11 @@ body{
 
 // about window
 #about-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
 
 	overflow-x: hidden;
 	left:-50%;
@@ -253,9 +259,8 @@ body{
 }
 .about-text-bubble{
 	display: block;
-	margin: 0 auto;
-	margin-top: 2%;
-	height: 25%;
+	width: 90%;
+	margin: 2% auto 10%;
 }
 
 .about-experience-skills-wrapper{
@@ -275,10 +280,10 @@ body{
 
 
 .about-skills-list{
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 auto;
 	display: inline-block;
 	height: 100%;
+	//width: 100%;
 	font-weight: 300;
 	text-align: left;
 	list-style: none;
@@ -311,13 +316,15 @@ body{
 	display: inline-block;
 	margin: 0;
 	width: 50%;
-	height: 100%;
 	border-right: 1px solid $light-grey;
 }
 
 .about-experience-buttons-wrapper{
+	height: 100%;
+
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 }
 
 

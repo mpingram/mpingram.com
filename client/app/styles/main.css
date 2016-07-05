@@ -60,6 +60,7 @@ body {
   font-weight: 300; }
 
 .subheading {
+  display: block;
   font-size: 110%;
   line-height: 90%;
   font-weight: 300; }
@@ -183,6 +184,14 @@ body {
   font-weight: 300; }
 
 #about-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: center;
+      align-items: center;
   overflow-x: hidden;
   left: -50%;
   top: 0%;
@@ -198,9 +207,8 @@ body {
 
 .about-text-bubble {
   display: block;
-  margin: 0 auto;
-  margin-top: 2%;
-  height: 25%; }
+  width: 90%;
+  margin: 2% auto 10%; }
 
 .about-experience-skills-wrapper {
   display: -ms-flexbox;
@@ -220,8 +228,7 @@ body {
   height: 100%; }
 
 .about-skills-list {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   display: inline-block;
   height: 100%;
   font-weight: 300;
@@ -247,14 +254,16 @@ body {
   display: inline-block;
   margin: 0;
   width: 50%;
-  height: 100%;
   border-right: 1px solid #bfbfbf; }
 
 .about-experience-buttons-wrapper {
+  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column; }
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center; }
 
 .about-experience-button {
   background-color: #a9c88f; }
