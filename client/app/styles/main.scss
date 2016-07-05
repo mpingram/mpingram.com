@@ -23,7 +23,6 @@ button{
 	vertical-align: baseline;
 }
 
-// TODO: move
 .button{
 	font-family: $sans;
 	outline: none;
@@ -238,7 +237,7 @@ body{
 #about-box{
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 
 
@@ -265,10 +264,13 @@ body{
 
 .about-experience-skills-wrapper{
 
+
+	// parent flex properties
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+
 	width: 100%;
 }
 .about-skills-bubble{
@@ -281,7 +283,7 @@ body{
 
 .about-skills-list{
 	margin: 0 auto;
-	display: inline-block;
+	display: block;
 	height: 100%;
 	//width: 100%;
 	font-weight: 300;
@@ -346,7 +348,7 @@ body{
 }
 .about-contact-button{
 	color: darken($col-about-accent, 10%);
-	margin: 0 auto;
+	margin: 7% auto;
 	padding: 1% 2%;
 	font-size: 130%;
 	font-weight: 400;
@@ -605,6 +607,27 @@ body{
 		margin: 0 1.5%;
 	}
 
+}
+// breakpoint at which two-column
+// about box layout stops working
+@media(max-width: 600px){
+	.about-experience-skills-wrapper{
+		// child flex properties
+		flex-grow: 4;
+
+		// parent flex properties
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+	.about-skills-bubble{
+		width: 100%;
+		order: 0;
+	}
+	.about-experience-bubble{
+		width: 100%;
+		order: 1;
+	}
 }
 // breakpoint for smaller phone screens
 // 1px above iPhone 5

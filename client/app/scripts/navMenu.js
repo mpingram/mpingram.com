@@ -98,7 +98,7 @@
 
 
 		// click event handler for four central icons
-		$(document).on('click touchend', '#about, #music, #websites, #projects',
+		$(document).on('click', '#about, #music, #websites, #projects',
 			function iconClickHandler(event){
 				var id = event.currentTarget.id;
 				// identify popin box associated with icon id

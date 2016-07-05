@@ -24,7 +24,7 @@ gulp.task('sass', function(){
 			browserSync.notify(err.message, 3000);
 			this.emit('end');
 		}).
-		pipe( postcss ([ autoprefixer ({ browsers: ['last 2 versions'] }) ]) ).
+		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5%'] }) ]) ).
 		// send to production dist dir
 		pipe(gulp.dest('app/styles')).
 		pipe(browserSync.reload({
