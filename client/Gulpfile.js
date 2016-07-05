@@ -10,8 +10,6 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
-//var karma = require('karma');
-// other test deps needed? probably
 
 
 // low-level tasks
@@ -56,6 +54,7 @@ gulp.task('imagemin', function(){
 // live reload browser
 gulp.task('browserSync', function(){
 	browserSync.init({
+		open: 'ui',
 		server: {
 			// development server
 			baseDir: './app'
