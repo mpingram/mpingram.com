@@ -190,7 +190,6 @@ body {
   pointer-events: none;
   position: relative;
   margin-bottom: 1em;
-  border: 1px solid grey;
   border-radius: 3px; }
 
 .toy-link {
@@ -439,11 +438,8 @@ body {
   float: left; }
 
 .projects-wrapper {
-  -webkit-flex-basis: content;
-          flex-basis: content;
   border: 1px solid #bfbfbf;
   border-radius: 12px;
-  height: 40%;
   margin: 2% 2% 1%; }
 
 .projects-thumbnail {
@@ -525,7 +521,10 @@ body {
     height: 3em; }
   #projects-box {
     right: -100%;
-    width: 100%; }
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start; }
   #projects-box.active {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%); }

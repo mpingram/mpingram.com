@@ -185,7 +185,6 @@ body{
 #icons.up{
 	transform: translateY(-100%);
 }
-
 .toy{
 	outline-style: none;
 	margin: 10px 2%;	
@@ -202,7 +201,7 @@ body{
 	position: relative;
 	margin-bottom: 1em;
 	//box-shadow: 1px 7px 5px -4px grey;
-	border: 1px solid grey;
+	//border: 1px solid grey;
 	border-radius: 3px;
 }
 
@@ -456,6 +455,7 @@ body{
 
 	display: flex;
 	flex-direction: column;
+	// @<767px: justify-content: flex-start
 	justify-content: space-around;
 
 	right: -50%;
@@ -483,7 +483,7 @@ body{
 }
 
 .projects-wrapper{
-	flex-basis: content;
+	//flex-basis: content;
 	//flex-grow: 3;
 	//width: 90%;
 
@@ -491,7 +491,7 @@ body{
 	border-radius: 12px;
 
 	// baseline height
-	height: 40%;
+	//height: 40%;
 	margin: 2% 2% 1%;
 }
 .projects-bubble{
@@ -595,6 +595,9 @@ body{
 	#projects-box{
 		right: -100%;
 		width: 100%;
+
+		// @>767px: space-around
+		justify-content: flex-start;
 	}
 	#projects-box.active{
 		transform: translateX(-100%);
