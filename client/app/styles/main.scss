@@ -28,7 +28,7 @@ button{
 	outline: none;
 	display: block;
 	padding: 2%;
-	//border: 1px solid $light-grey;
+
 	border-radius: 5px;
 
 	color: $lightest-grey;
@@ -366,6 +366,7 @@ body{
 .about-contact-wrapper{
 	margin-top: 2%;
 }
+
 .about-contact-button{
 	color: darken($col-about-accent, 10%);
 	margin: 7% auto;
@@ -443,6 +444,10 @@ body{
 	top: -50%;
 	width: 100%;
 	height: 50%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	//border-bottom: 1px solid $light-grey;
 }
 #websites-box.active{
@@ -450,6 +455,24 @@ body{
 	// slightly up-shifted icons
 	transform: translateY(95%);
 }
+.websites-contact-wrapper{
+
+}
+
+.websites-contact-button{
+	color: darken($col-websites-accent, 10%);
+	border: 3px solid $col-websites-accent;
+	padding: 1% 2%;
+	font-size: 130%;
+	font-weight: 400;
+	margin: 2% auto;
+}
+.websites-contact-button:hover{
+	background-color: $col-websites-accent;
+	color: $lightest-grey;
+
+}
+
 
 
 #projects-box{
@@ -515,7 +538,25 @@ body{
 	margin-top: 4%;
 	margin-left: 2%;
 }
-
+.projects-github-link{
+	font-weight: 400;
+	display: inline-block;
+	margin: 2%;
+	width: 12em;
+	font-size: 120%;
+	color: darken($col-projects-accent, 10%);
+	border: 3px solid $col-projects-accent;
+}
+.projects-github-link:hover{
+	background-color: $col-projects-accent;
+	color: $lightest-grey;
+}
+.projects-eventwindow-button{
+	float: left;
+}
+.projects-acrobat-mailmerge-button{
+	float: right;
+}
 
 
 
