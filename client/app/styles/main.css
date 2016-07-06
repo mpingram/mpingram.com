@@ -255,9 +255,9 @@ body {
   margin: 2% auto 10%; }
 
 .about-experience-skills-wrapper {
-  -webkit-box-flex: 2;
-  -webkit-flex: 2 1 content;
-          flex: 2 1 content;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
