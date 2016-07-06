@@ -233,7 +233,8 @@ body {
   left: -50%;
   top: 0;
   bottom: 0;
-  width: 50%; }
+  width: 50%;
+  height: 100%; }
 
 #about-box.active {
   -webkit-transform: translateX(100%);
@@ -425,11 +426,12 @@ body {
 
 .projects-heading {
   margin: 1% 2%;
+  font-weight: 400;
   text-align: left;
   width: 95%; }
 
 .projects-subheading {
-  font-weight: 400;
+  font-weight: 300;
   display: block;
   text-align: left;
   margin-left: 5%;
@@ -456,6 +458,7 @@ body {
 
 .projects-text {
   text-align: left;
+  font-weight: 400;
   margin-top: 4%;
   margin-left: 2%; }
 

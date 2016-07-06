@@ -252,7 +252,7 @@ body{
 	top: 0;
 	bottom: 0;
 	width: 50%;
-	//height:100%;
+	height:100%;
 
 }
 #about-box.active{
@@ -469,11 +469,12 @@ body{
 }
 .projects-heading{
 	margin: 1% 2%;
+	font-weight: 400;
 	text-align: left;
 	width: 95%;
 }
 .projects-subheading{
-	font-weight: 400;
+	font-weight: 300;
 	display: block;
 	text-align: left;
 	margin-left: 5%;
@@ -483,10 +484,6 @@ body{
 }
 
 .projects-wrapper{
-	//flex-basis: content;
-	//flex-grow: 3;
-	//width: 90%;
-
 	border: 1px solid $light-grey;
 	border-radius: 12px;
 
@@ -513,6 +510,7 @@ body{
 }
 .projects-text{
 	text-align: left;
+	font-weight: 400;
 	margin-top: 4%;
 	margin-left: 2%;
 }
