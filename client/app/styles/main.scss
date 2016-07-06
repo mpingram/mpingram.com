@@ -174,10 +174,10 @@ body{
 	transition: transform 1.5s 0.1s ease;
 }
 #icons.left{
-	transform: translateX(-33.333%);
+	transform: translateX(-40%);
 }
 #icons.right{
-	transform: translateX(33.333%);
+	transform: translateX(40%);
 }
 #icons.down{
 	transform: translateY(100%);
@@ -291,7 +291,6 @@ body{
 	width: 100%;
 }
 .about-skills-bubble{
-	display: block;
 	margin: 0;
 	width: 50%;
 	height: 100%;
@@ -300,9 +299,9 @@ body{
 
 .about-skills-list{
 	margin: 0 auto;
-	display: block;
-	height: 100%;
-	//width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	font-weight: 300;
 	text-align: left;
 	list-style: none;
@@ -403,6 +402,7 @@ body{
 }
 .music-content-wrapper{
 	display: flex;
+	flex-direction: row;
 	justify-content: space-around;
 	flex-wrap: wrap;
 
@@ -412,14 +412,15 @@ body{
 .music-player-container{
 	//width: 50%;
 	//float: left;
-	width: 310px;
-	height: 310px;
 	background: url('images/loading.svg');
 }
 .music-player{
 	margin: 0 auto;
 }
 .music-text-buttons-container{
+	align-self: center;
+	flex: 0 1 50%;
+	display: inline-block;
 }
 .music-text{
 	font-weight: 300;
@@ -522,14 +523,17 @@ body{
 // BREAKPOINTS
 // ======================
 // breakpoint below tablet
-// 1px below iPad
-@media(max-width: 767px){
+@media(max-width: 825px){
 
 	// shrink icons and sort
 	// them into a square.
 	#icons{
-		transition: transform 1.25s ease;
+		transition: transform 1.25s ease,
+					opacity 0.5s 0.5s ease,
+					visibility 1.25s linear;
 		flex-wrap: wrap;
+		visibility: visible;
+		opacity: 1;
 	}
 	.toy{
 		margin-right: 2em;
@@ -557,11 +561,18 @@ body{
 	#icons.right{
 		transform: translateX(100%);
 	}
-	#icons.down{
-		transform: translateY(200%);
+	#icons.down, #icons.up{
+		transition: transform 1.25s ease,
+					opacity 0.25s 0.25s ease,
+					visibility 0s 1.25s linear;
+		visibility: hidden;
+		opacity: 0;
 	}
 	#icons.up{
 		transform: translateY(-200%);
+	}
+	#icons.down{
+		transform: translateY(200%);
 	}
 
 
@@ -578,6 +589,9 @@ body{
 	#about-box{
 		left:-100%;
 		width: 100%;
+
+		// >767px: justify-content: center;
+		justify-content: flex-start;
 	}
 	#about-box.active{
 		transform: translateX(100%);

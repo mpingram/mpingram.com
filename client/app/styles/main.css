@@ -162,12 +162,12 @@ body {
   transition: transform 1.5s 0.1s ease, -webkit-transform 1.5s 0.1s ease; }
 
 #icons.left {
-  -webkit-transform: translateX(-33.333%);
-          transform: translateX(-33.333%); }
+  -webkit-transform: translateX(-40%);
+          transform: translateX(-40%); }
 
 #icons.right {
-  -webkit-transform: translateX(33.333%);
-          transform: translateX(33.333%); }
+  -webkit-transform: translateX(40%);
+          transform: translateX(40%); }
 
 #icons.down {
   -webkit-transform: translateY(100%);
@@ -273,15 +273,22 @@ body {
   width: 100%; }
 
 .about-skills-bubble {
-  display: block;
   margin: 0;
   width: 50%;
   height: 100%; }
 
 .about-skills-list {
   margin: 0 auto;
-  display: block;
-  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   font-weight: 300;
   text-align: left;
   list-style: none; }
@@ -369,6 +376,10 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
   -webkit-justify-content: space-around;
           justify-content: space-around;
   -webkit-flex-wrap: wrap;
@@ -377,12 +388,18 @@ body {
   margin: 0 auto; }
 
 .music-player-container {
-  width: 310px;
-  height: 310px;
   background: url("images/loading.svg"); }
 
 .music-player {
   margin: 0 auto; }
+
+.music-text-buttons-container {
+  -webkit-align-self: center;
+          align-self: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: inline-block; }
 
 .music-text {
   font-weight: 300; }
@@ -462,14 +479,16 @@ body {
   margin-top: 4%;
   margin-left: 2%; }
 
-@media (max-width: 767px) {
+@media (max-width: 825px) {
   #icons {
-    -webkit-transition: -webkit-transform 1.25s ease;
-    transition: -webkit-transform 1.25s ease;
-    transition: transform 1.25s ease;
-    transition: transform 1.25s ease, -webkit-transform 1.25s ease;
+    -webkit-transition: opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
+    transition: opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
+    transition: transform 1.25s ease, opacity 0.5s 0.5s ease, visibility 1.25s linear;
+    transition: transform 1.25s ease, opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
     -webkit-flex-wrap: wrap;
-            flex-wrap: wrap; }
+            flex-wrap: wrap;
+    visibility: visible;
+    opacity: 1; }
   .toy {
     margin-right: 2em;
     margin-left: 2em; }
@@ -497,12 +516,19 @@ body {
   #icons.right {
     -webkit-transform: translateX(100%);
             transform: translateX(100%); }
-  #icons.down {
-    -webkit-transform: translateY(200%);
-            transform: translateY(200%); }
+  #icons.down, #icons.up {
+    -webkit-transition: opacity 0.25s 0.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
+    transition: opacity 0.25s 0.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
+    transition: transform 1.25s ease, opacity 0.25s 0.25s ease, visibility 0s 1.25s linear;
+    transition: transform 1.25s ease, opacity 0.25s 0.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
+    visibility: hidden;
+    opacity: 0; }
   #icons.up {
     -webkit-transform: translateY(-200%);
             transform: translateY(-200%); }
+  #icons.down {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%); }
   .box {
     -webkit-transition: -webkit-transform 1.25s ease;
     transition: -webkit-transform 1.25s ease;
@@ -512,7 +538,10 @@ body {
     margin: 7% auto; }
   #about-box {
     left: -100%;
-    width: 100%; }
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start; }
   #about-box.active {
     -webkit-transform: translateX(100%);
             transform: translateX(100%); }
