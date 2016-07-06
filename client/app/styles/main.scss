@@ -246,11 +246,12 @@ body{
 
 
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 
 	left:-50%;
-	top: 0%;
+	top: 0;
+	bottom: 0;
 	width: 50%;
 	//height:100%;
 
@@ -277,6 +278,9 @@ body{
 }
 
 .about-experience-skills-wrapper{
+
+	// child flex properties
+	flex: 2 1 content;
 
 
 	// parent flex properties
@@ -310,16 +314,20 @@ body{
 	//margin: 5% 0;
 }
 
-.nested-list{
+.skill-list{
+	font-size: 85%;
+}
+
+.technology-list{
 	font-weight: 400;
 	font-size: 85%;
 	list-style: none;
 }
-.nested-list > li{
+.technology-list > li{
 	display: inline-block;
 	margin-right: 1em;
 }
-.nested-list > li:before{
+.technology-list > li:before{
 	content: '• ';
 	line-height: 0;
 	font-size: 1.5em;
@@ -627,11 +635,8 @@ body{
 @media(max-width: 600px){
 	.about-experience-skills-wrapper{
 		// child flex properties
-		flex-grow: 4;
 
 		// parent flex properties
-		flex-direction: column;
-		flex-wrap: nowrap;
 		align-items: center;
 	}
 	.about-skills-bubble{

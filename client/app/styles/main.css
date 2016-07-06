@@ -229,10 +229,11 @@ body {
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   left: -50%;
-  top: 0%;
+  top: 0;
+  bottom: 0;
   width: 50%; }
 
 #about-box.active {
@@ -254,6 +255,9 @@ body {
   margin: 2% auto 10%; }
 
 .about-experience-skills-wrapper {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 1 content;
+          flex: 2 1 content;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -282,16 +286,19 @@ body {
   text-align: left;
   list-style: none; }
 
-.nested-list {
+.skill-list {
+  font-size: 85%; }
+
+.technology-list {
   font-weight: 400;
   font-size: 85%;
   list-style: none; }
 
-.nested-list > li {
+.technology-list > li {
   display: inline-block;
   margin-right: 1em; }
 
-.nested-list > li:before {
+.technology-list > li:before {
   content: '• ';
   line-height: 0;
   font-size: 1.5em;
@@ -544,15 +551,6 @@ body {
 
 @media (max-width: 600px) {
   .about-experience-skills-wrapper {
-    -webkit-box-flex: 4;
-    -webkit-flex-grow: 4;
-            flex-grow: 4;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
     -webkit-box-align: center;
     -webkit-align-items: center;
                 -ms-grid-row-align: center;
