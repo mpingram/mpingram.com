@@ -52,7 +52,7 @@ body{
 	margin: 0;
 	width: 100%;
 	height:100%;
-	overflow: hidden;
+	//overflow: hidden;
 
 	background: $col-bg;
 	background: linear-gradient($col-bg 50%, lighten($col-highlight,7%));
@@ -276,69 +276,13 @@ body{
 	margin: 2% auto 10%;
 }
 
-.about-experience-skills-wrapper{
-
-	// child flex properties
-	flex: 1 0 300px;
-
-
-	// parent flex properties
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-
-	width: 100%;
-}
-.about-skills-bubble{
-	margin: 0;
-	width: 50%;
-	height: 100%;
-}
-
-
-.about-skills-list{
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	font-weight: 300;
-	text-align: left;
-	list-style: none;
-}
-
-.about-skills-list-item{
-	// TODO: consider flexbox here
-	//margin: 5% 0;
-}
-
-.skill-list{
-	font-size: 85%;
-}
-
-.technology-list{
-	font-weight: 400;
-	font-size: 85%;
-	list-style: none;
-}
-.technology-list > li{
-	display: inline-block;
-	margin-right: 1em;
-}
-.technology-list > li:before{
-	content: '• ';
-	line-height: 0;
-	font-size: 1.5em;
-	color: $col-about-accent;
-}
 
 
 
 .about-experience-bubble{
 	display: inline-block;
-	margin: 0;
+	margin-top: 2%;
 	width: 50%;
-	border-right: 1px solid $light-grey;
 }
 
 .about-experience-buttons-wrapper{
@@ -481,7 +425,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	// @<767px: justify-content: flex-start
-	justify-content: space-around;
+	justify-content: flex-start;
 
 	right: -50%;
 	top: 0%;
@@ -535,7 +479,6 @@ body{
 }
 .projects-text{
 	text-align: left;
-	font-weight: 400;
 	margin-top: 4%;
 	margin-left: 2%;
 }
@@ -547,17 +490,13 @@ body{
 	font-size: 120%;
 	color: darken($col-projects-accent, 10%);
 	border: 3px solid $col-projects-accent;
+	float: left;
 }
 .projects-github-link:hover{
 	background-color: $col-projects-accent;
 	color: $lightest-grey;
 }
-.projects-eventwindow-button{
-	float: left;
-}
-.projects-acrobat-mailmerge-button{
-	float: right;
-}
+
 
 
 
@@ -638,10 +577,6 @@ body{
 	}
 	#about-box.active{
 		transform: translateX(100%);
-	}
-	.about-experience-bubble{
-		height: 100%;
-		border-right: none;
 	}
 	.about-experience-button{
 		width: 13em;
