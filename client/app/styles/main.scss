@@ -278,6 +278,11 @@ body{
 
 
 .about-skills-bubble{
+	width: 90%;
+	// child flex properties
+	flex: 1 0 auto;
+
+	// parent flex properties
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -287,29 +292,44 @@ body{
 	font-size: 140%;
 }
 .about-column{
-	width: 40%;
-}
-.about-skills-column{
 
 }
-.about-tech-column{
+#about-skills-column{
+	align-self: center;
+}
+#about-tech-column{
 
+}
+.circle-top{
+	transform: rotate(-20deg);
+}
+.circle-top > .about-tech-item{
+	transform: rotate(20deg);
+}
+.circle-bottom{
+	transform: rotate(20deg);
+}
+.circle-bottom > .about-tech-item{
+	transform: rotate(-20deg);
 }
 
 .about-skills-item, .about-tech-item {
 	display: block;
 	width: auto;
-	margin-top: 3px;
+	margin-top: 5px;
 	border-radius: 5px;
-	padding: 3px 5px;
+
 }
 .about-skills-item{
 	background-color: $col-about-accent-light;
+	margin-top: 10px;
+	padding: 2% 4%;
 }
 .about-tech-item{
 	font-size: 85%;
+	padding: 1% 2%;
 	font-weight: 400;
-	//display: inline-block;
+	display: block;
 	background-color: $lighter-grey;
 }
 

@@ -250,6 +250,10 @@ body {
   margin: 2% auto 10%; }
 
 .about-skills-bubble {
+  width: 90%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -263,22 +267,42 @@ body {
 .about-skills-heading {
   font-size: 140%; }
 
-.about-column {
-  width: 40%; }
+#about-skills-column {
+  -webkit-align-self: center;
+          align-self: center; }
+
+.circle-top {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg); }
+
+.circle-top > .about-tech-item {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg); }
+
+.circle-bottom {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg); }
+
+.circle-bottom > .about-tech-item {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg); }
 
 .about-skills-item, .about-tech-item {
   display: block;
   width: auto;
-  margin-top: 3px;
-  border-radius: 5px;
-  padding: 3px 5px; }
+  margin-top: 5px;
+  border-radius: 5px; }
 
 .about-skills-item {
-  background-color: #C1D7AE; }
+  background-color: #C1D7AE;
+  margin-top: 10px;
+  padding: 2% 4%; }
 
 .about-tech-item {
   font-size: 85%;
+  padding: 1% 2%;
   font-weight: 400;
+  display: block;
   background-color: #d9d9d9; }
 
 .about-experience-bubble {
