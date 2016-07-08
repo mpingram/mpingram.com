@@ -267,7 +267,7 @@ body{
 .about-headshot {
 	//box-sizing: content-box;
 	//margin-top: 1em;
-	height: auto !important;
+	//height: auto !important;
 }
 
 .about-text-bubble{
@@ -277,6 +277,30 @@ body{
 }
 
 
+.about-skills-bubble{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+.about-skills-heading{
+	font-size: 140%;
+}
+.about-column{
+	width: 40%;
+}
+.about-skills-item, .about-tech-item {
+	display: block;
+	width: auto;
+	margin-top: 3px;
+}
+
+.about-skills-column{
+
+}
+.about-tech-column{
+
+}
 
 
 .about-experience-bubble{
