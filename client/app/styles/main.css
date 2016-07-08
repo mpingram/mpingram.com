@@ -269,7 +269,17 @@ body {
 .about-skills-item, .about-tech-item {
   display: block;
   width: auto;
-  margin-top: 3px; }
+  margin-top: 3px;
+  border-radius: 5px;
+  padding: 3px 5px; }
+
+.about-skills-item {
+  background-color: #C1D7AE; }
+
+.about-tech-item {
+  font-size: 85%;
+  font-weight: 400;
+  background-color: #d9d9d9; }
 
 .about-experience-bubble {
   display: inline-block;

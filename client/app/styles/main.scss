@@ -289,18 +289,31 @@ body{
 .about-column{
 	width: 40%;
 }
-.about-skills-item, .about-tech-item {
-	display: block;
-	width: auto;
-	margin-top: 3px;
-}
-
 .about-skills-column{
 
 }
 .about-tech-column{
 
 }
+
+.about-skills-item, .about-tech-item {
+	display: block;
+	width: auto;
+	margin-top: 3px;
+	border-radius: 5px;
+	padding: 3px 5px;
+}
+.about-skills-item{
+	background-color: $col-about-accent-light;
+}
+.about-tech-item{
+	font-size: 85%;
+	font-weight: 400;
+	//display: inline-block;
+	background-color: $lighter-grey;
+}
+
+
 
 
 .about-experience-bubble{
