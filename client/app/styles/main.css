@@ -228,6 +228,9 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   left: -50%;
   top: 0;
   bottom: 0;
@@ -239,21 +242,33 @@ body {
           transform: translateX(100%); }
 
 .about-image-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   margin-top: 1.5em;
   width: 9.5em;
   height: 9.5em;
   box-sizing: content-box; }
 
 .about-text-bubble {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   display: block;
   width: 90%;
   margin: 2% auto 10%; }
 
+.about-skills-heading {
+  -webkit-box-flex: inherit;
+  -webkit-flex: inherit;
+          flex: inherit;
+  font-size: 140%; }
+
 .about-skills-bubble {
   width: 90%;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -webkit-box-flex: inherit;
+  -webkit-flex: inherit;
+          flex: inherit;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -263,9 +278,6 @@ body {
           flex-direction: row;
   -webkit-justify-content: space-around;
           justify-content: space-around; }
-
-.about-skills-heading {
-  font-size: 140%; }
 
 #about-skills-svg {
   position: absolute;
@@ -495,8 +507,8 @@ body {
 
 .projects-wrapper {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   border: 1px solid #bfbfbf;
   border-radius: 12px;
   margin: 2% 2% 1%; }

@@ -243,10 +243,13 @@ body{
 	align-items: center;
 	flex-wrap: nowrap;
 
-
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
+
+
+	// flex properties for children to inherit
+	flex: 1 0 auto;
 
 	left:-50%;
 	top: 0;
@@ -259,6 +262,8 @@ body{
 	transform: translateX(100%);
 }
 .about-image-wrapper{
+	flex: 1 0 auto;
+
 	margin-top: 1.5em;
 	width: 9.5em;
 	height: 9.5em;
@@ -271,16 +276,21 @@ body{
 }
 
 .about-text-bubble{
+	flex: 1 0 auto;
 	display: block;
 	width: 90%;
 	margin: 2% auto 10%;
 }
 
-
+.about-skills-heading{
+	flex: inherit;
+	font-size: 140%;
+}
 .about-skills-bubble{
 	width: 90%;
+
 	// child flex properties
-	flex: 1 1 auto;
+	flex: inherit;
 
 	// parent flex properties
 	display: flex;
@@ -288,9 +298,7 @@ body{
 	justify-content: space-around;
 
 }
-.about-skills-heading{
-	font-size: 140%;
-}
+
 #about-skills-svg{
 	position: absolute;
 	top:0;
@@ -494,6 +502,7 @@ body{
 	// @<767px: justify-content: flex-start
 	justify-content: flex-start;
 
+
 	right: -50%;
 	top: 0%;
 	width: 50%;
@@ -521,7 +530,7 @@ body{
 }
 
 .projects-wrapper{
-	flex: 1 1 auto;
+	flex: 1 0 auto;
 
 	border: 1px solid $light-grey;
 	border-radius: 12px;

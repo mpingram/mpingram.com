@@ -178,8 +178,6 @@
 			svgLine.setAttributeNS(null, 'y1',positionObj.y1);
 			svgLine.setAttributeNS(null, 'x2',positionObj.x2);
 			svgLine.setAttributeNS(null, 'y2',positionObj.y2);
-
-			console.log(svgLine);
 			return svgLine;
 		};
 
@@ -199,7 +197,6 @@
 
 
 			// get the array of tech item IDs associated with this skill
-			console.log(skillItem[0].id);
 			var technologies = skillTechTable[skillItem[0].id];
 
 			var positionObj = {
