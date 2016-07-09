@@ -169,10 +169,10 @@
 		var createSVG = function(positionObj){
 			// half-baked markup which we'll add to
 			var svgMarkup = '<svg class="about-skills-line"><line stroke-width="2px" stroke="black"';
-			svgMarkup += ' x1=\"'+positionObj.x1+'\"';
-			svgMarkup += ' x2=\"'+positionObj.x2+'\"';
-			svgMarkup += ' y1=\"'+positionObj.y1+'\"';
-			svgMarkup += ' y2=\"'+positionObj.y2+'\"';
+			svgMarkup += ' x1=\"'+positionObj.x1+'px\"';
+			svgMarkup += ' x2=\"'+positionObj.x2+'px\"';
+			svgMarkup += ' y1=\"'+positionObj.y1+'px\"';
+			svgMarkup += ' y2=\"'+positionObj.y2+'px\"';
 			svgMarkup += '></line></svg>';
 			console.log(svgMarkup);
 			return svgMarkup;
