@@ -291,6 +291,12 @@ body{
 .about-skills-heading{
 	font-size: 140%;
 }
+.about-skills-line{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 .about-column{
 
 }
@@ -498,6 +504,7 @@ body{
 	font-weight: 400;
 	text-align: left;
 	width: 95%;
+	border-bottom: 3px solid $col-projects-accent;
 }
 .projects-subheading{
 	font-weight: 300;
@@ -510,6 +517,8 @@ body{
 }
 
 .projects-wrapper{
+	flex: 1 1 auto;
+
 	border: 1px solid $light-grey;
 	border-radius: 12px;
 
@@ -536,8 +545,7 @@ body{
 }
 .projects-text{
 	text-align: left;
-	margin-top: 4%;
-	margin-left: 2%;
+	margin: 4% 2% 0;
 }
 .projects-github-link{
 	font-weight: 400;
@@ -545,13 +553,12 @@ body{
 	margin: 2%;
 	width: 12em;
 	font-size: 120%;
-	color: darken($col-projects-accent, 10%);
-	border: 3px solid $col-projects-accent;
+	background-color: $col-projects-accent;
+	color: $lightest-grey;
 	float: left;
 }
 .projects-github-link:hover{
-	background-color: $col-projects-accent;
-	color: $lightest-grey;
+	background-color: darken($col-projects-accent, 5%);
 }
 
 

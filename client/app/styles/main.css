@@ -267,6 +267,11 @@ body {
 .about-skills-heading {
   font-size: 140%; }
 
+.about-skills-line {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 #about-skills-column {
   -webkit-align-self: center;
           align-self: center; }
@@ -469,7 +474,8 @@ body {
   margin: 1% 2%;
   font-weight: 400;
   text-align: left;
-  width: 95%; }
+  width: 95%;
+  border-bottom: 3px solid #208AAE; }
 
 .projects-subheading {
   font-weight: 300;
@@ -481,6 +487,9 @@ body {
   float: left; }
 
 .projects-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+          flex: 1 1 auto;
   border: 1px solid #bfbfbf;
   border-radius: 12px;
   margin: 2% 2% 1%; }
@@ -499,8 +508,7 @@ body {
 
 .projects-text {
   text-align: left;
-  margin-top: 4%;
-  margin-left: 2%; }
+  margin: 4% 2% 0; }
 
 .projects-github-link {
   font-weight: 400;
@@ -508,13 +516,12 @@ body {
   margin: 2%;
   width: 12em;
   font-size: 120%;
-  color: #186883;
-  border: 3px solid #208AAE;
+  background-color: #208AAE;
+  color: #f7f7f7;
   float: left; }
 
 .projects-github-link:hover {
-  background-color: #208AAE;
-  color: #f7f7f7; }
+  background-color: #1c7998; }
 
 @media (max-width: 825px) {
   #icons {
