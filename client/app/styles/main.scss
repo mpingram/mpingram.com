@@ -280,7 +280,7 @@ body{
 .about-skills-bubble{
 	width: 90%;
 	// child flex properties
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 
 	// parent flex properties
 	display: flex;
@@ -291,15 +291,18 @@ body{
 .about-skills-heading{
 	font-size: 140%;
 }
-.about-skills-line{
+#about-skills-svg{
 	position: absolute;
 	top:0;
 	left:0;
 }
+.about-skills-line{
+	z-index: 99;
+}
 
 
 .about-column{
-
+	align-self: center;
 }
 #about-skills-column{
 	align-self: center;

@@ -127,6 +127,7 @@
 		// store skills and technology jQuery elements
 		var skillItems = {};
 		var techItems = {};
+		var svgElement = $('#about-skills-svg');
 
 		// match skills to technologies via IDs
 		// TODO: brittle, is there a smarter way?
@@ -167,15 +168,19 @@
 
 		// TODO: define svg create function - make sure the markup is good - give it a class
 		var createSVG = function(positionObj){
-			// half-baked markup which we'll add to
-			var svgMarkup = '<svg class="about-skills-line"><line stroke-width="2px" stroke="black"';
-			svgMarkup += ' x1=\"'+positionObj.x1+'px\"';
-			svgMarkup += ' x2=\"'+positionObj.x2+'px\"';
-			svgMarkup += ' y1=\"'+positionObj.y1+'px\"';
-			svgMarkup += ' y2=\"'+positionObj.y2+'px\"';
-			svgMarkup += '></line></svg>';
-			console.log(svgMarkup);
-			return svgMarkup;
+
+			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+			svgLine.setAttributeNS(null, 'class','about-skills-line');
+			svgLine.setAttributeNS(null, 'stroke-width','2px');
+			svgLine.setAttributeNS(null, 'stroke','black');
+
+			svgLine.setAttributeNS(null, 'x1',positionObj.x1);
+			svgLine.setAttributeNS(null, 'y1',positionObj.y1);
+			svgLine.setAttributeNS(null, 'x2',positionObj.x2);
+			svgLine.setAttributeNS(null, 'y2',positionObj.y2);
+
+			console.log(svgLine);
+			return svgLine;
 		};
 
 
@@ -214,7 +219,7 @@
 				// draw svg line connecting skill element to tech element
 				var line = createSVG(positionObj);
 				// stick the svg line into the dom
-				skillItem.after(line);
+				svgElement.append(line);
 
 			}
 

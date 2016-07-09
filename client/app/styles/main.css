@@ -252,8 +252,8 @@ body {
 .about-skills-bubble {
   width: 90%;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-          flex: 1 0 auto;
+  -webkit-flex: 1 1 auto;
+          flex: 1 1 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -267,10 +267,17 @@ body {
 .about-skills-heading {
   font-size: 140%; }
 
-.about-skills-line {
+#about-skills-svg {
   position: absolute;
   top: 0;
   left: 0; }
+
+.about-skills-line {
+  z-index: 99; }
+
+.about-column {
+  -webkit-align-self: center;
+          align-self: center; }
 
 #about-skills-column {
   -webkit-align-self: center;
