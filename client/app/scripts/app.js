@@ -30,9 +30,10 @@
 
 		// hammerjs initialization
 		// ----------------------
-		var body = document.getElementById('body-wrapper');
-		var hammer = new Hammer(body);
-		var hammerManager = new Hammer.Manager(body,{
+		//var body = document.getElementById('body-wrapper');
+		var center = document.getElementById('center-container');
+		var hammer = new Hammer(center);
+		var hammerManager = new Hammer.Manager(center,{
 			recognizers: [
 				[Hammer.Swipe, {direction: Hammer.DIRECTION_ALL}]
 			]
