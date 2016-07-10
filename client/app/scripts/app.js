@@ -175,13 +175,13 @@
 
 			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
 			svgLine.setAttributeNS(null, 'class','about-skills-line');
-			svgLine.setAttributeNS(null, 'stroke-width','2px');
+			svgLine.setAttributeNS(null, 'stroke-width','1px');
 			svgLine.setAttributeNS(null, 'stroke','black');
 
-			svgLine.setAttributeNS(null, 'x1', positionObj.x1 + 'px');
-			svgLine.setAttributeNS(null, 'y1', positionObj.y1 + 'px');
-			svgLine.setAttributeNS(null, 'x2', positionObj.x2 + 'px');
-			svgLine.setAttributeNS(null, 'y2', positionObj.y2 + 'px');
+			svgLine.setAttributeNS(null, 'x1', positionObj.x1);
+			svgLine.setAttributeNS(null, 'y1', positionObj.y1);
+			svgLine.setAttributeNS(null, 'x2', positionObj.x2);
+			svgLine.setAttributeNS(null, 'y2', positionObj.y2);
 			svg.appendChild(svgLine);
 			return svg;
 		};
@@ -194,7 +194,6 @@
 		// iterate over skill items and draw the svgs we need.
 		$('#about-skills-column').find('.about-skills-item').each(function(){
 			var skillItem = $(this);
-			console.log(skillItem[0]);
 
 			// stick skill jQuery element into container object, we'll need it to
 			// efficiently update the svg lines on window.resize events.
@@ -208,8 +207,8 @@
 			var positionObj = {
 				// todo: this sucks, i want the mid right
 				// can use clientHeight/clientWidth jquery obj props to fix
-				'x1':skillPosition.left,
-				'y1':skillPosition.top
+				'x1':skillPosition.left + skillItem[0].clientWidth,
+				'y1':skillPosition.top + skillItem[0].clientHeight/2
 			};
 			for (var i=0;i<technologies.length;i++){
 
@@ -217,7 +216,7 @@
 				var techItem = techItems[technologies[i]];
 				var techPosition = techItem.position();
 				positionObj.x2 = techPosition.left;
-				positionObj.y2 = techPosition.top;
+				positionObj.y2 = techPosition.top + techItem[0].clientHeight/2;
 
 				// draw svg line connecting skill element to tech element
 				var line = createSVG(positionObj);

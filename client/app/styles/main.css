@@ -337,6 +337,7 @@ body {
 .about-tech-item {
   font-size: 85%;
   padding: 1% 2%;
+  margin: 5px 0;
   font-weight: 400;
   display: block;
   background-color: #d9d9d9; }
