@@ -84,7 +84,7 @@
 
 
 		// hammer.js touch event handler
-		hammerManager.on('swipe', function(event){
+		hammerManager.on('swipe', function hammerSwipeHandler(event){
 			if(event.direction !== 1){
 
 				var swipe = swipeTable[event.direction];
@@ -128,7 +128,7 @@
 		// store skills and technology jQuery elements
 		var skillItems = {};
 		var techItems = {};
-		var svgElement = $('#about-skills-svg');
+		var svgElement = $('#svg-container');
 
 		// match skills to technologies via IDs
 		// TODO: brittle, is there a smarter way?
@@ -162,7 +162,7 @@
 			'webDesign': [
 				'html',
 				'css',
-				'illustrator',
+				'illustrator', 
 				'jQuery'
 			] 
 		};
@@ -170,16 +170,20 @@
 		// TODO: define svg create function - make sure the markup is good - give it a class
 		var createSVG = function(positionObj){
 
+			var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+			svg.setAttributeNS(null, 'class','about-skills-svg');
+
 			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
 			svgLine.setAttributeNS(null, 'class','about-skills-line');
 			svgLine.setAttributeNS(null, 'stroke-width','2px');
 			svgLine.setAttributeNS(null, 'stroke','black');
 
-			svgLine.setAttributeNS(null, 'x1',positionObj.x1);
-			svgLine.setAttributeNS(null, 'y1',positionObj.y1);
-			svgLine.setAttributeNS(null, 'x2',positionObj.x2);
-			svgLine.setAttributeNS(null, 'y2',positionObj.y2);
-			return svgLine;
+			svgLine.setAttributeNS(null, 'x1', positionObj.x1 + 'px');
+			svgLine.setAttributeNS(null, 'y1', positionObj.y1 + 'px');
+			svgLine.setAttributeNS(null, 'x2', positionObj.x2 + 'px');
+			svgLine.setAttributeNS(null, 'y2', positionObj.y2 + 'px');
+			svg.appendChild(svgLine);
+			return svg;
 		};
 
 
@@ -190,6 +194,7 @@
 		// iterate over skill items and draw the svgs we need.
 		$('#about-skills-column').find('.about-skills-item').each(function(){
 			var skillItem = $(this);
+			console.log(skillItem[0]);
 
 			// stick skill jQuery element into container object, we'll need it to
 			// efficiently update the svg lines on window.resize events.
