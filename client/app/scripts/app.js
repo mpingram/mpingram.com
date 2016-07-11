@@ -34,6 +34,8 @@
 
 		// hammerjs initialization
 		// ----------------------
+		// TODO: figure out how to manage touch events without
+		// interfering with browsers' touch scrolling.
 		//var body = document.getElementById('body-wrapper');
 		var center = document.getElementById('center-container');
 		var hammer = new Hammer(center);
@@ -241,10 +243,10 @@
 		}
 
 		// call drawSVG()
-		//drawSVG();
+		window.onload = drawSVG();
 
 		// DEBUG: export drawSVG()
-		window.appNamespace.drawSVG = drawSVG;
+		//window.appNamespace.drawSVG = drawSVG;
 
 		// TODO: handle window.resize() events with updateSVG function
 
