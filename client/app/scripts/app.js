@@ -243,10 +243,10 @@
 		}
 
 		// call drawSVG()
-		window.onload = drawSVG();
+		//window.onload = drawSVG();
 
 		// DEBUG: export drawSVG()
-		//window.appNamespace.drawSVG = drawSVG;
+		window.appNamespace.drawSVG = drawSVG;
 
 		// TODO: handle window.resize() events with updateSVG function
 
