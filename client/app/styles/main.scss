@@ -143,7 +143,7 @@ body{
 	margin-bottom: 5px;
 }
 
-#contact{
+#contact-info{
 	text-align: center;
 	font-size:90%;
 	font-weight: 400;
@@ -158,7 +158,12 @@ body{
 // ---------
 
 
+#contact-box{
 
+}
+#contact-box.hidden{
+	display: none;
+}
 
 
 // ---------
@@ -264,6 +269,9 @@ body{
 .about-image-wrapper{
 	flex: 1 0 auto;
 
+	border: 10px solid $col-about-accent;
+	border-radius: 50%;
+
 	margin-top: 1.5em;
 	width: 9.5em;
 	height: 9.5em;
@@ -282,7 +290,7 @@ body{
 .about-text-bubble{
 	flex: 1 0 auto;
 	display: block;
-	width: 90%;
+	width: 30em;
 	margin: 2% auto 10%;
 }
 
@@ -597,7 +605,7 @@ body{
 // ======================
 
 // breakpoint below tablet
-@media(max-width: 825px){
+@media(max-width: 750px){
 
 	// shrink icons and sort
 	// them into a square.
@@ -678,6 +686,9 @@ body{
 		width: 13em;
 		height: 3em;
 	}
+	.about-text-bubble{
+		width: 90%;
+	}
 	#projects-box{
 		right: -100%;
 		width: 100%;
@@ -714,7 +725,7 @@ body{
 		transition: visibility 0s linear 0.25s, opacity 0.25s linear;
 	}
 
-	#contact > a{
+	#contact-info > a{
 		margin: 0 1.5%;
 	}
 

@@ -20,10 +20,20 @@
 	
 			<span id='name' class='heading'>Michael Ingram</span>
 			<span id='title' class='subheading'>Full Stack Web Developer</span>
-			<span id='contact'>
+			<span id='contact-info'>
 			<a href='https://github.com/mpingram' class='link contact-link'>github.com/mpingram</a> || <span class='link contact-link'>mpingram92@gmail.com</span>
 			</span>
 		</div>
+		</div>
+
+		<div id='contact-box' class='hidden'>
+			<form class='contact-form'>
+				<input type='text' name='firstname' placeholder="first name"><br>
+				<input type='text' name='lastname' placeholder="last name"><br>
+
+				<input type='submit' value='submit'>
+
+			</form>	
 		</div>
 
 		<!-- NB: Do not put classes on icons div -->
@@ -61,7 +71,7 @@
 	<div class='box' id='about-box'>
 
 		<!-- DEBUG -->
-		<div class="button about-experience-button" onclick="window.appNamespace.drawSVG()">Update svgs</div>
+		<div class="button about-experience-button" onclick="appNamespace.drawSVG()">Update svgs</div>
 
 		<div class='about-image-wrapper'>
 			<img class='about-headshot' src='images/headshot.png'/>
@@ -70,7 +80,7 @@
 		<h3 class='heading about-box-heading'>Hi, I'm Michael!</h3>
 
 		<div class='bubble about-text-bubble'>
-			<p>I'm a self-taught web developer with a strong Javascript background and a neverending hunger for new problems. I started a year ago knowing nothing, and now I'm here.</p>
+			<p>I'm a self-taught developer with a year's worth of experience building responsive websites, [server-side javascript applications], and [adjective] web apps. I'm based in Chicago, I make electronic music in my spare time, and I live for the sweet rush of [dunking on nerds who say I won't amount to shit.]</p>
 			<p>When I'm not working, I'm making music, writing fiction, or job hunting. <a class='link' href=''>Want to help me out with that last one?</a></p>
 		</div>
 

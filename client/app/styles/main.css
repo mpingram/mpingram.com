@@ -127,7 +127,7 @@ body {
 #title {
   margin-bottom: 5px; }
 
-#contact {
+#contact-info {
   text-align: center;
   font-size: 90%;
   font-weight: 400; }
@@ -137,6 +137,9 @@ body {
 
 .link:hover {
   color: #ff854b; }
+
+#contact-box.hidden {
+  display: none; }
 
 #icons {
   width: 100%;
@@ -245,6 +248,8 @@ body {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
           flex: 1 0 auto;
+  border: 10px solid #a9c88f;
+  border-radius: 50%;
   margin-top: 1.5em;
   width: 9.5em;
   height: 9.5em;
@@ -261,7 +266,7 @@ body {
   -webkit-flex: 1 0 auto;
           flex: 1 0 auto;
   display: block;
-  width: 90%;
+  width: 30em;
   margin: 2% auto 10%; }
 
 .about-skills-heading {
@@ -557,7 +562,7 @@ body {
 .projects-github-link:hover {
   background-color: #1c7998; }
 
-@media (max-width: 825px) {
+@media (max-width: 750px) {
   #icons {
     -webkit-transition: opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
     transition: opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
@@ -629,6 +634,8 @@ body {
   .about-experience-button {
     width: 13em;
     height: 3em; }
+  .about-text-bubble {
+    width: 90%; }
   #projects-box {
     right: -100%;
     width: 100%;
@@ -655,7 +662,7 @@ body {
   #centerpiece.collapsed {
     -webkit-transition: visibility 0s linear 0.25s, opacity 0.25s linear;
     transition: visibility 0s linear 0.25s, opacity 0.25s linear; }
-  #contact > a {
+  #contact-info > a {
     margin: 0 1.5%; } }
 
 @media (max-width: 600px) {
