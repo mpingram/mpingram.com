@@ -672,15 +672,19 @@ body {
                 -ms-grid-row-align: center;
             align-items: center; }
   .about-skills-bubble {
-    width: 100%;
-    -webkit-box-ordinal-group: 1;
-    -webkit-order: 0;
-            order: 0; }
-  .about-experience-bubble {
-    width: 100%;
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-            order: 1; } }
+    width: 100%; }
+  .about-skills-item {
+    font-size: 90%;
+    width: 80%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 5%; }
+  #about-tech-column > .circle-top,
+  #about-tech-column > .circle-bottom,
+  .circle-bottom > .about-tech-item,
+  .circle-top > .about-tech-item {
+    -webkit-transform: none;
+            transform: none; } }
 
 @media (max-width: 321px) {
   .toy {

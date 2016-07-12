@@ -311,7 +311,7 @@ body{
 .about-skills-bubble-flex-wrapper{
 	width: 100%;
 	height: 100%;
-	
+
 	// parent flex properties
 	display: flex;
 	flex-direction: row;
@@ -747,11 +747,19 @@ body{
 	}
 	.about-skills-bubble{
 		width: 100%;
-		order: 0;
 	}
-	.about-experience-bubble{
-		width: 100%;
-		order: 1;
+	.about-skills-item{
+		font-size: 90%;
+		width: 80%;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		margin-bottom: 5%;
+	}
+	#about-tech-column > .circle-top, 
+	#about-tech-column > .circle-bottom,
+	.circle-bottom > .about-tech-item,
+	.circle-top > .about-tech-item {
+		transform: none;
 	}
 }
 // breakpoint for smaller phone screens
