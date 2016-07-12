@@ -12,6 +12,14 @@
 
 	<div id='body-wrapper'>
 
+	<div id='contact-box' class=''>
+		<form class='contact-form'>
+			<input required class='contact-form-name' type='text' name='name' placeholder='your name'><br>
+			<input required class='contact-form-email' type='email'  name='email' placeholder='your email'><br>
+			<input required class='contact-form-message' type='text' name='message' placeholder='message'>
+			<input class='button about-experience-button' type='submit' value='submit'>
+		</form>	
+	</div>
 
 	<div id='center-container'>
 
@@ -26,43 +34,34 @@
 		</div>
 		</div>
 
-		<div id='contact-box' class='hidden'>
-			<form class='contact-form'>
-				<input type='text' name='firstname' placeholder="first name"><br>
-				<input type='text' name='lastname' placeholder="last name"><br>
-
-				<input type='submit' value='submit'>
-
-			</form>	
-		</div>
-
 		<!-- NB: Do not put classes on icons div -->
-		<div id='icons'>
+		<div id='icons-wrapper'>
+			<div id='icons'>
+				<button id='about' class='toy unselectable'>
+					<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
+					</object>
+					<span class='toy-link'>about</span>
+				</button>
 
-			<button id='about' class='toy unselectable'>
-				<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
-				</object>
-				<span class='toy-link'>about</span>
-			</button>
+				<button id='music' class='toy unselectable'>
+					<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
+					</object>
+					
+					<span class='toy-link'>music</span>
+				</button>
 
-			<button id='music' class='toy unselectable'>
-				<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
-				</object>
-				
-				<span class='toy-link'>music</span>
-			</button>
+				<button id='websites' class='toy unselectable'>
+					<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
+					</object>
+					<span class='toy-link'>websites</span>
+				</button>
 
-			<button id='websites' class='toy unselectable'>
-				<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
-				</object>
-				<span class='toy-link'>websites</span>
-			</button>
-
-			<button id='projects' class='toy unselectable'>
-				<object class='toy-icon' type='image/svg+xml' data='images/projects-toy-neutral.svg'>
-				</object>
-				<span class='toy-link'>projects</span>
-			</button>
+				<button id='projects' class='toy unselectable'>
+					<object class='toy-icon' type='image/svg+xml' data='images/projects-toy-neutral.svg'>
+					</object>
+					<span class='toy-link'>projects</span>
+				</button>
+			</div>
 		</div>
 
 	</div>
