@@ -511,6 +511,7 @@ body {
 
 .projects-subheading {
   font-weight: 300;
+  font-size: 120%;
   display: block;
   text-align: left;
   margin-left: 5%;
@@ -539,8 +540,9 @@ body {
   float: right; }
 
 .projects-text {
+  font-weight: 300;
   text-align: left;
-  margin: 4% 2% 0; }
+  margin: 5% 2% 0; }
 
 .projects-github-link {
   font-weight: 400;
@@ -611,7 +613,8 @@ body {
     transition: transform 1.25s ease;
     transition: transform 1.25s ease, -webkit-transform 1.25s ease; }
   .button {
-    margin: 7% auto; }
+    margin-top: 7%;
+    margin-bottom: 7%; }
   #about-box {
     left: -100%;
     width: 100%;
