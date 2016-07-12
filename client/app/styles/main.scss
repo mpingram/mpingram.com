@@ -268,19 +268,16 @@ body{
 }
 .about-image-wrapper{
 	flex: 1 0 auto;
+	margin-top: 1.5em;
+	width: 9.5em;
+	height: auto;
+	box-sizing: content-box;
+}
+.about-headshot {
 
 	border: 10px solid $col-about-accent;
 	border-radius: 50%;
 
-	margin-top: 1.5em;
-	width: 9.5em;
-	height: 9.5em;
-	box-sizing: content-box;
-}
-.about-headshot {
-	//box-sizing: content-box;
-	//margin-top: 1em;
-	//height: auto !important;
 }
 .about-box-heading{
 	flex: 1 0 auto;
@@ -457,12 +454,16 @@ body{
 
 	width: 50%;
 }
-.music-player-container{
+#music-player-container{
+	width: auto;
 	//width: 50%;
 	//float: left;
-	background: url('images/loading.svg');
+	background: url('images/loading.gif');
 }
 .music-player{
+	border: 0;
+	width: 275px;
+	height: 275px;
 	margin: 0 auto;
 }
 .music-text-buttons-container{
@@ -573,7 +574,7 @@ body{
 	display: inline-block;
 	position: relative;
 	float: left;
-	margin: 2%;
+	margin: 2% 2% 0;
 }
 .event-manager-thumbnail{
 	float: left;
@@ -587,7 +588,7 @@ body{
 .projects-text{
 	font-weight: 300;
 	text-align: left;
-	margin: 5% 2% 0;
+	margin: 5% 2% 2%;
 }
 .projects-github-link{
 	font-weight: 400;

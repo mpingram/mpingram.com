@@ -248,12 +248,14 @@ body {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
           flex: 1 0 auto;
-  border: 10px solid #a9c88f;
-  border-radius: 50%;
   margin-top: 1.5em;
   width: 9.5em;
-  height: 9.5em;
+  height: auto;
   box-sizing: content-box; }
+
+.about-headshot {
+  border: 10px solid #a9c88f;
+  border-radius: 50%; }
 
 .about-box-heading {
   -webkit-box-flex: 1;
@@ -430,10 +432,14 @@ body {
           flex-wrap: wrap;
   width: 50%; }
 
-.music-player-container {
-  background: url("images/loading.svg"); }
+#music-player-container {
+  width: auto;
+  background: url("images/loading.gif"); }
 
 .music-player {
+  border: 0;
+  width: 275px;
+  height: 275px;
   margin: 0 auto; }
 
 .music-text-buttons-container {
@@ -536,7 +542,7 @@ body {
   display: inline-block;
   position: relative;
   float: left;
-  margin: 2%; }
+  margin: 2% 2% 0; }
 
 .event-manager-thumbnail {
   float: left; }
@@ -547,7 +553,7 @@ body {
 .projects-text {
   font-weight: 300;
   text-align: left;
-  margin: 5% 2% 0; }
+  margin: 5% 2% 2%; }
 
 .projects-github-link {
   font-weight: 400;

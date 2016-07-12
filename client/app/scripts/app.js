@@ -12,8 +12,14 @@ $(document).ready( function init(){
 	locals.iconsLocation = undefined;
 	// stores whether about-skills svg lines have been drawn
 	locals.svgLinesDrawn = false;
+	// stores whether bandcamp iframe has been loaded
+	locals.musicPlayerLoaded = false;
 
 
+
+	// I: HELPER FUNCTIONS for drawing svg lines in about-box
+	// and async loading bandcamp player in music box.
+	// ================================================
 	function drawSVG(){
 
 
@@ -78,7 +84,7 @@ $(document).ready( function init(){
 			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
 			svgLine.setAttributeNS(null, 'class','about-skills-line');
 			svgLine.setAttributeNS(null, 'stroke-width','1px');
-			svgLine.setAttributeNS(null, 'stroke',' grey');
+			svgLine.setAttributeNS(null, 'stroke','#B7B7B7');
 
 			svgLine.setAttributeNS(null, 'x1', positionObj.x1);
 			svgLine.setAttributeNS(null, 'y1', positionObj.y1);
@@ -129,7 +135,33 @@ $(document).ready( function init(){
 	// end drawSvg()
 	}
 
-	// I. EVENT HANDLERS
+	function loadBandcampPlayer(){
+		// DEBUG: does this block?
+
+		// grab container
+		var musicPlayerContainer = $('#music-player-container');
+
+		// generate bandcamp player iframe
+		var player = document.createElement('iframe');
+		player.src = 'https://bandcamp.com/EmbeddedPlayer/album=2571936169/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/';
+		player.setAttribute('seamless','');
+		player.classList.add('music-player');
+
+		// add link to bandcamp page to iframe
+		var bcLink = document.createElement('a');
+		bcLink.href = 'http://nominal.bandcamp.com/album/apartments-ep';
+		player.appendChild(bcLink);
+
+		// put iframe in container element,
+		musicPlayerContainer.append(player);
+		// remove loading.gif background
+		musicPlayerContainer.css('background', 'none');
+
+		// update local variable, we've loaded the player
+		// locals.musicPlayerLoaded = true;
+	}
+
+	// II. EVENT HANDLERS
 	// ====================
 
 	// --------------------
@@ -215,7 +247,13 @@ $(document).ready( function init(){
 		};
 
 		// click event handler for four central icons
-		$(document).on('click', '#music, #websites, #projects', iconClickHandler );
+		$(document).on('click', '#websites, #projects', iconClickHandler );
+		$('#music').on('click', function(event){
+			iconClickHandler(event);
+			/*if (!locals.musicPlayerLoaded){
+				loadBandcampPlayer();
+			}*/
+		});
 		$('#about').on('click', function(event){
 			iconClickHandler(event);
 			if (!locals.svgLinesDrawn){
@@ -248,27 +286,7 @@ $(document).ready( function init(){
 	// ======================
 
 
-	// II. ABOUT-SKILLS-LIST CONNECTING LINES
-	// =======================
-
-
-
-
-
-		// call drawSVG()
-		//window.onload = drawSVG();
-
-		// DEBUG: export drawSVG()
-		// window.appNamespace.drawSVG = drawSVG;
-
-		// TODO: handle window.resize() events with updateSVG function
-
-
-
-
-	// end ABOUT-SKILLS-LIST CONNECTING LINES
-	// ========================
-
+	window.onload = loadBandcampPlayer();
 
 // end document.ready
 });
