@@ -1,6 +1,7 @@
-(function($, window, document){
+(function init(){
 
-	$(document).ready(function init(){
+	// TODO (consider): You don't really need jquery here!
+	// consider removing when optimizing site
 
 	// 0: DEFINE GLOBAL NAMESPACE
 	// TODO: necessary?
@@ -87,7 +88,25 @@
 			locals.activeBox.addClass('active').siblings().removeClass('active');
 		}
 
+		var iconClickHandler = function(event){
+			var id = event.currentTarget.id;
+			// identify popin box associated with icon id
+			locals.activeBox = $('#'+id+'-box'); 
+			// if box is already open, close it and move the center back to neutral
+			if(locals.activeBox.hasClass('active')){
+				reset();
+			// else move the center and slide in the box
+			} else {
+				move();
+			}
+		};
 
+		// click event handler for four central icons
+		$(document).on('click', '#music, #websites, #projects', iconClickHandler );
+		$('#about').on('click', function(event){
+			iconClickHandler(event);
+			drawSVG();
+		});
 
 		// hammer.js touch event handler
 		hammerManager.on('swipe', function hammerSwipeHandler(event){
@@ -106,21 +125,6 @@
 		});
 
 
-		// click event handler for four central icons
-		$(document).on('click', '#about, #music, #websites, #projects',
-			function iconClickHandler(event){
-				var id = event.currentTarget.id;
-				// identify popin box associated with icon id
-				locals.activeBox = $('#'+id+'-box'); 
-				// if box is already open, close it and move the center back to neutral
-				if(locals.activeBox.hasClass('active')){
-					reset();
-				// else move the center and slide in the box
-				} else {
-					move();
-				}
-			}
-		);
 
 	// end EVENT HANDLERS
 	// ======================
@@ -141,7 +145,7 @@
 			// store skills and technology jQuery elements
 			var skillItems = {};
 			var techItems = {};
-			var svgElement = $('#svg-container');
+			var svgContainer = $('#svg-container');
 
 			// match skills to technologies via IDs
 			// TODO: brittle, is there a smarter way?
@@ -180,23 +184,25 @@
 				] 
 			};
 
-			// TODO: define svg create function - make sure the markup is good - give it a class
-			var createSVG = function(positionObj){
+			// create svg object and append it to DOM
+			var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+			svg.setAttributeNS(null, 'class','about-skills-svg');
+			svgContainer.append(svg);
 
-				var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-				svg.setAttributeNS(null, 'class','about-skills-svg');
+			var drawLine = function(positionObj){
+
 
 				var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
 				svgLine.setAttributeNS(null, 'class','about-skills-line');
 				svgLine.setAttributeNS(null, 'stroke-width','1px');
-				svgLine.setAttributeNS(null, 'stroke','black');
+				svgLine.setAttributeNS(null, 'stroke',' grey');
 
 				svgLine.setAttributeNS(null, 'x1', positionObj.x1);
 				svgLine.setAttributeNS(null, 'y1', positionObj.y1);
 				svgLine.setAttributeNS(null, 'x2', positionObj.x2);
 				svgLine.setAttributeNS(null, 'y2', positionObj.y2);
 				svg.appendChild(svgLine);
-				return svg;
+
 			};
 
 
@@ -232,13 +238,9 @@
 					positionObj.y2 = techPosition.top + techItem[0].clientHeight/2;
 
 					// draw svg line connecting skill element to tech element
-					var line = createSVG(positionObj);
-					// stick the svg line into the dom
-					svgElement.append(line);
-
+					drawLine(positionObj);
 				}
 			});
-
 		// end drawSvg()
 		}
 
@@ -257,10 +259,5 @@
 	// ========================
 
 
-
-	// end document.ready
-	});
-
-// end IIFE
-// pass in global objects
-})(window.jQuery, window, document);
+// end init()
+})();
