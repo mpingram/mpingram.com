@@ -13,11 +13,11 @@
 	<div id='body-wrapper'>
 
 	<div id='contact-box' class=''>
-		<form class='contact-form'>
-			<input required class='contact-form-name' type='text' name='name' placeholder='your name'><br>
-			<input required class='contact-form-email' type='email'  name='email' placeholder='your email'><br>
-			<input required class='contact-form-message' type='text' name='message' placeholder='message'>
-			<input class='button about-experience-button' type='submit' value='submit'>
+		<form id='contact-form'>
+			<textarea form='contact-form' class='contact-form-message' type='text' name='message' placeholder='leave a message here...'></textarea>
+			<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
+			<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
+			<input class='contact-submit-button' type='submit' value='submit'>
 		</form>	
 	</div>
 
@@ -36,7 +36,7 @@
 
 		<!-- NB: Do not put classes on icons div -->
 		<div id='icons-wrapper'>
-			<div id='icons'>
+			<div id='icons' class='down'>
 				<button id='about' class='toy unselectable'>
 					<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
 					</object>

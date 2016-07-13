@@ -197,16 +197,16 @@ $(document).ready( function init(){
 				 'closes': '#about-box'
 				},
 			4:{ // left swipe
-					'opens': '#about',
-					'closes': '#projects-box'
+				'opens': '#about',
+				'closes': '#projects-box'
 				},
 			8:{ // downward swipe
-					'opens': '#music',
-					'closes': '#websites-box'
+				'opens': '#music',
+				'closes': '#websites-box'
 				},
 			16:{ // upward swipe
-					'opens': '#websites',
-					'closes':'#music-box'
+				'opens': '#websites',
+				'closes':'#music-box'
 				}
 		};
 
@@ -215,6 +215,14 @@ $(document).ready( function init(){
 
 		// helper functions
 		// --------------------
+
+		// move centerpiece, icons, and popin boxes
+		function move(){
+			locals.iconsLocation = boxLocationTable[locals.activeBox.selector];
+			centerpiece.addClass('collapsed');
+			icons.removeClass().addClass(locals.iconsLocation);
+			locals.activeBox.addClass('active').siblings().removeClass('active');
+		}
 
 		// move centerpiece and popin boxes back to neutral
 		function reset(){
@@ -225,13 +233,7 @@ $(document).ready( function init(){
 			$('.active').removeClass('active');
 		}
 
-		// move centerpiece, icons, and popin boxes
-		function move(){
-			locals.iconsLocation = boxLocationTable[locals.activeBox.selector];
-			centerpiece.addClass('collapsed');
-			icons.removeClass().addClass(locals.iconsLocation);
-			locals.activeBox.addClass('active').siblings().removeClass('active');
-		}
+
 
 		var iconClickHandler = function(event){
 			var id = event.currentTarget.id;
@@ -267,8 +269,11 @@ $(document).ready( function init(){
 
 		// hammer.js touch event handler
 		hammerManager.on('swipe', function hammerSwipeHandler(event){
+
+			// if event direction is not 'no direction'
 			if(event.direction !== 1){
 
+				// match swipe value to direction ('left','right','up','down')
 				var swipe = swipeTable[event.direction];
 
 				if (!locals.activeBox){

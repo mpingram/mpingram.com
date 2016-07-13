@@ -162,16 +162,51 @@ body{
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	z-index: 1;
 	transform: translateX(-50%);
-	width: auto;
+	width: 100%;
+	height: 20%;
+	background: none;
+
+
 }
 
 #contact-box.hidden{
+
 	display: none;
 }
 
-.contact-form{
-	background: $lightest-grey;
+#contact-form{
+	height: 100%;
+	margin: 0 auto;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+
+	background:none;
+	font-family: $sans;
+	font-weight: 300;
+}
+.contact-form-message{
+	flex: 0 0 auto;
+
+	font-family: inherit;
+	font-weight: inherit;
+
+	height: 10em;
+	width: 20em;
+}
+
+.contact-form-name, .contact-form-email{
+	margin-left: 2em;
+	width: 15em;
+	font-family: inherit;
+	font-weight: inherit;
+	flex: 0 0 2em;
 }
 
 
@@ -461,7 +496,7 @@ body{
 .music-heading{
 	display: block;
 	margin: 2% auto;
-
+}
 .music-content-wrapper{
 	display: flex;
 	flex-direction: row;

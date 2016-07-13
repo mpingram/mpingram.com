@@ -142,15 +142,58 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: auto; }
+  width: 100%;
+  height: 20%;
+  background: none; }
 
 #contact-box.hidden {
   display: none; }
 
-.contact-form {
-  background: #f7f7f7; }
+#contact-form {
+  height: 100%;
+  margin: 0 auto;
+  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-align-content: center;
+          align-content: center;
+  background: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300; }
+
+.contact-form-message {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
+  font-family: inherit;
+  font-weight: inherit;
+  height: 10em;
+  width: 20em; }
+
+.contact-form-name, .contact-form-email {
+  margin-left: 2em;
+  width: 15em;
+  font-family: inherit;
+  font-weight: inherit;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 2em;
+          flex: 0 0 2em; }
 
 #icons-wrapper {
   width: 100%;
@@ -494,8 +537,8 @@ body {
           justify-content: center; }
 
 #websites-box.active {
-  -webkit-transform: translate3d(0, 95%, 0);
-          transform: translate3d(0, 95%, 0); }
+  -webkit-transform: translateY(95%);
+          transform: translateY(95%); }
 
 .websites-contact-button {
   color: #f46134;
@@ -526,8 +569,8 @@ body {
   height: 100%; }
 
 #projects-box.active {
-  -webkit-transform: translate3d(-100%, 0, 0);
-          transform: translate3d(-100%, 0, 0); }
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); }
 
 .projects-heading {
   margin: 1% 2%;
@@ -616,11 +659,11 @@ body {
     -webkit-order: 4;
             order: 4; }
   #icons.left {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
   #icons.right {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0); }
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
   #icons.down, #icons.up {
     -webkit-transition: opacity 0.25s 0.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
     transition: opacity 0.25s 0.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
@@ -629,11 +672,11 @@ body {
     visibility: hidden;
     opacity: 0; }
   #icons.up {
-    -webkit-transform: translate3d(0, -200%, 0);
-            transform: translate3d(0, -200%, 0); }
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%); }
   #icons.down {
-    -webkit-transform: translate3d(0, 200%, 0);
-            transform: translate3d(0, 200%, 0); }
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%); }
   .box {
     -webkit-transition: -webkit-transform 1.25s ease;
     transition: -webkit-transform 1.25s ease;
@@ -651,8 +694,8 @@ body {
     -webkit-justify-content: flex-start;
             justify-content: flex-start; }
   #about-box.active {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0); }
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
   .about-experience-button {
     width: 13em;
     height: 3em; }
@@ -665,20 +708,20 @@ body {
     -webkit-justify-content: flex-start;
             justify-content: flex-start; }
   #projects-box.active {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
   #music-box {
     bottom: -100%;
     height: 100%; }
   #music-box.active {
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0); }
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
   #websites-box {
     top: -100%;
     height: 100%; }
   #websites-box.active {
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0); }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
   #centerpiece {
     font-size: 90%; }
   #centerpiece.collapsed {
