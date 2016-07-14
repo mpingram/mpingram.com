@@ -194,21 +194,34 @@ body{
 .contact-form-message{
 	flex: 0 0 auto;
 
+	height: 10em;
+	width: 20em;
+
 	font-family: inherit;
 	font-weight: inherit;
 
-	height: 10em;
-	width: 20em;
+	resize: none;
+	border-radius: 3px;
+	border: 1px solid $light-grey;
+
 }
 
 .contact-form-name, .contact-form-email{
+	//float: left;
+	display: block;
 	margin-left: 2em;
 	width: 15em;
 	font-family: inherit;
 	font-weight: inherit;
 	flex: 0 0 2em;
-}
 
+	border-radius: 3px;
+	border: 1px solid $light-grey;
+}
+.contact-left-wrapper{
+	height: 100%;
+
+}
 
 
 // ---------
@@ -491,7 +504,7 @@ body{
 	justify-content: center;
 }
 #music-box.active{
-	transform: translateX(-100%);
+	transform: translateY(-100%);
 }
 .music-heading{
 	display: block;

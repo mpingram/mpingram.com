@@ -12,13 +12,15 @@
 
 	<div id='body-wrapper'>
 
-	<div id='contact-box' class=''>
+	<div id='contact-box' class='hidden'>
 		<form id='contact-form'>
 			<textarea form='contact-form' class='contact-form-message' type='text' name='message' placeholder='leave a message here...'></textarea>
-			<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
-			<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
-			<input class='contact-submit-button' type='submit' value='submit'>
-		</form>	
+			<div class = 'contact-left-wrapper'>
+				<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
+				<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
+				<input class='contact-submit-button' type='submit' value='submit'>
+			</div>
+		</form>
 	</div>
 
 	<div id='center-container'>
@@ -36,7 +38,7 @@
 
 		<!-- NB: Do not put classes on icons div -->
 		<div id='icons-wrapper'>
-			<div id='icons' class='down'>
+			<div id='icons'>
 				<button id='about' class='toy unselectable'>
 					<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
 					</object>
@@ -202,7 +204,7 @@
 			<span class='subheading'>
 			I'm available for freelance work.
 			</span>
-			<button class='button websites-contact-button'>Get in touch</button>
+			<button class='button websites-contact-button contact-button'>Get in touch</button>
 
 		</div>
 	</div>

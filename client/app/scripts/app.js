@@ -167,6 +167,7 @@ $(document).ready( function init(){
 	// --------------------
 	var icons = $('#icons');
 	var centerpiece = $('#centerpiece');
+	var contactBox = $('#contact-box');
 
 
 
@@ -217,23 +218,21 @@ $(document).ready( function init(){
 		// --------------------
 
 		// move centerpiece, icons, and popin boxes
-		function move(){
+		var move = function(){
 			locals.iconsLocation = boxLocationTable[locals.activeBox.selector];
 			centerpiece.addClass('collapsed');
 			icons.removeClass().addClass(locals.iconsLocation);
 			locals.activeBox.addClass('active').siblings().removeClass('active');
-		}
+		};
 
 		// move centerpiece and popin boxes back to neutral
-		function reset(){
+		var reset = function(){
 			locals.iconsLocation = undefined;
 			locals.activeBox = undefined;
 			centerpiece.removeClass('collapsed');
 			icons.removeClass();
 			$('.active').removeClass('active');
-		}
-
-
+		};
 
 		var iconClickHandler = function(event){
 			var id = event.currentTarget.id;
@@ -248,7 +247,14 @@ $(document).ready( function init(){
 			}
 		};
 
+		var contactBoxClickHandler = function(event){
+			reset();
+			contactBox.toggleClass('hidden');
+			icons.addClass('down');
+		};
+
 		// click event handler for four central icons
+		$(document).on('click', '.contact-button', contactBoxClickHandler );
 		$(document).on('click', '#websites, #projects', iconClickHandler );
 		$('#music').on('click', function(event){
 			iconClickHandler(event);

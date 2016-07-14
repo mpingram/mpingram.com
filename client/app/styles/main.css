@@ -181,19 +181,28 @@ body {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
           flex: 0 0 auto;
+  height: 10em;
+  width: 20em;
   font-family: inherit;
   font-weight: inherit;
-  height: 10em;
-  width: 20em; }
+  resize: none;
+  border-radius: 3px;
+  border: 1px solid #bfbfbf; }
 
 .contact-form-name, .contact-form-email {
+  display: block;
   margin-left: 2em;
   width: 15em;
   font-family: inherit;
   font-weight: inherit;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 2em;
-          flex: 0 0 2em; }
+          flex: 0 0 2em;
+  border-radius: 3px;
+  border: 1px solid #bfbfbf; }
+
+.contact-left-wrapper {
+  height: 100%; }
 
 #icons-wrapper {
   width: 100%;
@@ -467,8 +476,8 @@ body {
           justify-content: center; }
 
 #music-box.active {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%); }
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%); }
 
 .music-heading {
   display: block;
