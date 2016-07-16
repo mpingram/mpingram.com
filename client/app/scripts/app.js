@@ -179,15 +179,24 @@ $(document).ready( function init(){
 		'#websites-box':'down'
 	};
 
-	/*
+	
 	// hammerjs initialization
 	// ----------------------
 	// TODO: figure out how to manage touch events without
 	// interfering with browsers' touch scrolling.
 	//var body = document.getElementById('body-wrapper');
-	var center = document.getElementById('center-container');
-	var hammer = new Hammer(center);
-	var hammerManager = new Hammer.Manager(center,{
+	var bodyContainer = document.getElementById('body-wrapper');
+	var centerContainer = document.getElementById('center-container');
+	var aboutBox = document.getElementById('about-box');
+	var musicBox = document.getElementById('music-box');
+	var websitesBox = document.getElementById('websites-box');
+	var projectsBox = document.getElementById('projects-box');
+
+
+	var hammerManager = new Hammer.Manager(centerContainer,{
+		preset: [],
+		domEvents: false,
+		touchAction: 'pan-y',
 		recognizers: [
 			[Hammer.Swipe, {direction: Hammer.DIRECTION_ALL}]
 		]
@@ -231,7 +240,7 @@ $(document).ready( function init(){
 
 		}
 	});
-	*/
+	
 
 
 

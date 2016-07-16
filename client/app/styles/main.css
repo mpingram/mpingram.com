@@ -241,7 +241,8 @@ body {
 
 #icons-wrapper {
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  left: 0; }
 
 #icons {
   width: auto;
