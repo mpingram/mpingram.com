@@ -15,12 +15,13 @@
 	<div id='contact-box' class='hidden'>
 		<form id='contact-form'>
 			<textarea form='contact-form' class='contact-form-message' type='text' name='message' placeholder='leave a message here...'></textarea>
-			<div class = 'contact-left-wrapper'>
+			<div class = 'contact-left-wrapper'> 
 				<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
 				<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
-				<input class='contact-submit-button' type='submit' value='submit'>
+				<input class='button contact-submit-button' type='submit' value='submit'>
 			</div>
 		</form>
+		<button class='button contact-cancel-button' id='contact-cancel'><span class='cancel-icon'></span>cancel</button>
 	</div>
 
 	<div id='center-container'>
@@ -36,7 +37,6 @@
 		</div>
 		</div>
 
-		<!-- NB: Do not put classes on icons div -->
 		<div id='icons-wrapper'>
 			<div id='icons'>
 				<button id='about' class='toy unselectable'>

@@ -2,6 +2,7 @@ $(document).ready( function init(){
 
 	// TODO (consider): You don't really need jquery here!
 	// consider removing when optimizing site
+	// IF network says its an issue
 
 	// stores local variables which track
 	// the page's state
@@ -171,125 +172,136 @@ $(document).ready( function init(){
 
 
 
-		var boxLocationTable = {
-			'#projects-box':'left',
-			'#about-box':'right',
-			'#music-box':'up',
-			'#websites-box':'down'
-		};
+	var boxLocationTable = {
+		'#projects-box':'left',
+		'#about-box':'right',
+		'#music-box':'up',
+		'#websites-box':'down'
+	};
 
+	/*
+	// hammerjs initialization
+	// ----------------------
+	// TODO: figure out how to manage touch events without
+	// interfering with browsers' touch scrolling.
+	//var body = document.getElementById('body-wrapper');
+	var center = document.getElementById('center-container');
+	var hammer = new Hammer(center);
+	var hammerManager = new Hammer.Manager(center,{
+		recognizers: [
+			[Hammer.Swipe, {direction: Hammer.DIRECTION_ALL}]
+		]
+	});
+	
+	var swipeTable = {
+		2:{ // right swipe
+			 'opens': '#projects',
+			 'closes': '#about-box'
+			},
+		4:{ // left swipe
+			'opens': '#about',
+			'closes': '#projects-box'
+			},
+		8:{ // downward swipe
+			'opens': '#music',
+			'closes': '#websites-box'
+			},
+		16:{ // upward swipe
+			'opens': '#websites',
+			'closes':'#music-box'
+			}
+	};
 
-		// hammerjs initialization
-		// ----------------------
-		// TODO: figure out how to manage touch events without
-		// interfering with browsers' touch scrolling.
-		//var body = document.getElementById('body-wrapper');
-		var center = document.getElementById('center-container');
-		var hammer = new Hammer(center);
-		var hammerManager = new Hammer.Manager(center,{
-			recognizers: [
-				[Hammer.Swipe, {direction: Hammer.DIRECTION_ALL}]
-			]
-		});
-		
-		var swipeTable = {
-			2:{ // right swipe
-				 'opens': '#projects',
-				 'closes': '#about-box'
-				},
-			4:{ // left swipe
-				'opens': '#about',
-				'closes': '#projects-box'
-				},
-			8:{ // downward swipe
-				'opens': '#music',
-				'closes': '#websites-box'
-				},
-			16:{ // upward swipe
-				'opens': '#websites',
-				'closes':'#music-box'
-				}
-		};
+	// hammerjs event handling
+	// ------------------------------------
+	// swipe event handler
+	hammerManager.on('swipe', function hammerSwipeHandler(event){
 
+		// if event direction is not 'no direction'
+		if(event.direction !== 1){
 
+			// match swipe value to direction ('left','right','up','down')
+			var swipe = swipeTable[event.direction];
 
-
-		// helper functions
-		// --------------------
-
-		// move centerpiece, icons, and popin boxes
-		var move = function(){
-			locals.iconsLocation = boxLocationTable[locals.activeBox.selector];
-			centerpiece.addClass('collapsed');
-			icons.removeClass().addClass(locals.iconsLocation);
-			locals.activeBox.addClass('active').siblings().removeClass('active');
-		};
-
-		// move centerpiece and popin boxes back to neutral
-		var reset = function(){
-			locals.iconsLocation = undefined;
-			locals.activeBox = undefined;
-			centerpiece.removeClass('collapsed');
-			icons.removeClass();
-			$('.active').removeClass('active');
-		};
-
-		var iconClickHandler = function(event){
-			var id = event.currentTarget.id;
-			// identify popin box associated with icon id
-			locals.activeBox = $('#'+id+'-box'); 
-			// if box is already open, close it and move the center back to neutral
-			if(locals.activeBox.hasClass('active')){
+			if (!locals.activeBox){
+				$(swipe.opens).trigger('click');
+			} else if (locals.activeBox.selector === swipe.closes){
 				reset();
-			// else move the center and slide in the box
-			} else {
-				move();
 			}
-		};
 
-		var contactBoxClickHandler = function(event){
+		}
+	});
+	*/
+
+
+
+	// helper functions
+	// --------------------
+
+	// move centerpiece, icons, and popin boxes
+	var move = function(){
+		contactBox.addClass('hidden');
+		locals.iconsLocation = boxLocationTable[locals.activeBox.selector];
+		centerpiece.addClass('collapsed');
+		icons.removeClass().addClass(locals.iconsLocation);
+		locals.activeBox.addClass('active').siblings().removeClass('active');
+	};
+
+	// move centerpiece and popin boxes back to neutral
+	var reset = function(){
+		locals.iconsLocation = undefined;
+		locals.activeBox = undefined;
+		contactBox.addClass('hidden');
+		centerpiece.removeClass('collapsed');
+		icons.removeClass('up down left right hidden');
+		$('.active').removeClass('active');
+	};
+
+	var iconClickHandler = function(event){
+		var id = event.currentTarget.id;
+		// identify popin box associated with icon id
+		locals.activeBox = $('#'+id+'-box'); 
+		// if box is already open, close it and move the center back to neutral
+		if(locals.activeBox.hasClass('active')){
 			reset();
-			contactBox.toggleClass('hidden');
-			icons.addClass('down');
-		};
+		// else move the center and slide in the box
+		} else {
+			move();
+		}
+	};
 
-		// click event handler for four central icons
-		$(document).on('click', '.contact-button', contactBoxClickHandler );
-		$(document).on('click', '#websites, #projects', iconClickHandler );
-		$('#music').on('click', function(event){
-			iconClickHandler(event);
-			/*if (!locals.musicPlayerLoaded){
-				loadBandcampPlayer();
-			}*/
-		});
-		$('#about').on('click', function(event){
-			iconClickHandler(event);
-			if (!locals.svgLinesDrawn){
-				drawSVG();
-			}
-		});
+	var contactBoxClickHandler = function(event){
+		reset();
+		contactBox.toggleClass('hidden');
+		icons.toggleClass('hidden');
+	};
+
+	// click event handler for four central icons
+	$(document).on('click', '.contact-button', contactBoxClickHandler );
+	$(document).on('click', '#websites, #projects' , iconClickHandler );
+	$('#music').on('click', function(event){
+		iconClickHandler(event);
+		/*if (!locals.musicPlayerLoaded){
+			loadBandcampPlayer();
+		}*/
+	});
+	$('#about').on('click', function(event){
+		iconClickHandler(event);
+		if (!locals.svgLinesDrawn){
+			drawSVG();
+		}
+	});
+	$('#contact-cancel').on('click', function(event){
+		reset();
+	});
 
 
-		// redraw about-skill svg lines on window resize
-		$(window).resize( drawSVG );
+	// redraw about-skill svg lines on window resize
+	$(window).resize( drawSVG );
 
-		// hammer.js touch event handler
-		hammerManager.on('swipe', function hammerSwipeHandler(event){
 
-			// if event direction is not 'no direction'
-			if(event.direction !== 1){
 
-				// match swipe value to direction ('left','right','up','down')
-				var swipe = swipeTable[event.direction];
 
-				if (!locals.activeBox){
-					$(swipe.opens).trigger('click');
-				} else if (locals.activeBox.selector === swipe.closes){
-					reset();
-				}
-
-			}
-		});
 
 
 
