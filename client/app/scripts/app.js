@@ -272,6 +272,7 @@ $(document).ready( function init(){
 
 	var contactBoxClickHandler = function(event){
 		reset();
+		centerpiece.addClass('collapsed');
 		contactBox.toggleClass('hidden');
 		icons.toggleClass('hidden');
 	};
