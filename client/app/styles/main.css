@@ -292,11 +292,16 @@ body {
 .toy:focus, .toy:hover {
   text-decoration: underline; }
 
+.toy:active > .toy-icon {
+  box-shadow: none;
+  border: 1px inset #bfbfbf; }
+
 .toy-icon {
   width: 9em;
   pointer-events: none;
   position: relative;
   margin-bottom: 1em;
+  box-shadow: 1px 7px 5px -4px grey;
   border-radius: 3px; }
 
 .toy-link {
@@ -552,8 +557,7 @@ body {
   width: 50%; }
 
 #music-player-container {
-  width: auto;
-  background: url("images/loading.gif"); }
+  width: auto; }
 
 .music-player {
   border: 0;

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset='UTF-8'/>
-	<meta name='viewport' content='width=device-width'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
 	<link href='styles/main.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 	<!--<link href='fonts/SourceSansPro-Local.css' rel='stylesheet' type='text/css'>-->
@@ -31,7 +31,7 @@
 			<span id='name' class='heading'>Michael Ingram</span>
 			<span id='title' class='subheading'>Full Stack Web Developer</span>
 			<span id='contact-info'>
-			<a href='https://github.com/mpingram' class='link contact-link'>github.com/mpingram</a> || <span class='link contact-link'>mpingram92@gmail.com</span>
+				<a href='https://github.com/mpingram' target='_blank' class='link contact-link'>github.com/mpingram</a> || <a href='https://www.linkedin.com/in/mpingram' target='_blank' class='link contact-link'>linkedin.com/in/mpingram</a>
 			</span>
 		</div>
 		</div>
@@ -39,26 +39,26 @@
 		<div id='icons-wrapper'>
 			<div id='icons'>
 				<button id='about' class='toy unselectable'>
-					<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
+					<object id='about-icon' class='toy-icon' type='image/svg+xml' data='images/about-toy-large.svg'>
 					</object>
 					<span class='toy-link'>about</span>
 				</button>
 
 				<button id='music' class='toy unselectable'>
-					<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
+					<object id='music-icon' class='toy-icon' type='image/svg+xml' data='images/music-toy-large.svg'>
 					</object>
 					
 					<span class='toy-link'>music</span>
 				</button>
 
 				<button id='websites' class='toy unselectable'>
-					<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
+					<object id='websites-icon' class='toy-icon' type='image/svg+xml' data='images/websites-toy-large.svg'>
 					</object>
 					<span class='toy-link'>websites</span>
 				</button>
 
 				<button id='projects' class='toy unselectable'>
-					<object class='toy-icon' type='image/svg+xml' data='images/projects-toy-neutral.svg'>
+					<object id='projects-icon' class='toy-icon' type='image/svg+xml' data='images/projects-toy-large.svg'>
 					</object>
 					<span class='toy-link'>projects</span>
 				</button>
@@ -76,7 +76,7 @@
 		<h3 class='heading about-box-heading'>Hi, I'm Michael!</h3>
 
 		<div class='bubble about-text-bubble'>
-			<p>I'm a self-taught developer with a year's worth of experience building responsive websites, [server-side javascript applications], and [adjective] web apps. I'm based in Chicago, I make electronic music in my spare time, and I live for the sweet rush of not knowing how to do something and then figuring out how to do it.</p>
+			<p>I'm a self-taught developer with a year's worth of experience building responsive websites, web apps, and web APIs. I'm based in Chicago, I make electronic music in my spare time, and I live for the sweet rush of not knowing how to do something and then figuring out how to do it.</p>
 			<p>[A one or two sentence long thing that is pretty much just here for layout purposes. I like this and I'm really good at it.]
 			</p>
 		</div>
@@ -173,7 +173,7 @@
 		
 		<div class='about-contact-wrapper'>
 			<span class='subheading'>Want to hire me?</span>
-			<button class='button about-contact-button'>Get in touch</button>
+			<button class='button contact-button about-contact-button'>Get in touch</button>
 		</div>
 	</div>
 	<div class='box' id='music-box'>

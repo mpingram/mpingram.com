@@ -314,12 +314,17 @@ body{
 	text-decoration: underline;
 }
 
+.toy:active > .toy-icon{
+	box-shadow: none;
+	border: 1px inset $light-grey;
+}
+
 .toy-icon{
 	width: 9em;
 	pointer-events: none;
 	position: relative;
 	margin-bottom: 1em;
-	//box-shadow: 1px 7px 5px -4px grey;
+	box-shadow: 1px 7px 5px -4px grey;
 	//border: 1px solid grey;
 	border-radius: 3px;
 }
@@ -339,10 +344,8 @@ body{
 	position: absolute;
 	overflow: auto;
 
-	// inertia scrolling on ios
 	-webkit-overflow-scrolling: touch;
 
-	// TODO: shim for ie8 and below with filter
 	background-color: rgba(213, 213, 213, 0.10);
 	text-align: center;
 
@@ -594,7 +597,7 @@ body{
 	width: auto;
 	//width: 50%;
 	//float: left;
-	background: url('images/loading.gif');
+	//background: url('images/loading.gif');
 }
 .music-player{
 	border: 0;

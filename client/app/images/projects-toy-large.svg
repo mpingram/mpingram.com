@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="650" height="650" viewBox="0.5 0.5 650 650" enable-background="new 0.5 0.5 650 650" xml:space="preserve">
+<defs>
+</defs>
+<path fill="none" stroke="#636466" stroke-width="3" d="M649.5,637.5c0,6.627-5.373,12-12,12h-624c-6.627,0-12-5.373-12-12v-624
+	c0-6.627,5.373-12,12-12h624c6.627,0,12,5.373,12,12V637.5z"/>
+<rect x="10.5" y="10.5" fill="none" width="495" height="630"/>
+<text transform="matrix(1 0 0 1 10.5 20.5654)" font-family="'SourceSansPro-Light'" font-size="14">// factory function</text>
+<text transform="matrix(1 0 0 1 10.5 37.3662)" font-family="'SourceSansPro-Light'" font-size="14">// ============================</text>
+<text transform="matrix(1 0 0 1 10.5 54.166)" font-family="'SourceSansPro-Light'" font-size="14">var AcrobatMailMerge =  function(mockApi){</text>
+<text transform="matrix(1 0 0 1 10.5 87.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 87.7656)" font-family="'SourceSansPro-Light'" font-size="14">// DEVELOPMENT</text>
+<text transform="matrix(1 0 0 1 10.5 104.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 104.5654)" font-family="'SourceSansPro-Light'" font-size="14">// ---------------------------------</text>
+<text transform="matrix(1 0 0 1 10.5 121.3662)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 121.3662)" font-family="'SourceSansPro-Light'" font-size="14">// injects mock API if it&apos;s passed as an argument</text>
+<text transform="matrix(1 0 0 1 10.5 138.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 138.166)" font-family="'SourceSansPro-Light'" font-size="14">// to the factory</text>
+<text transform="matrix(1 0 0 1 10.5 154.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 154.9658)" font-family="'SourceSansPro-Light'" font-size="14">if (mockApi) {</text>
+<text transform="matrix(1 0 0 1 10.5 171.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">  </text>
+<text transform="matrix(1 0 0 1 82.5 171.7656)" font-family="'SourceSansPro-Light'" font-size="14">// verify api is ok</text>
+<text transform="matrix(1 0 0 1 10.5 188.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">  </text>
+<text transform="matrix(1 0 0 1 82.5 188.5654)" font-family="'SourceSansPro-Light'" font-size="14">if (</text>
+<text transform="matrix(1 0 0 1 96.0791 188.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="18"> </text>
+<text transform="matrix(1 0 0 1 118.5 188.5654)" font-family="'SourceSansPro-Light'" font-size="14">typeof mockApi </text>
+<text transform="matrix(1 0 0 1 209.917 188.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="12"> </text>
+<text transform="matrix(1 0 0 1 226.499 188.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 262.499 188.5654)" font-family="'SourceSansPro-Light'" font-size="14">!== &apos;object&apos; ||</text>
+<text transform="matrix(1 0 0 1 10.5 205.3662)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">     </text>
+<text transform="matrix(1 0 0 1 190.5 205.3662)" font-family="'SourceSansPro-Light'" font-size="14">mockApi.app </text>
+<text transform="matrix(1 0 0 1 268.394 205.3662)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="26"> </text>
+<text transform="matrix(1 0 0 1 298.499 205.3662)" font-family="'SourceSansPro-Light'" font-size="14">=== undefined ||</text>
+<text transform="matrix(1 0 0 1 10.5 222.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">     </text>
+<text transform="matrix(1 0 0 1 190.5 222.166)" font-family="'SourceSansPro-Light'" font-size="14">mockApi.doc </text>
+<text transform="matrix(1 0 0 1 267.5669 222.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="28"> </text>
+<text transform="matrix(1 0 0 1 298.499 222.166)" font-family="'SourceSansPro-Light'" font-size="14">=== undefined ||</text>
+<text transform="matrix(1 0 0 1 10.5 238.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">     </text>
+<text transform="matrix(1 0 0 1 190.5 238.9658)" font-family="'SourceSansPro-Light'" font-size="14">mockApi.util </text>
+<text transform="matrix(1 0 0 1 264.4741 238.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="30"> </text>
+<text transform="matrix(1 0 0 1 298.5 238.9658)" font-family="'SourceSansPro-Light'" font-size="14">=== undefined){</text>
+<text transform="matrix(1 0 0 1 10.5 255.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">   </text>
+<text transform="matrix(1 0 0 1 118.5 255.7656)" font-family="'SourceSansPro-Light'" font-size="14">throw new Error(&apos;Incomplete mock API&apos;);</text>
+<text transform="matrix(1 0 0 1 10.5 289.3662)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">  </text>
+<text transform="matrix(1 0 0 1 82.5 289.3662)" font-family="'SourceSansPro-Light'" font-size="14">} else {</text>
+<text transform="matrix(1 0 0 1 10.5 306.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">   </text>
+<text transform="matrix(1 0 0 1 118.5 306.166)" font-family="'SourceSansPro-Light'" font-size="14">// establish mock API</text>
+<text transform="matrix(1 0 0 1 10.5 322.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">   </text>
+<text transform="matrix(1 0 0 1 118.5 322.9658)" font-family="'SourceSansPro-Light'" font-size="14">var app = mockApi.app;</text>
+<text transform="matrix(1 0 0 1 10.5 339.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">   </text>
+<text transform="matrix(1 0 0 1 118.5 339.7656)" font-family="'SourceSansPro-Light'" font-size="14">var doc = mockApi.doc;</text>
+<text transform="matrix(1 0 0 1 10.5 356.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">   </text>
+<text transform="matrix(1 0 0 1 118.5 356.5654)" font-family="'SourceSansPro-Light'" font-size="14">var util = mockApi.util;</text>
+<text transform="matrix(1 0 0 1 10.5 373.3662)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32">  </text>
+<text transform="matrix(1 0 0 1 82.5 373.3662)" font-family="'SourceSansPro-Light'" font-size="14">}</text>
+<text transform="matrix(1 0 0 1 10.5 390.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 390.166)" font-family="'SourceSansPro-Light'" font-size="14">}</text>
+<text transform="matrix(1 0 0 1 10.5 406.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 406.9658)" font-family="'SourceSansPro-Light'" font-size="14">// otherwise, assume we&apos;re running in AcroJS environment</text>
+<text transform="matrix(1 0 0 1 10.5 423.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 423.7656)" font-family="'SourceSansPro-Light'" font-size="14">// and we don&apos;t need to inject anything.</text>
+<text transform="matrix(1 0 0 1 10.5 440.5654)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 440.5654)" font-family="'SourceSansPro-Light'" font-size="14">// ----------------------------------</text>
+<text transform="matrix(1 0 0 1 10.5 474.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 474.166)" font-family="'SourceSansPro-Light'" font-size="14">var self = {};</text>
+<text transform="matrix(1 0 0 1 10.5 507.7656)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 507.7656)" font-family="'SourceSansPro-Light'" font-size="14">// private vars</text>
+<text transform="matrix(1 0 0 1 10.5 524.5664)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 524.5664)" font-family="'SourceSansPro-Light'" font-size="14">// ----------------------</text>
+<text transform="matrix(1 0 0 1 10.5 541.3652)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 541.3652)" font-family="'SourceSansPro-Light'" font-size="14">var targetFieldsRegexNoFlags = /&lt;&lt;(.+?)&gt;&gt;/;</text>
+<text transform="matrix(1 0 0 1 10.5 558.166)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 558.166)" font-family="'SourceSansPro-Light'" font-size="14">var targetFieldsRegex = new RegExp(targetFieldsRegexNoFlags,&apos;g&apos;);</text>
+<text transform="matrix(1 0 0 1 10.5 574.9658)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 574.9658)" font-family="'SourceSansPro-Light'" font-size="14">var conditionalBlocksRegex = /\[[^\[]*?&lt;&gt;[^\]]*?\]|&lt;|&gt;|\[|\]/g;</text>
+<text transform="matrix(1 0 0 1 10.5 608.5664)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 608.5664)" font-family="'SourceSansPro-Light'" font-size="14">// flag marks whether multiple fields each map to one record (false)</text>
+<text transform="matrix(1 0 0 1 10.5 625.3652)" font-family="'SourceSansPro-Light'" font-size="14" letter-spacing="32"> </text>
+<text transform="matrix(1 0 0 1 46.5 625.3652)" font-family="'SourceSansPro-Light'" font-size="14">// or multiple fields map to multiple records (true)</text>
+</svg>

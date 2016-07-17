@@ -268,6 +268,11 @@ $(document).ready( function init(){
 
 	var iconClickHandler = function(event){
 		var id = event.currentTarget.id;
+		if (id === 'about'){
+			if (!locals.svgLinesDrawn){
+				drawSVG();
+			}
+		}
 		// identify popin box associated with icon id
 		locals.activeBox = $('#'+id+'-box'); 
 		// if box is already open, close it and move the center back to neutral
@@ -287,24 +292,18 @@ $(document).ready( function init(){
 	};
 
 	// click event handler for four central icons
-	$(document).on('click', '.contact-button', contactBoxClickHandler );
-	$(document).on('click', '#websites, #projects' , iconClickHandler );
-	$('#music').on('click', function(event){
-		iconClickHandler(event);
-		/*if (!locals.musicPlayerLoaded){
-			loadBandcampPlayer();
-		}*/
-	});
-	$('#about').on('click', function(event){
-		iconClickHandler(event);
-		if (!locals.svgLinesDrawn){
-			drawSVG();
-		}
-	});
+	var $document = $(document);
+	$document.on('click', '.contact-button', contactBoxClickHandler );
+	$document.on('click', '#websites, #projects, #music, #about' , iconClickHandler );
 	$('#contact-cancel').on('click', function(event){
 		reset();
 	});
 
+	// hack to engage iOS click event bubbling
+	$document.on('click', '.toy-icon', function(event){
+		console.log(event);
+
+	});
 
 	// redraw about-skill svg lines on window resize
 	$(window).resize( drawSVG );
