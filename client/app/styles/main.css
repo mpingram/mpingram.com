@@ -745,7 +745,8 @@ body {
     margin-right: 2em;
     margin-left: 2em; }
   .toy-icon {
-    width: 5.5em; }
+    width: 5.5em;
+    z-index: -1; }
   #about {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;

@@ -820,6 +820,10 @@ body{
 	}
 	.toy-icon{
 		width: 5.5em;
+		// moves icon under icon button so that
+		// touch events work properly on iOS.
+		// TODO: hacky
+		z-index: -1;
 	}
 	#about{
 		order: 1;

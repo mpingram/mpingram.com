@@ -267,6 +267,7 @@ $(document).ready( function init(){
 	};
 
 	var iconClickHandler = function(event){
+		console.log(event);
 		var id = event.currentTarget.id;
 		if (id === 'about'){
 			if (!locals.svgLinesDrawn){
@@ -299,11 +300,6 @@ $(document).ready( function init(){
 		reset();
 	});
 
-	// hack to engage iOS click event bubbling
-	$document.on('click', '.toy-icon', function(event){
-		console.log(event);
-
-	});
 
 	// redraw about-skill svg lines on window resize
 	$(window).resize( drawSVG );
