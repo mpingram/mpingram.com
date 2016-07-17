@@ -378,7 +378,7 @@ body {
   box-sizing: content-box; }
 
 .about-headshot {
-  border: 10px solid #a9c88f;
+  border: 10px solid #C1D7AE;
   border-radius: 50%; }
 
 .about-box-heading {
@@ -393,9 +393,13 @@ body {
           flex: 1 0 auto;
   display: block;
   width: 30em;
-  margin: 2% auto 10%; }
+  margin: 1em auto;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #bfbfbf; }
 
 .about-skills-heading {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -473,24 +477,6 @@ body {
   display: block;
   background-color: #d9d9d9; }
 
-.about-experience-bubble {
-  display: inline-block;
-  margin-top: 2%;
-  width: 50%; }
-
-.about-experience-buttons-wrapper {
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center; }
-
 .about-experience-button {
   background-color: #a9c88f; }
 
@@ -499,9 +485,6 @@ body {
 
 .about-experience-button:hover {
   background-color: #C1D7AE; }
-
-.about-contact-wrapper {
-  margin-top: 2%; }
 
 .about-contact-button {
   color: #8fb76d;
