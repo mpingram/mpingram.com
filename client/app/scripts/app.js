@@ -193,7 +193,7 @@ $(document).ready( function init(){
 	var projectsBox = document.getElementById('projects-box');
 
 
-	var hammerManager = new Hammer.Manager(centerContainer,{
+	var hammerManager = new Hammer.Manager(bodyContainer,{
 		preset: [],
 		domEvents: false,
 		touchAction: 'pan-y',

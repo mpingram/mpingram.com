@@ -216,11 +216,12 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  width: 12em;
   border: 1px solid #bfbfbf;
   background-color: #a9c88f;
   display: block;
   margin: 1em auto;
-  padding: 1em;
+  padding: 1em 0;
   font-size: 100%; }
 
 .contact-submit-button:hover {
@@ -230,7 +231,7 @@ body {
   margin: 1em auto;
   padding: 1em;
   height: auto;
-  width: 18em;
+  width: 12em;
   border: 3px solid #bfbfbf;
   color: #bfbfbf;
   font-weight: 400; }
@@ -306,6 +307,7 @@ body {
 .box {
   position: absolute;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: rgba(213, 213, 213, 0.1);
   text-align: center;
   will-change: transform;
@@ -319,6 +321,12 @@ body {
   font-weight: 300; }
 
 #about-box {
+  overflow-y: visible;
+  left: -50%;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -336,15 +344,20 @@ body {
           flex-wrap: nowrap;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
-          flex: 1 0 auto;
-  left: -50%;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  height: 100%; }
+          flex: 1 0 auto; }
+
+#about-box-tab {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 75%;
+  content: '>';
+  font-weight: 400;
+  background-color: #bfbfbf;
+  padding: 0.5em;
+  border-radius: 50%; }
 
 #about-box.active {
   -webkit-transform: translateX(100%);
@@ -521,7 +534,7 @@ body {
   display: block;
   margin: 2% auto; }
 
-.music-content-wrapper {
+.music-box-content-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -660,6 +673,12 @@ body {
   font-weight: 300;
   text-align: left;
   margin: 5% 2% 2%; }
+
+.projects-text-aside {
+  display: block;
+  margin: 0.5em auto;
+  font-size: 90%;
+  font-weight: 400; }
 
 .projects-github-link {
   font-weight: 400;
