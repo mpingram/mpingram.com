@@ -267,7 +267,6 @@ $(document).ready( function init(){
 	};
 
 	var iconClickHandler = function(event){
-		console.log(event);
 		var id = event.currentTarget.id;
 		if (id === 'about'){
 			if (!locals.svgLinesDrawn){
@@ -301,8 +300,7 @@ $(document).ready( function init(){
 	});
 
 
-	// redraw about-skill svg lines on window resize
-	$(window).resize( drawSVG );
+
 
 
 
@@ -312,9 +310,11 @@ $(document).ready( function init(){
 
 	// end EVENT HANDLERS
 	// ======================
-
-
 	window.onload = loadBandcampPlayer();
+
+	// redraw about-skill svg lines on window resize
+	window.onresize = drawSVG;
+	
 
 // end document.ready
 });

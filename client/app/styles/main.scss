@@ -591,10 +591,10 @@ body{
 	align-items: center;
 	flex-wrap: wrap;
 
-	width: 50%;
+	width: 50em;
 }
 #music-player-container{
-	width: auto;
+	flex: 1 0 auto;
 	//width: 50%;
 	//float: left;
 	//background: url('images/loading.gif');
@@ -606,14 +606,16 @@ body{
 	margin: 0 auto;
 }
 .music-text-buttons-container{
+	padding: 0 1em;
 	align-self: center;
-	flex: 0 1 50%;
+	flex: 1 1 50%;
 	display: inline-block;
 }
 .music-text{
 	font-weight: 300;
 }
 .music-buttons-wrapper{
+	margin: 0 auto;
 }
 .music-link-button{
 	width: 15em;
