@@ -906,7 +906,9 @@ body{
 		// TODO: adjust animation time?
 		font-size: 90%;
 	}
-	#centerpiece.collapsed{
+
+	// TODO: adjust this to accomodate js
+	#centerpiece.contact-active{
 		transition: visibility 0s linear 0.25s, opacity 0.25s linear;
 	}
 

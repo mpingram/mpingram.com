@@ -819,7 +819,7 @@ body {
             transform: translateY(100%); }
   #centerpiece {
     font-size: 90%; }
-  #centerpiece.collapsed {
+  #centerpiece.contact-active {
     -webkit-transition: visibility 0s linear 0.25s, opacity 0.25s linear;
     transition: visibility 0s linear 0.25s, opacity 0.25s linear; }
   #contact-info > a {
