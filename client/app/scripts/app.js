@@ -369,10 +369,9 @@ $(document).ready( function init(){
 	var $document = $(document);
 	$document.on('click', '.contact-button', contactBoxClickHandler );
 	$document.on('click', '#websites, #projects, #music, #about' , iconClickHandler );
-	$document.on('click', '#contact-cancel', reset);
 	$document.on('mouseenter mouseleave touchstart touchend', '.about-skills-item', skillsItemHoverHandler);
-
-
+	$document.on('click', '#contact-cancel', reset);
+	$(centerContainer).on('dblclick', reset);
 
 
 
