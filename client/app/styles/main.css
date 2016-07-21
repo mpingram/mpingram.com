@@ -18,6 +18,9 @@ button {
   font-size: 100%;
   vertical-align: baseline; }
 
+a:focus, .button:focus {
+  text-decoration: underline; }
+
 .button {
   font-family: "Source Sans Pro", sans-serif;
   outline: none;
@@ -327,13 +330,26 @@ body {
 .box {
   position: absolute;
   overflow: visible;
+  visibility: hidden;
   background-color: rgba(213, 213, 213, 0.1);
   text-align: center;
   will-change: transform;
-  -webkit-transition: -webkit-transform 1.5s 0.1s ease;
-  transition: -webkit-transform 1.5s 0.1s ease;
-  transition: transform 1.5s 0.1s ease;
-  transition: transform 1.5s 0.1s ease, -webkit-transform 1.5s 0.1s ease; }
+  -webkit-transition: visibility 0s 1.6s linear, -webkit-transform 1.5s 0.1s ease;
+  transition: visibility 0s 1.6s linear, -webkit-transform 1.5s 0.1s ease;
+  transition: transform 1.5s 0.1s ease, visibility 0s 1.6s linear;
+  transition: transform 1.5s 0.1s ease, visibility 0s 1.6s linear, -webkit-transform 1.5s 0.1s ease;
+  tabindex: -1; }
+
+.box > a, .box > .button {
+  tabindex: inherit; }
+
+.box.active {
+  tabindex: 0;
+  visibility: visible;
+  -webkit-transition: visibility 0s linear, -webkit-transform 1.5s 0.1s ease;
+  transition: visibility 0s linear, -webkit-transform 1.5s 0.1s ease;
+  transition: transform 1.5s 0.1s ease, visibility 0s linear;
+  transition: transform 1.5s 0.1s ease, visibility 0s linear, -webkit-transform 1.5s 0.1s ease; }
 
 .box-inner-wrapper {
   width: 100%;

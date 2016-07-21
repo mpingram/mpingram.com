@@ -23,6 +23,10 @@ button{
 	vertical-align: baseline;
 }
 
+a:focus, .button:focus{
+	text-decoration: underline;				
+}
+
 .button{
 	font-family: $sans;
 	outline: none;
@@ -363,12 +367,25 @@ body{
 .box{
 	position: absolute;
 	overflow: visible;
+	visibility: hidden;
 
 	background-color: rgba(213, 213, 213, 0.10);
 	text-align: center;
 
 	will-change: transform;
-	transition: transform 1.5s 0.1s ease;
+	transition: transform 1.5s 0.1s ease,
+				visibility 0s 1.6s linear;
+
+	tabindex: -1;
+}
+.box > a, .box > .button {
+	tabindex: inherit;
+}
+.box.active{
+	tabindex: 0;
+	visibility: visible;
+	transition: transform 1.5s 0.1s ease,
+				visibility 0s linear;
 }
 .box-inner-wrapper{
 
@@ -381,6 +398,7 @@ body{
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
+
 
 
 .pull-tab{
