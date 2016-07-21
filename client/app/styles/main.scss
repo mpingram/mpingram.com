@@ -500,7 +500,7 @@ body{
 .about-image-wrapper{
 	flex: 0.5 0 auto;
 	margin-top: 1.5em;
-	width: 9.5em;
+	width: auto;
 	height: auto;
 	box-sizing: content-box;
 }
@@ -511,12 +511,12 @@ body{
 
 }
 .about-box-heading{
-	flex: 0.25 1 auto;
+	flex: 0.25 0 auto;
 	display: block;
 }
 
 .about-text-bubble{
-	flex: 1 1 auto;
+	flex: 1 0 auto;
 	display: block;
 	width: 30em;
 	margin: auto;
@@ -551,7 +551,8 @@ body{
 
 }
 #svg-container{
-
+	z-index: -1;
+	pointer-events: none;
 }
 .about-skills-svg{
 	position: absolute;
@@ -562,10 +563,14 @@ body{
 
 }
 .about-skills-line{
+	stroke: $lighter-grey;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 99;
+}
+.about-skills-line.highlight{
+	stroke: $light-grey;
 }
 
 
@@ -596,6 +601,9 @@ body{
 	margin: 5px 0;
 	padding: 2% 4%;
 }
+.about-skills-item:hover{
+
+}
 .about-tech-item{
 	font-size: 85%;
 	padding: 1% 2%;
@@ -603,6 +611,9 @@ body{
 	font-weight: 400;
 	display: block;
 	background-color: $lighter-grey;
+}
+.about-tech-item.highlight{
+	background: radial-gradient(circle farthest-corner at 0px 0px, lighten($col-about-accent-light, 5%) 0%, $light-grey 20%);
 }
 
 

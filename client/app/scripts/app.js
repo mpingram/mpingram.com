@@ -13,9 +13,11 @@ $(document).ready( function init(){
 	locals.iconsLocation = undefined;
 	// stores whether about-skills svg lines have been drawn
 	locals.svgLinesDrawn = false;
+	// for about box svg lines:
+	// map skills to technologies
+	locals.skillsTechTable = {};
 	// stores whether bandcamp iframe has been loaded
 	locals.musicPlayerLoaded = false;
-
 
 
 
@@ -126,53 +128,21 @@ $(document).ready( function init(){
 
 		// match skills to technologies via IDs
 		// TODO: brittle, is there a smarter way?
-		var skillTechTable = {
-			'webApps': [
-				'javascript',
-				'angularJS',
-				'jQuery',
-				'html',
-				'css'
-			],
-			'restApi': [
-				'javascript',
-				'nodeJS',
-				'expressJS'
-			],
-			'server': [
-				'javascript',
-				'nodeJS',
-				'expressJS'
-			],
-			'databaseManagement': [
-				'mongoDB',
-				'mongoose',
-				'mySQL'
-			],
-			'webDeployment': [
-				'git',
-				'AWS'
-			],
-			'webDesign': [
-				'html',
-				'css',
-				'illustrator', 
-				'jQuery'
-			] 
-		};
+
 
 		// create svg object and append it to DOM
 		var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 		svg.setAttributeNS(null, 'class','about-skills-svg');
 		svgContainer.append(svg);
 
-		var drawLine = function(positionObj){
+		function drawLine(positionObj, skillID){
 
+			var lineClass = skillID + '-line';
 
 			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
-			svgLine.setAttributeNS(null, 'class','about-skills-line');
+			svgLine.setAttributeNS(null, 'class','about-skills-line' + ' ' + lineClass);
 			svgLine.setAttributeNS(null, 'stroke-width','1px');
-			svgLine.setAttributeNS(null, 'stroke','#B7B7B7');
+			//svgLine.setAttributeNS(null, 'stroke','#B7B7B7');
 
 			svgLine.setAttributeNS(null, 'x1', positionObj.x1);
 			svgLine.setAttributeNS(null, 'y1', positionObj.y1);
@@ -180,25 +150,64 @@ $(document).ready( function init(){
 			svgLine.setAttributeNS(null, 'y2', positionObj.y2);
 			svg.appendChild(svgLine);
 
-		};
+		}
 
 
 		// stick tech jQuery element into container object, we'll need it soon.
 		$('#about-tech-column').find('.about-tech-item').each(function(index, elem){
 			techItems[elem.id] = $(this);
 		});
+
+		// keep track of which techs map to which skills
+		locals.skillTechTable = {
+			'webApps': [
+				techItems.javascript,
+				techItems.angularJS,
+				techItems.jQuery,
+				techItems.html,
+				techItems.css,
+			],
+			'restApi': [
+				techItems.javascript,
+				techItems.nodeJS,
+				techItems.expressJS,
+			],
+			'server': [
+				techItems.javascript,
+				techItems.nodeJS,
+				techItems.expressJS,
+			],
+			'databaseManagement': [
+				techItems.mongoDB,
+				techItems.mongoose,
+				techItems.mySQL,
+			],
+			'webDeployment': [
+				techItems.git,
+				techItems.AWS,
+			],
+			'webDesign': [
+				techItems.html,
+				techItems.css,
+				techItems.illustrator, 
+				techItems.jQuery,
+			] 
+		};
+
+
 		// iterate over skill items and draw the svgs we need.
 		$('#about-skills-column').find('.about-skills-item').each(function(){
 			var skillItem = $(this);
+			var skillItemName = skillItem[0].id;
 
 			// stick skill jQuery element into container object, we'll need it to
 			// efficiently update the svg lines on window.resize events.
-			skillItems[skillItem[0].id] = skillItem;
+			skillItems[skillItemName] = skillItem;
 			var skillPosition =  skillItem.position();
 
 
 			// get the array of tech item IDs associated with this skill
-			var technologies = skillTechTable[skillItem[0].id];
+			var technologies = locals.skillTechTable[skillItemName];
 
 			var positionObj = {
 				// todo: this sucks, i want the mid right
@@ -209,19 +218,33 @@ $(document).ready( function init(){
 			for (var i=0;i<technologies.length;i++){
 
 				// get position of this tech element
-				var techItem = techItems[technologies[i]];
+				var techItem = technologies[i];
 				var techPosition = techItem.position();
 				positionObj.x2 = techPosition.left;
 				positionObj.y2 = techPosition.top + techItem[0].clientHeight/2;
 
 				// draw svg line connecting skill element to tech element
-				drawLine(positionObj);
+				drawLine(positionObj, skillItemName);
 			}
 		});
 
 		locals.svgLinesDrawn = true;
 	}
 
+
+	// highlight svg lines and tech boxes on associated skill hover
+	function skillsItemHoverHandler(event){
+		// highlight svg lines
+		var skillName = event.currentTarget.id;
+		var lineClass = '.' + skillName + '-line';
+		$(lineClass).toggleClass('highlight');
+
+		// highlight tech items
+		var techItemsArray = locals.skillTechTable[skillName];
+		for (var i=0;i<techItemsArray.length;i++){
+			techItemsArray[i].toggleClass('highlight');
+		}
+	}
 	// create iframe for bandcamp player and suppress
 	// its annoying console.log
 	function loadBandcampPlayer(){
@@ -254,12 +277,7 @@ $(document).ready( function init(){
 	// II. EVENT HANDLERS
 	// ====================
 
-	// jquery click event handlers
-	// ---------------------------
-	var $document = $(document);
-	$document.on('click', '.contact-button', contactBoxClickHandler );
-	$document.on('click', '#websites, #projects, #music, #about' , iconClickHandler );
-	$document.on('click', '#contact-cancel', reset);
+	
 
 	
 	// hammerjs initialization and swipe handlers
@@ -346,7 +364,13 @@ $(document).ready( function init(){
 
 
 
-
+	// jquery click event handlers
+	// ---------------------------
+	var $document = $(document);
+	$document.on('click', '.contact-button', contactBoxClickHandler );
+	$document.on('click', '#websites, #projects, #music, #about' , iconClickHandler );
+	$document.on('click', '#contact-cancel', reset);
+	$document.on('mouseenter mouseleave touchstart touchend', '.about-skills-item', skillsItemHoverHandler);
 
 
 

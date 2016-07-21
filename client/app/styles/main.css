@@ -457,7 +457,7 @@ body {
   -webkit-flex: 0.5 0 auto;
           flex: 0.5 0 auto;
   margin-top: 1.5em;
-  width: 9.5em;
+  width: auto;
   height: auto;
   box-sizing: content-box; }
 
@@ -467,14 +467,14 @@ body {
 
 .about-box-heading {
   -webkit-box-flex: 0.25;
-  -webkit-flex: 0.25 1 auto;
-          flex: 0.25 1 auto;
+  -webkit-flex: 0.25 0 auto;
+          flex: 0.25 0 auto;
   display: block; }
 
 .about-text-bubble {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -webkit-flex: 1 0 auto;
+          flex: 1 0 auto;
   display: block;
   width: 30em;
   margin: auto;
@@ -510,6 +510,10 @@ body {
   -webkit-justify-content: space-around;
           justify-content: space-around; }
 
+#svg-container {
+  z-index: -1;
+  pointer-events: none; }
+
 .about-skills-svg {
   position: absolute;
   width: 100%;
@@ -518,10 +522,14 @@ body {
   left: 0; }
 
 .about-skills-line {
+  stroke: #d9d9d9;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 99; }
+
+.about-skills-line.highlight {
+  stroke: #bfbfbf; }
 
 .about-column {
   -webkit-align-self: center;
@@ -560,6 +568,10 @@ body {
   font-weight: 400;
   display: block;
   background-color: #d9d9d9; }
+
+.about-tech-item.highlight {
+  background: -webkit-radial-gradient(circle farthest-corner at 0px 0px, #cedfbf 0%, #bfbfbf 20%);
+  background: radial-gradient(circle farthest-corner at 0px 0px, #cedfbf 0%, #bfbfbf 20%); }
 
 .about-experience-button {
   background-color: #a9c88f; }
