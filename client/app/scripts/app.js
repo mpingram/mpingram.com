@@ -45,7 +45,7 @@ $(document).ready( function init(){
 		locals.iconsLocation = undefined;
 		locals.activeBox = undefined;
 		$contactBox.addClass('hidden');
-		$centerpiece.removeClass('collapsed');
+		$centerpiece.removeClass('collapsed contact-active');
 		$icons.removeClass('up down left right hidden');
 		$('.active').removeClass('active');
 	};

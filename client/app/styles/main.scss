@@ -364,8 +364,6 @@ body{
 	position: absolute;
 	overflow: visible;
 
-
-
 	background-color: rgba(213, 213, 213, 0.10);
 	text-align: center;
 
@@ -374,14 +372,16 @@ body{
 }
 .box-inner-wrapper{
 
+
 	width: 100%;
 	height: 100%;
 
 	position: relative;
+
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-
 }
+
 
 .pull-tab{
 	// on non-mobile: hide pull-tabs
@@ -480,7 +480,7 @@ body{
 
 
 .about-image-wrapper{
-	flex: 1 0 auto;
+	flex: 0.5 0 auto;
 	margin-top: 1.5em;
 	width: 9.5em;
 	height: auto;
@@ -493,15 +493,15 @@ body{
 
 }
 .about-box-heading{
-	flex: 1 0 auto;
+	flex: 0.25 1 auto;
 	display: block;
 }
 
 .about-text-bubble{
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 	display: block;
 	width: 30em;
-	margin: 1em auto;
+	margin: auto;
 	padding-bottom: 0.5em;
 	border-bottom: 1px solid $light-grey;
 }
@@ -823,6 +823,9 @@ body{
 		// parent flex properties
 		align-items: center;
 	}
+	.about-text-bubble{
+		width: 90%;
+	}
 	.about-skills-bubble{
 		width: 100%;
 	}
@@ -849,7 +852,7 @@ body{
 }
 
 // breakpoint at which boxes cover entire screen
-@media(max-width: 700px){
+@media(max-width: 850px){
 	.pull-tab{
 		display: block;
 	}
