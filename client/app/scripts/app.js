@@ -375,13 +375,15 @@ $(document).ready( function init(){
 
 
 
-	// end EVENT HANDLERS
-	// ======================
-	window.onload = loadBandcampPlayer();
+	// window event handlers
 
+	window.onload = loadBandcampPlayer();
 	// redraw about-skill svg lines on window resize
 	window.onresize = drawSVG;
 	
+
+	// end EVENT HANDLERS
+	// ======================
 
 // end document.ready
 });

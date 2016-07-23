@@ -27,6 +27,7 @@ a:focus, .button:focus{
 	text-decoration: underline;				
 }
 
+
 .button{
 	font-family: $sans;
 	outline: none;
@@ -268,6 +269,9 @@ body{
 .contact-submit-button:hover{
 	background-color: $col-about-accent-light;
 }
+.contact-submit-button:active{
+	background: darken($col-about-accent, 5%);
+}
 .contact-cancel-button{
 	margin: 1em auto;
 	padding: 1em;
@@ -281,6 +285,10 @@ body{
 .contact-cancel-button:hover{
 	background-color: $light-grey;
 	color: $lightest-grey;
+}
+.contact-cancel-button:active{
+	background: $grey;
+	border-color: $grey;
 }
 
 
@@ -630,6 +638,9 @@ body{
 .about-experience-button:hover{
 	background-color: $col-about-accent-light;
 }
+.about-experience-button:active{
+	background-color: darken($col-about-accent, 5%);
+}
 
 .about-contact-wrapper{
 	//margin-top: 2%;
@@ -637,7 +648,7 @@ body{
 
 .about-contact-button{
 	color: darken($col-about-accent, 10%);
-	margin: 7% auto;
+	margin: 1em auto;
 	padding: 1% 2%;
 	font-size: 130%;
 	font-weight: 400;
@@ -651,6 +662,10 @@ body{
 	border-color: $col-about-accent-light;
 	background-color: $col-about-accent-light;
 	color: $lightest-grey;
+}
+.about-contact-button:active{
+	background-color: darken($col-about-accent, 5%);
+	border-color: darken($col-about-accent, 5%);
 }
 
 // music window
@@ -735,6 +750,7 @@ body{
 
 .websites-contact-button{
 	color: darken($col-websites-accent, 10%);
+	width: auto;
 	border: 3px solid $col-websites-accent;
 	padding: 1% 2%;
 	font-size: 130%;
@@ -744,7 +760,10 @@ body{
 .websites-contact-button:hover{
 	background-color: $col-websites-accent;
 	color: $lightest-grey;
-
+}
+.websites-contact-button:active{
+	background-color: darken($col-websites-accent, 5%);
+	border-color: darken($col-websites-accent, 5%);
 }
 
 
@@ -833,10 +852,12 @@ body{
 	color: $lightest-grey;
 	float: left;
 }
-.projects-github-link:hover{
-	background-color: darken($col-projects-accent, 5%);
+.projects-github-link:focus, .projects-github-link:hover{
+	background-color: lighten($col-projects-accent, 5%);
 }
-
+.projects-github-link:active{
+	background-color: darken($col-projects-accent, 5%);		
+}
 
 
 

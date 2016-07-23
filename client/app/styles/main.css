@@ -236,6 +236,9 @@ body {
 .contact-submit-button:hover {
   background-color: #C1D7AE; }
 
+.contact-submit-button:active {
+  background: #9cbf7e; }
+
 .contact-cancel-button {
   margin: 1em auto;
   padding: 1em;
@@ -248,6 +251,10 @@ body {
 .contact-cancel-button:hover {
   background-color: #bfbfbf;
   color: #f7f7f7; }
+
+.contact-cancel-button:active {
+  background: #a6a6a6;
+  border-color: #a6a6a6; }
 
 #icons-wrapper {
   width: 100%;
@@ -582,9 +589,12 @@ body {
 .about-experience-button:hover {
   background-color: #C1D7AE; }
 
+.about-experience-button:active {
+  background-color: #9cbf7e; }
+
 .about-contact-button {
   color: #8fb76d;
-  margin: 7% auto;
+  margin: 1em auto;
   padding: 1% 2%;
   font-size: 130%;
   font-weight: 400;
@@ -598,6 +608,10 @@ body {
   border-color: #C1D7AE;
   background-color: #C1D7AE;
   color: #f7f7f7; }
+
+.about-contact-button:active {
+  background-color: #9cbf7e;
+  border-color: #9cbf7e; }
 
 #music-box {
   bottom: -50%;
@@ -695,6 +709,7 @@ body {
 
 .websites-contact-button {
   color: #f46134;
+  width: auto;
   border: 3px solid #F78764;
   padding: 1% 2%;
   font-size: 130%;
@@ -704,6 +719,10 @@ body {
 .websites-contact-button:hover {
   background-color: #F78764;
   color: #f7f7f7; }
+
+.websites-contact-button:active {
+  background-color: #f6744c;
+  border-color: #f6744c; }
 
 #projects-box {
   right: -50%;
@@ -785,7 +804,10 @@ body {
   color: #f7f7f7;
   float: left; }
 
-.projects-github-link:hover {
+.projects-github-link:focus, .projects-github-link:hover {
+  background-color: #249bc4; }
+
+.projects-github-link:active {
   background-color: #1c7998; }
 
 @media (max-width: 1100px) {
