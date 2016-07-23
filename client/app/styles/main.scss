@@ -570,7 +570,7 @@ body{
 	z-index: 99;
 }
 .about-skills-line.highlight{
-	stroke: $light-grey;
+	stroke: $grey;
 }
 
 
@@ -594,11 +594,12 @@ body{
 	display: block;
 	width: auto;
 	border-radius: 5px;
+	cursor: default;
 
 }
 .about-skills-item{
 	background-color: $col-about-accent-light;
-	margin: 5px 0;
+	margin: 10px 0;
 	padding: 2% 4%;
 }
 .about-skills-item:hover{
@@ -613,7 +614,7 @@ body{
 	background-color: $lighter-grey;
 }
 .about-tech-item.highlight{
-	background: radial-gradient(circle farthest-corner at 0px 0px, lighten($col-about-accent-light, 5%) 0%, $light-grey 20%);
+	background: $light-grey;
 }
 
 

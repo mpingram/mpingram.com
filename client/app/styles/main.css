@@ -529,7 +529,7 @@ body {
   z-index: 99; }
 
 .about-skills-line.highlight {
-  stroke: #bfbfbf; }
+  stroke: #a6a6a6; }
 
 .about-column {
   -webkit-align-self: center;
@@ -554,11 +554,12 @@ body {
 .about-skills-item, .about-tech-item {
   display: block;
   width: auto;
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: default; }
 
 .about-skills-item {
   background-color: #C1D7AE;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 2% 4%; }
 
 .about-tech-item {
@@ -570,8 +571,7 @@ body {
   background-color: #d9d9d9; }
 
 .about-tech-item.highlight {
-  background: -webkit-radial-gradient(circle farthest-corner at 0px 0px, #cedfbf 0%, #bfbfbf 20%);
-  background: radial-gradient(circle farthest-corner at 0px 0px, #cedfbf 0%, #bfbfbf 20%); }
+  background: #bfbfbf; }
 
 .about-experience-button {
   background-color: #a9c88f; }

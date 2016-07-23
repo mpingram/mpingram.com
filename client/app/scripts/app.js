@@ -176,8 +176,6 @@ $(document).ready( function init(){
 				techItems.javascript,
 				techItems.nodeJS,
 				techItems.expressJS,
-			],
-			'databaseManagement': [
 				techItems.mongoDB,
 				techItems.mongoose,
 				techItems.mySQL,
@@ -185,13 +183,19 @@ $(document).ready( function init(){
 			'webDeployment': [
 				techItems.git,
 				techItems.AWS,
+				techItems.taskRunners,
 			],
 			'webDesign': [
 				techItems.html,
 				techItems.css,
 				techItems.illustrator, 
+			],
+			'frontend': [
+				techItems.html,
+				techItems.css,
 				techItems.jQuery,
-			] 
+				techItems.taskRunners,
+			],
 		};
 
 
@@ -209,19 +213,16 @@ $(document).ready( function init(){
 			// get the array of tech item IDs associated with this skill
 			var technologies = locals.skillTechTable[skillItemName];
 
-			var positionObj = {
-				// todo: this sucks, i want the mid right
-				// can use clientHeight/clientWidth jquery obj props to fix
-				'x1':skillPosition.left + skillItem[0].clientWidth,
-				'y1':skillPosition.top + skillItem[0].clientHeight/2
-			};
+			var positionObj = {};
+			positionObj.x1 = skillPosition.left + skillItem[0].clientWidth;
+			positionObj.y1 = skillPosition.top + skillItem[0].clientHeight*0.75;
 			for (var i=0;i<technologies.length;i++){
 
 				// get position of this tech element
 				var techItem = technologies[i];
 				var techPosition = techItem.position();
 				positionObj.x2 = techPosition.left;
-				positionObj.y2 = techPosition.top + techItem[0].clientHeight/2;
+				positionObj.y2 = techPosition.top + techItem[0].clientHeight*0.75;
 
 				// draw svg line connecting skill element to tech element
 				drawLine(positionObj, skillItemName);
@@ -368,7 +369,7 @@ $(document).ready( function init(){
 	// ---------------------------
 	var $document = $(document);
 	$document.on('click', '.contact-button', contactBoxClickHandler );
-	$document.on('click', '#websites, #projects, #music, #about' , iconClickHandler );
+	$document.on('click', '#websites, #projects, #music, #about', iconClickHandler );
 	$document.on('mouseenter mouseleave touchstart touchend', '.about-skills-item', skillsItemHoverHandler);
 	$document.on('click', '#contact-cancel', reset);
 	$(centerContainer).on('dblclick', reset);

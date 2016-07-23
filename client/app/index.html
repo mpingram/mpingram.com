@@ -80,8 +80,11 @@
 			<h3 class='heading about-box-heading'>Hi, I'm Michael!</h3>
 
 			<div class='bubble about-text-bubble'>
-				<p>I'm a self-taught developer with a year's worth of experience building responsive websites, web apps, and web APIs. I'm based in Chicago, I make electronic music in my spare time, and I live for the sweet rush of not knowing how to do something and then figuring out how to do it.</p>
-				<p>[here's what i can do, here's a call to action]
+				<p>
+				I'm a self-taught developer with a year's worth of experience building responsive websites, web apps, and REST-based backends. I'm based in Chicago, I make electronic music in my spare time, and I live for the sweet rush of not knowing how to do something and then figuring out how to do it.
+				</p>
+				<p>
+				
 				</p>
 			</div>
 
@@ -99,28 +102,35 @@
 
 						
 
+						<div class='about-skills-item' id='webDesign'>
+							Web Design, UX Prototyping
+						</div>
+						<div class='about-skills-item' id='frontend'>
+							Frontend Web Development
+						</div>
 						<div class='about-skills-item' id='webApps'>
 							Web app programming
 						</div>
-						<div class='about-skills-item' id='restApi'>
-							REST API [construction]
-						</div>
 						<div class='about-skills-item' id='server'>
-							Server [building/routing]
-						</div>
-						<div class='about-skills-item' id='databaseManagement'>
-							Database [building and interaction]
+							Backend programming, API creation
 						</div>
 						<div class='about-skills-item' id='webDeployment'>
-							Deployment to the web [cms? aws?]
+							Deployment to the web
 						</div>
-						<div class='about-skills-item' id='webDesign'>
-							Mobile-responsive design
-						</div>
+
 					</div>
 
 					<div class='about-column' id='about-tech-column'>
 						<div class='circle-top'>
+							<div class='about-tech-item' id='html'>
+								HTML5
+							</div>
+							<div class='about-tech-item' id='css'>
+								CSS3, SASS, LESS
+							</div>
+							<div class='about-tech-item' id='illustrator'>
+								Illustrator
+							</div>
 							<div class='about-tech-item' id='javascript'>
 								Javascript (ES6)
 							</div>
@@ -137,15 +147,6 @@
 							<div class='about-tech-item' id='jQuery'>
 								jQuery
 							</div>
-							<div class='about-tech-item' id='html'>
-								HTML5
-							</div>
-							<div class='about-tech-item' id='css'>
-								CSS3
-							</div>
-							<div class='about-tech-item' id='illustrator'>
-								Illustrator
-							</div>
 						</div>
 						<div class='circle-bottom'>
 							<div class='about-tech-item' id='mongoDB'>
@@ -157,17 +158,14 @@
 							<div class='about-tech-item' id='mySQL'>
 								MySQL
 							</div>
-							<div class='about-tech-item' id='SASS'>
-								SASS, LESS
-							</div>
 							<div class='about-tech-item' id='taskRunners'>
 								Task runners (Gulp, Grunt)
 							</div>
 							<div class='about-tech-item' id='AWS'>
-							Amazon Web Services
+								Amazon Web Services
 							</div>
 							<div class='about-tech-item' id='git'>
-							Git
+								Git
 							</div>
 						</div>
 					</div>
@@ -236,10 +234,21 @@
 				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.svg'>
 				<div class='projects-text'>
 					<p>
-						Nonprofit organizations with hospitality-based services have a hard time when it comes to event organizing. They either need to allocate large amounts of their budget for professional event management software or work with cheaper and less professional options, like [free evite systems].
+						Nonprofit organizations have a hard time when it comes to event organizing. In order to [deal with] common issues such as keeping track of the catering needs of several events in the same week or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, such as free e-vite systems and shared calendars.
 					</p>
 					<p>
-						The goal of EventWindow is to provide a simple, highly integratable [say what you mean by integratable] app allowing for event planning with a focus on the administrative side: allocating and tracking resources for events, such as parking, audio/visual equipment, and setup time. EventWindow is designed to be 
+						EventWindow is a web app that solves this problem by providing event organizing functionality which is simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system which exactly matches their needs. The EventWindow app is designed to be easy to integrate into existing websites [...].
+					</p>
+					<p>
+						Out of the box, EventWindow [has three core features]:
+						<ul class='projects-text-list'>
+							<li>an event dashboard, showing a searchable timeline of upcoming events (see image)</li>
+							<li>event pages, which provide a stable link to each event and display each event's resource needs, such as room set-up, catering, and audio-visual equipment</li>
+							<li>an administrator view, which allows privileged users to manage [permissions].</li>
+						</ul>
+					</p>
+					<p>
+						The app is designed to interact with a [xxx-compliant] REST API [link], and can run on any server environment which implements one. The distribution includes an example server implementation using Node.js, Express, and MongoDB. For more details, see the github documentation. 
 					</p>
 					<p class='projects-text-aside'> This project is in early development.
 					</p>
@@ -261,10 +270,16 @@
 					<img class='projects-thumbnail acrobat-mailmerge-thumbnail' alt='Acrobat mailmerge - a script allowing for variable data printing in Adobe Acrobat.' src='images/toy-template.svg'>
 					<div class='projects-text'>
 						<p>
-						Variable data printing, if you didn't know, is how businesses do things like print your name and address on a letter. Data (for example, your name and address) is transferred directly to the letter as it prints - imagine the waste if a business needed to save a thousand copies of the same letter, each with a different name and address printed on them.
+						If you've ever had the occasion to send a letter to a thousand different people, you likely know what a <a class='link' href='https://en.wikipedia.org/wiki/Mail_merge' target='_blank'>mailmerge</a> is—a functionality in MS Word and other word-processing software that allows a template document to be filled in with data from another source, allowing for automation of tasks such as, for example, printing a thousand envelope labels from a list of addresses.
 						</p>
 						<p>
-						If you want to print via .pdf files, however, that's the way you have to do it: Adobe Acrobat has no native support for mailmerging or variable data printing. The Acrobat Mailmerge script adds that support by making creative use of Acrobat's form fields, updating them with data from an excel spreadsheet and silently printing the document.
+						This is all well and good if you're working with a Word document, but what if you're printing something more complicated? For example, imagine that instead of printing envelope labels, you're printing a brochure that your designer has just finished and sent you in .pdf form, and you want each copy of the brochure you send out to acknowledge the addressee by name. (You've wisely decided that 'Dear Recipient' is probably a turn-off.)
+						</p>
+						<p>
+						Unlike Word documents, however, .pdf documents are (generally speaking) not editable, and Adobe Acrobat has no support for word processing features like mailmerging. So, the only way to print a thousand brochures which are [addressed to] a thousand different people is to create and save a thousand different .pdf files, like an animal.
+						</p>
+						<p>
+						The Acrobat Mailmerge script adds that support by making creative use of Acrobat's form fields, updating them with data from an excel spreadsheet and silently printing each document. It's definitely a hack, but it's a hack that can save a few hundred gigabytes of hard drive space (and has, for my old printing room!).
 						</p>
 					</div>
 				</div>
