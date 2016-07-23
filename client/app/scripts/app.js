@@ -246,8 +246,7 @@ $(document).ready( function init(){
 			techItemsArray[i].toggleClass('highlight');
 		}
 	}
-	// create iframe for bandcamp player and suppress
-	// its annoying console.log
+	// create iframe for bandcamp player
 	function loadBandcampPlayer(){
 
 		// DEBUG: does this block?
