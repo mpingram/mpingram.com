@@ -1,16 +1,17 @@
-var gulp = require('gulp');
-var gulpIf = require('gulp-if');
-var del = require('del');
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var useref = require('gulp-useref');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var cssmin = require('gulp-cssmin');
-var rename = require('gulp-rename');
-var autoprefixer = require('autoprefixer');
+const browserSync = require('browser-sync');
+const gulp = require('gulp');
+const gulpIf = require('gulp-if');
+const del = require('del');
+const runSequence = require('run-sequence');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const useref = require('gulp-useref');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+const autoprefixer = require('autoprefixer');
+
 
 
 

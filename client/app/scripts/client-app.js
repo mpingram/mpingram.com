@@ -377,7 +377,7 @@ $(document).ready( function init(){
 
 	// window event handlers
 
-	window.onload = loadBandcampPlayer();
+	$(window).load(loadBandcampPlayer);
 	// redraw about-skill svg lines on window resize
 	window.onresize = drawSVG;
 	
