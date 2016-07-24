@@ -95,7 +95,7 @@ body {
   font-weight: 400;
   font-size: 110%;
   position: relative;
-  width: 100%;
+  width: auto;
   max-height: 5%;
   margin-bottom: 1.5em;
   -webkit-transition: visibility 0s 0s linear , opacity 0.25s 0.5s linear;
@@ -121,8 +121,8 @@ body {
 #centerpiece.collapsed {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
+  -webkit-transition: visibility 0s linear 0.5s,  opacity 0.5s linear;
+  transition: visibility 0s linear 0.5s,  opacity 0.5s linear; }
 
 #name {
   margin: 10px 0 0 0; }
@@ -136,6 +136,7 @@ body {
   font-weight: 400; }
 
 .link {
+  cursor: pointer;
   font-weight: 400; }
 
 .link:hover {
@@ -709,7 +710,7 @@ body {
 
 .websites-contact-button {
   color: #f46134;
-  width: auto;
+  min-width: 10em;
   border: 3px solid #F78764;
   padding: 1% 2%;
   font-size: 130%;
@@ -769,13 +770,17 @@ body {
           flex: 1 0 auto;
   border: 1px solid #bfbfbf;
   border-radius: 12px;
-  margin: 2% 2% 1%; }
+  margin-top: 2%;
+  margin-left: 1.5em; }
 
 .projects-thumbnail {
   display: inline-block;
   position: relative;
   float: left;
-  margin: 2% 2% 0; }
+  margin: 2% 2% 0;
+  padding: 1%;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px; }
 
 .event-manager-thumbnail {
   float: left; }
@@ -793,6 +798,9 @@ body {
   margin: 0.5em auto;
   font-size: 90%;
   font-weight: 400; }
+
+.projects-text-list > li {
+  list-style-image: url(../images/bullet.svg); }
 
 .projects-github-link {
   font-weight: 400;
@@ -900,14 +908,10 @@ body {
     -webkit-transform: translateY(200%);
             transform: translateY(200%); }
   .box {
-    -webkit-transition: -webkit-transform 1.25s ease;
-    transition: -webkit-transform 1.25s ease;
-    transition: transform 1.25s ease;
-    transition: transform 1.25s ease, -webkit-transform 1.25s ease; }
-  /*.button{
-		margin-top: 7%;
-		margin-bottom: 7%;
-	}*/
+    -webkit-transition: visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
+    transition: visibility 0s 1.25s linear, -webkit-transform 1.25s ease;
+    transition: transform 1.25s ease, visibility 0s 1.25s linear;
+    transition: transform 1.25s ease, visibility 0s 1.25s linear, -webkit-transform 1.25s ease; }
   #about-box {
     left: -100%;
     width: 100%; }

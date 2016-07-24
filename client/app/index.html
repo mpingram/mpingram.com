@@ -31,7 +31,7 @@
 			<span id='name' class='heading'>Michael Ingram</span>
 			<span id='title' class='subheading'>Full Stack Web Developer</span>
 			<span id='contact-info'>
-				<a href='https://github.com/mpingram' target='_blank' class='link contact-link'>github.com/mpingram</a> || <a href='https://www.linkedin.com/in/mpingram' target='_blank' class='link contact-link'>linkedin.com/in/mpingram</a>
+				<a href='https://github.com/mpingram' target='_blank' class='link centerpiece-social-link'>github.com/mpingram</a> || <a href='https://www.linkedin.com/in/mpingram' target='_blank' class='link centerpiece-social-link'>linkedin.com/in/mpingram</a>
 			</span>
 		</div>
 		</div>
@@ -229,26 +229,25 @@
 				EventWindow
 				</span>
 				<span class='subheading projects-subheading'>
-				an open-source web app for nonprofit event planning
+				an open-source web app for nonprofit event management
 				</span>
-				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.svg'>
+				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.png'>
 				<div class='projects-text'>
 					<p>
-						Nonprofit organizations have a hard time when it comes to event organizing. In order to [deal with] common issues such as keeping track of the catering needs of several events in the same week or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, such as free e-vite systems and shared calendars.
+						Nonprofit organizations have a hard time when it comes to event organizing. In order to deal with common problems like keeping track of the catering needs of several events or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, like free e-vite systems.
 					</p>
 					<p>
-						EventWindow is a web app that solves this problem by providing event organizing functionality which is simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system which exactly matches their needs. The EventWindow app is designed to be easy to integrate into existing websites [...].
+						EventWindow is an event management web app with the goal of solving this problem by being simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system that suits their needs. The base EventWindow app is designed to be easy to integrate into existing websites and extended with more features by anyone with web programming experience.
 					</p>
 					<p>
-						Out of the box, EventWindow [has three core features]:
+						Out of the box, EventWindow has two core features:
 						<ul class='projects-text-list'>
-							<li>an event dashboard, showing a searchable timeline of upcoming events (see image)</li>
-							<li>event pages, which provide a stable link to each event and display each event's resource needs, such as room set-up, catering, and audio-visual equipment</li>
-							<li>an administrator view, which allows privileged users to manage [permissions].</li>
+							<li>an event dashboard, showing a searchable timeline of upcoming events—intended as a tool for tracking resources and meeting the needs of each event, like room setup, cleaning, and audio-visual equipment.</li>
+							<li>event pages, which provide a stable link to each event. On an event's event page, event organizers can submit requests for resources for their event, which administrator users can approve or edit.</li>
 						</ul>
 					</p>
 					<p>
-						The app is designed to interact with a [xxx-compliant] REST API [link], and can run on any server environment which implements one. The distribution includes an example server implementation using Node.js, Express, and MongoDB. For more details, see the github documentation. 
+						The app is designed to interact with a minimal REST API, and can run on any server environment which implements one. (See the github documentation for more details about that.) The distribution includes an example server implementation using Node.js, Express, and MongoDB.
 					</p>
 					<p class='projects-text-aside'> This project is in early development.
 					</p>
@@ -270,16 +269,13 @@
 					<img class='projects-thumbnail acrobat-mailmerge-thumbnail' alt='Acrobat mailmerge - a script allowing for variable data printing in Adobe Acrobat.' src='images/toy-template.svg'>
 					<div class='projects-text'>
 						<p>
-						If you've ever had the occasion to send a letter to a thousand different people, you likely know what a <a class='link' href='https://en.wikipedia.org/wiki/Mail_merge' target='_blank'>mailmerge</a> is—a functionality in MS Word and other word-processing software that allows a template document to be filled in with data from another source, allowing for automation of tasks such as, for example, printing a thousand envelope labels from a list of addresses.
+						If you've ever had the occasion to send a letter to a thousand different people, you likely know what a mailmerge is—a <a class='link' href='https://en.wikipedia.org/wiki/Mail_merge' target='_blank'>functionality</a> in MS Word and other word-processing software, also known as <a class='link' href='https://en.wikipedia.org/wiki/Variable_data_printing' target='_blank'>variable data printing</a>, that allows a template document to be filled in with data from another source, allowing for automation of tasks such as, for example, printing a thousand envelope labels from a list of addresses.
 						</p>
 						<p>
-						This is all well and good if you're working with a Word document, but what if you're printing something more complicated? For example, imagine that instead of printing envelope labels, you're printing a brochure that your designer has just finished and sent you in .pdf form, and you want each copy of the brochure you send out to acknowledge the addressee by name. (You've wisely decided that 'Dear Recipient' is probably a turn-off.)
+						Unlike Word documents, however, .pdf documents are (generally speaking) not editable, and Adobe Acrobat has no support for word processing features like mailmerging. So, if you want to mailmerge anything to a .pdf document, the only way to do that is to create and save a different .pdf file for each address, like an animal.
 						</p>
 						<p>
-						Unlike Word documents, however, .pdf documents are (generally speaking) not editable, and Adobe Acrobat has no support for word processing features like mailmerging. So, the only way to print a thousand brochures which are [addressed to] a thousand different people is to create and save a thousand different .pdf files, like an animal.
-						</p>
-						<p>
-						The Acrobat Mailmerge script adds that support by making creative use of Acrobat's form fields, updating them with data from an excel spreadsheet and silently printing each document. It's definitely a hack, but it's a hack that can save a few hundred gigabytes of hard drive space (and has, for my old printing room!).
+						The Acrobat Mailmerge script adds that support by making creative use of Acrobat's form fields, updating them with data from a .csv file and silently printing each document using the default printer settings.
 						</p>
 					</div>
 				</div>
