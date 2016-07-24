@@ -12,6 +12,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+// TODO: static directory
+app.use(express.static('./dist'));
+// TODO: route handling for email business. Do that with router? In
+// case you want something more complicated l8r?
 
 // in development
 // -----------------------
@@ -50,11 +54,6 @@ if (app.get('env') === 'production'){
 	});
 }
 
-
-// routes
-// TODO: there's something im not grokking here
-var routes = require('./router/index.js');
-var router = require('./router')(app);
 
 // when booted:
 console.log('App running in ' + app.settings.env + ' mode.');

@@ -1,11 +1,12 @@
 {
   "name": "mpingram.com-server",
-  "private":true,
+  "private": true,
   "version": "1.0.0",
   "description": "personal website",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production && nodemon ./bin/www"
   },
   "author": "Michael Ingram",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "morgan": "^1.7.0",
+    "nodemon": "^1.9.2",
     "serve-favicon": "^2.3.0"
   }
 }

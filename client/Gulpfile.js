@@ -8,6 +8,8 @@ var imagemin = require('gulp-imagemin');
 var useref = require('gulp-useref');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
 var autoprefixer = require('autoprefixer');
 
 
@@ -24,9 +26,14 @@ gulp.task('sass', function(){
 			browserSync.notify(err.message, 3000);
 			this.emit('end');
 		}).
-		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5%'] }) ]) ).
+		// autoprefix css
+		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5% in US'] }) ]) ).
+		// minify css
+		pipe(cssmin()).
+		// rename minified css
+		pipe(rename({suffix:'.min'})).
 		// send to production dist dir
-		pipe(gulp.dest('app/styles')).
+		pipe(gulp.dest('../server/dist/styles')).
 		pipe(browserSync.reload({
 			stream: true
 		}));
@@ -34,9 +41,6 @@ gulp.task('sass', function(){
 
 // concatenate and minify scripts
 gulp.task('useref', function(){
-	// only applies to top level html
-	// so that views and partials don't
-	// get tossed into /dist
 	return gulp.src('app/*.html').
 		pipe(useref()).
 		// if javascript, minify it
@@ -45,9 +49,23 @@ gulp.task('useref', function(){
 		pipe(gulp.dest('../server/dist'));
 });
 
+// minify images
 gulp.task('imagemin', function(){
 	return gulp.src('app/images/*').
 		pipe(imagemin()).
+		pipe(gulp.dest('../server/dist/images'));
+});
+
+
+// move bower dependencies over
+gulp.task('moveBowerComponents', function(){
+	return gulp.src('app/bower_components/**/*.*', {base:'./app'}).
+		pipe(gulp.dest('../server/dist'));
+});
+
+// move the fucking favicon
+gulp.task('moveFavicon', function(){
+	return gulp.src('app/favicon.ico').
 		pipe(gulp.dest('../server/dist'));
 });
 
@@ -81,7 +99,7 @@ gulp.task('watch', ['browserSync','sass'], function(){
 
 // build production dist dir
 gulp.task('build', function(callback){
-	runSequence('clean:dist', ['sass','imagemin','useref'], callback );
+	runSequence('clean:dist', ['moveBowerComponents','moveFavicon','sass','imagemin','useref'], callback );
 });
 
 // compile sass, launch server, and watch
