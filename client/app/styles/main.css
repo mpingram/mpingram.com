@@ -710,12 +710,13 @@ body {
 
 .websites-contact-button {
   color: #f46134;
-  min-width: 10em;
+  min-width: 12em;
+  max-width: auto;
   border: 3px solid #F78764;
-  padding: 1% 2%;
+  padding: 0.5em;
   font-size: 130%;
   font-weight: 400;
-  margin: 2% auto; }
+  margin: 1em auto; }
 
 .websites-contact-button:hover {
   background-color: #F78764;

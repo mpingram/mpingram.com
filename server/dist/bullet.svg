@@ -6,9 +6,8 @@
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
 <svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 width="146" height="146" viewBox="-0.75 -0.75 146 146" enable-background="new -0.75 -0.75 146 146" xml:space="preserve">
+	 width="8" height="8" viewBox="-0.151 -0.151 8 8" enable-background="new -0.151 -0.151 8 8" xml:space="preserve">
 <defs>
 </defs>
-<path fill="none" stroke="#636466" stroke-width="0.5" d="M144.25,141.583c0,1.473-1.194,2.667-2.667,2.667H2.917
-	c-1.473,0-2.667-1.194-2.667-2.667V2.917c0-1.473,1.194-2.667,2.667-2.667h138.667c1.473,0,2.667,1.194,2.667,2.667V141.583z"/>
+<circle fill="none" stroke="#228AAE" stroke-width="2" cx="3.849" cy="3.849" r="2.849"/>
 </svg>

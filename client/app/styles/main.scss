@@ -753,12 +753,13 @@ body{
 
 .websites-contact-button{
 	color: darken($col-websites-accent, 10%);
-	min-width: 10em;
+	min-width: 12em;
+	max-width: auto;
 	border: 3px solid $col-websites-accent;
-	padding: 1% 2%;
+	padding: 0.5em;
 	font-size: 130%;
 	font-weight: 400;
-	margin: 2% auto;
+	margin: 1emgu auto;
 }
 .websites-contact-button:hover{
 	background-color: $col-websites-accent;

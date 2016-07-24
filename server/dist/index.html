@@ -1,61 +1,297 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
-<link rel='stylesheet' type='text/css' href='styles/main.css'>
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+	<meta charset='UTF-8'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+	<link href='styles/main.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+	<!--<link href='fonts/SourceSansPro-Local.css' rel='stylesheet' type='text/css'>-->
+	
 </head>
-
 <body>
+<div id='body-wrapper'>
 
-	<div class='centerpiece'>
+	<div id='contact-box' class='hidden'>
+		<form id='contact-form'>
+			<textarea form='contact-form' class='contact-form-message' type='text' name='message' placeholder='leave a message here...'></textarea>
+			<div class = 'contact-left-wrapper'> 
+				<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
+				<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
+				<input class='button contact-submit-button' type='submit' value='submit'>
+			</div>
+		</form>
+		<button class='button contact-cancel-button' id='contact-cancel'><span class='cancel-icon'></span>cancel</button>
+	</div>
 
-		<img class='headshot' src='images/headshot.png' alt='Michael Ingram'>
-		<span class='and-his-name-is'>Michael Ingram</span>
-		<span class='title'>Full Stack Web Developer</span>
-		<span class='contact'>
-			<a target="_blank" class='contact contact-github' href='https://github.com/mpingram'>github.com/mpingram</a> ||
-			 <a class='contact contact-email' href='mailto:mpingram92@gmail.com'>mpingram92@gmail.com</a>
-		</span>
+	<div id='center-container'>
+
+		<div>
+		<div id='centerpiece'>
+	
+			<span id='name' class='heading'>Michael Ingram</span>
+			<span id='title' class='subheading'>Full Stack Web Developer</span>
+			<span id='contact-info'>
+				<a href='https://github.com/mpingram' target='_blank' class='link centerpiece-social-link'>github.com/mpingram</a> || <a href='https://www.linkedin.com/in/mpingram' target='_blank' class='link centerpiece-social-link'>linkedin.com/in/mpingram</a>
+			</span>
+		</div>
+		</div>
+
+		<div id='icons-wrapper'>
+			<div id='icons'>
+				<button id='about' class='toy unselectable'>
+					<object id='about-icon' class='toy-icon' type='image/svg+xml' data='images/about-toy-large.svg'>
+					</object>
+					<span class='toy-link'>about</span>
+				</button>
+
+				<button id='music' class='toy unselectable'>
+					<object id='music-icon' class='toy-icon' type='image/svg+xml' data='images/music-toy-large.svg'>
+					</object>
+					
+					<span class='toy-link'>music</span>
+				</button>
+
+				<button id='websites' class='toy unselectable'>
+					<object id='websites-icon' class='toy-icon' type='image/svg+xml' data='images/websites-toy-large.svg'>
+					</object>
+					<span class='toy-link'>websites</span>
+				</button>
+
+				<button id='projects' class='toy unselectable'>
+					<object id='projects-icon' class='toy-icon' type='image/svg+xml' data='images/projects-toy-large.svg'>
+					</object>
+					<span class='toy-link'>projects</span>
+				</button>
+			</div>
+		</div>
 	</div>
 
 
-	<div class='toybox'>
+	<div class='box' id='about-box'>
 
-		<div id='about' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/about-toy-neutral.svg'>
-			</object>
-			<a class='toy-link' href=''>about</a>
-		</div>
+		<div class='pull-tab' id='about-box-pull-tab'></div>
+		<div class='box-inner-wrapper about-box-inner-wrapper'>
 
-		<div id='music' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/music-toy-neutral.svg'>
-			</object>
+
+			<div class='about-image-wrapper'>
+				<img class='about-headshot' src='images/headshot.png'/>
+			</div>
+
+			<h3 class='heading about-box-heading'>Hi, I'm Michael!</h3>
+
+			<div class='bubble about-text-bubble'>
+				<p>
+				I'm a self-taught developer with a year's worth of experience building responsive websites, web apps, and REST-based backends. I'm based in Chicago, I <button class='link' onclick='$("#music").trigger("click")'>make electronic music</button> in my spare time, and I live for the sweet rush of not knowing how to do something and then figuring out how to do it.
+				</p>
+				<p>
+				I'm currently working as a freelancer, and always happy for new opportunities to do what I do. Take a look at my skills below, <button class='link' onclick='$("#websites").trigger("click")'>the websites I've built</button>, and <button class='link' onclick='$("#projects").trigger("click")'>my side projects</button>—maybe I can help you with something.
+				</p>
+			</div>
+
+			<h3 class='heading about-skills-heading'>Here's what I can do</h3>
+
+
+			<div class='bubble about-skills-bubble'>
+
+				<div id='svg-container'>
+				</div>
+
+				<div class='about-skills-bubble-flex-wrapper'>
+
+					<div class='about-column' id='about-skills-column'>
+
+						
+
+						<div class='about-skills-item' id='webDesign'>
+							Web Design, UX Prototyping
+						</div>
+						<div class='about-skills-item' id='frontend'>
+							Frontend Web Development
+						</div>
+						<div class='about-skills-item' id='webApps'>
+							Web app programming
+						</div>
+						<div class='about-skills-item' id='server'>
+							Backend programming, API creation
+						</div>
+						<div class='about-skills-item' id='webDeployment'>
+							Deployment to the web
+						</div>
+
+					</div>
+
+					<div class='about-column' id='about-tech-column'>
+						<div class='circle-top'>
+							<div class='about-tech-item' id='html'>
+								HTML5
+							</div>
+							<div class='about-tech-item' id='css'>
+								CSS3, SASS, LESS
+							</div>
+							<div class='about-tech-item' id='illustrator'>
+								Illustrator
+							</div>
+							<div class='about-tech-item' id='javascript'>
+								Javascript (ES6)
+							</div>
+							<div class='about-tech-item' id='nodeJS'>
+								Node.js
+							</div>
+							<div class='about-tech-item' id='expressJS'>
+								Express.js
+							</div>
+							<div class='about-tech-item' id='angularJS'>
+								AngularJS
+							</div>
+
+							<div class='about-tech-item' id='jQuery'>
+								jQuery
+							</div>
+						</div>
+						<div class='circle-bottom'>
+							<div class='about-tech-item' id='mongoDB'>
+								MongoDB
+							</div>
+							<div class='about-tech-item' id='mongoose'>
+								Mongoose
+							</div>
+							<div class='about-tech-item' id='mySQL'>
+								MySQL
+							</div>
+							<div class='about-tech-item' id='taskRunners'>
+								Task runners (Gulp, Grunt)
+							</div>
+							<div class='about-tech-item' id='AWS'>
+								Amazon Web Services
+							</div>
+							<div class='about-tech-item' id='git'>
+								Git
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			
-			<a class='toy-link' href=''>music</a>
+			<div class='about-contact-wrapper'>
+				<span class='subheading'>Want to hire me?</span>
+				<button class='button contact-button about-contact-button'>Get in touch</button>
+			</div>
 		</div>
+	</div>
 
-		<div id='websites' class='toy'>
-			<object class='toy-icon' type='image/svg+xml' data='images/websites-toy-neutral.svg'>
-			</object>
-			<a class = 'toy-link' href=''> websites </a>
+	<div class='box' id='music-box'>
+
+		<div class='pull-tab' id='music-box-pull-tab'></div>
+
+		<div class='box-inner-wrapper music-box-inner-wrapper'>
+			<div class='music-box-content-wrapper'>
+
+				<div id='music-player-container'>
+				</div>
+				<div class='music-text-buttons-container'>
+					<p class='music-text'>
+					I've been making electronic music for the past five years (and still haven't settled on a style). I specialize in house music, although I've been making ambient recently. Take a listen to my most recent work in the player or check out the rest of it (even the bad stuff!) on my bandcamp or soundcloud.
+					</p>
+
+					<div class='music-buttons-wrapper'>
+						<a class='button music-link-button' href='https://nominal.bandcamp.com/' target='_blank'>visit my bandcamp</a>
+						<a class='button music-link-button' href='https://soundcloud.com/nominal_at' target='_blank'>visit my soundcloud</a>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
 
-		<div id='projects' class='toy'>
-			<!-- TODO: stick to css for this one -->
-			<object class='toy-icon' type='image/svg+xml' data='images/toy-template.svg'>
-			</object>
-			<a class = 'toy-link' href=''>projects</a>
+	<div class='box' id='websites-box'>
+		<div class='pull-tab' id='websites-box-pull-tab'></div>
+		<div class='box-inner-wrapper websites-box-innner-wrapper'>
+
+			<div class='websites-contact-wrapper'>
+				<span class='heading'>
+				Like what you see?
+				</span>
+				<span class='subheading'>
+				I'm available for freelance work.
+				</span>
+				<button class='button websites-contact-button contact-button'>Get in touch</button>
+
+			</div>
 		</div>
-
 	</div>
 
 
-<script src='bower_components/jquery/dist/jquery.js'></script>
-<script src='scripts/toys.js'></script>
-<script src='scripts/showoff.js'></script>
+	<div class='box' id='projects-box'>
+		<div class='pull-tab' id='projects-box-pull-tab'></div>
+		<div class='box-inner-wrapper projects-box-inner-wrapper'>
 
+			<div class='projects-wrapper'>
+				<span class='heading projects-heading'>
+				EventWindow
+				</span>
+				<span class='subheading projects-subheading'>
+				an open-source web app for nonprofit event management
+				</span>
+				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.png'>
+				<div class='projects-text'>
+					<p>
+						Nonprofit organizations have a hard time when it comes to event organizing. In order to deal with common problems like keeping track of the catering needs of several events or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, like free e-vite systems.
+					</p>
+					<p>
+						EventWindow is an event management web app with the goal of solving this problem by being simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system that suits their needs. The base EventWindow app is designed to be easy to integrate into existing websites and extended with more features by anyone with web programming experience.
+					</p>
+					<p>
+						Out of the box, EventWindow has two core features:
+						<ul class='projects-text-list'>
+							<li>an event dashboard, showing a searchable timeline of upcoming events—intended as a tool for tracking resources and meeting the needs of each event, like room setup, cleaning, and audio-visual equipment.</li>
+							<li>event pages, which provide a stable link to each event. On an event's event page, event organizers can submit requests for resources for their event, which administrator users can approve or edit.</li>
+						</ul>
+					</p>
+					<p>
+						The app is designed to interact with a minimal REST API, and can run on any server environment which implements one. (See the github documentation for more details about that.) The distribution includes an example server implementation using Node.js, Express, and MongoDB.
+					</p>
+					<p class='projects-text-aside'> This project is in early development.
+					</p>
+				</div>
+				<a class='button projects-github-link projects-eventwindow-button' href='https://github.com/mpingram/eventwindow' target='_blank'>
+				view project on github
+				</a>
+			</div>
+
+			<div class='projects-wrapper'>
+				<span class='heading projects-heading'>
+				Acrobat Mailmerge
+				</span>
+				<span class='subheading projects-subheading'>
+				an Acrobat Javascript extension for variable data printing
+				</span>
+
+				<div class='projects-text-wrapper'>
+					<div class='projects-text'>
+						<p>
+						If you've ever had the occasion to send a letter to a thousand different people, you likely know what a mailmerge is—a <a class='link' href='https://en.wikipedia.org/wiki/Mail_merge' target='_blank'>functionality</a> in MS Word and other word-processing software, also known as <a class='link' href='https://en.wikipedia.org/wiki/Variable_data_printing' target='_blank'>variable data printing</a>, that allows a template document to be filled in with data from another source, allowing for automation of tasks such as, for example, printing a thousand envelope labels from a list of addresses.
+						</p>
+						<p>
+						Unlike Word documents, however, .pdf documents are (generally speaking) not editable, and Adobe Acrobat has no support for word processing features like mailmerging. So, if you want to mailmerge anything to a .pdf document, the only way to do that is to create and save a different .pdf file for each address, like an animal.
+						</p>
+						<p>
+						The Acrobat Mailmerge script adds that support by making creative use of Acrobat's form fields, updating them with data from a .csv file and silently printing each document using the default printer settings.
+						</p>
+					</div>
+				</div>
+				<a class='button projects-github-link projects-acrobat-mailmerge-button' href='https://github.com/mpingram/acrobat-mailmerge' target='_blank'>view project on github</a>
+			</div>	
+		</div>
+	</div>
+
+<!-- end body-wrapper -->
+</div>
+
+<!-- scripts -->
+<script src='bower_components/hammerjs/hammer.min.js'></script>
+<script src='bower_components/jquery/dist/jquery.min.js'></script>
+<script src='scripts/app.js'></script>
+
+
+<!-- end scripts -->
 </body>
-
-
 </html>
