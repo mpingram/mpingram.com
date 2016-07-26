@@ -1,24 +1,37 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const helmet = require('helmet');
+
 
 
 // server
-var app = express();
+// =========
+
+const app = express();
+const contactFormRouter = require('./routes/contact-form-route');
+
+// utils
+// -------
+app.use(helmet());
 app.use(favicon(path.join(__dirname,'dist','favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
-// TODO: static directory
-app.use(express.static('./dist'));
-// TODO: route handling for email business. Do that with router? In
-// case you want something more complicated l8r?
+
+// routes
+// -------------
+// contact form submission
+app.use('/contact', contactFormRouter);
+
+
+// static
+// ------------
 
 // in development
-// -----------------------
 if (app.get('env') === 'development'){
 
 	// use dev-only client directory as client side
@@ -38,11 +51,11 @@ if (app.get('env') === 'development'){
 
 
 // in production
-// -----------------------
-if (app.get('env') === 'production'){
+if (app.settings.env === 'production'){
 
-	// use dist directory as client side (contains minified files)
+	// serve production version of app
 	app.use(express.static(path.join(__dirname, '/dist')));
+
 
 	// don't print stacktrace
 	app.use(function(err, req, res, next) {
@@ -55,6 +68,6 @@ if (app.get('env') === 'production'){
 }
 
 
-// when booted:
+// ========
 console.log('App running in ' + app.settings.env + ' mode.');
 module.exports = app;

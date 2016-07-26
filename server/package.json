@@ -6,7 +6,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=production && nodemon ./bin/www"
+    "start": "set NODE_ENV=production&& nodemon ./bin/www"
   },
   "author": "Michael Ingram",
   "license": "ISC",
@@ -14,8 +14,11 @@
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
+    "helmet": "^2.1.1",
+    "mailgun-js": "^0.7.11",
     "morgan": "^1.7.0",
     "nodemon": "^1.9.2",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "validator": "^5.5.0"
   }
 }

@@ -75,7 +75,6 @@ $(document).ready( function init(){
 		// if box is already open, close it and move the center back to neutral
 		if(locals.activeBox.hasClass('active')){
 			reset();
-		// else move the center and slide in the box
 		} else {
 			move();
 		}
@@ -374,9 +373,23 @@ $(document).ready( function init(){
 	$(centerContainer).on('dblclick', reset);
 
 
+	// contact-form submission event handler
+	var $contactForm = $('#contact-form');
+	$contactForm.on('submit', function(event){
+		// stop the browser from trying to do the same thing
+		event.preventDefault();
+		// send the data
+		$.ajax({
+			type: 'POST',
+			url: 'contact',
+			data: $(this).serialize(),
+		});
+		// close the contact form
+		reset();
+	});
 
 	// window event handlers
-
+	// -----------------------------
 	$(window).load(loadBandcampPlayer);
 	// redraw about-skill svg lines on window resize
 	window.onresize = drawSVG;
