@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset='UTF-8'/>
+	<title>Personal website for Michael Ingram</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
-	<link rel="stylesheet" href="main.min.css">
+	<link rel="stylesheet" href="./styles/main.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 	
 </head>
@@ -12,7 +13,7 @@
 
 	<div id='contact-box' class='hidden'>
 		<form id='contact-form'>
-			<textarea form='contact-form' class='contact-form-message' type='text' name='message' placeholder='leave a message here...'></textarea>
+			<textarea form='contact-form' class='contact-form-message' name='message' placeholder='leave a message here...'></textarea>
 			<div class = 'contact-left-wrapper'> 
 				<input required class='contact-form-name' type='text' name='name' placeholder='your name'>
 				<input required class='contact-form-email' type='email'  name='email' placeholder='your email'>
@@ -73,7 +74,7 @@
 
 
 			<div class='about-image-wrapper'>
-				<img class='about-headshot' src='images/headshot.png'/>
+				<img class='about-headshot' src='images/headshot.png' alt='A very nice headshot of Michael Ingram'/>
 			</div>
 
 			<h3 class='heading about-box-heading'>Hi, I'm Michael!</h3>
@@ -230,25 +231,22 @@
 				<span class='subheading projects-subheading'>
 				an open-source web app for nonprofit event management
 				</span>
-				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.png'>
+				<img class='projects-thumbnail event-manager-thumbnail' alt='A screenshot of the EventWindow dashboard page.' src='images/event-manager-screenshot.png'/>
 				<div class='projects-text'>
-					<p>
-						Nonprofit organizations have a hard time when it comes to event organizing. In order to deal with common problems like keeping track of the catering needs of several events or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, like free e-vite systems.
+					<p>Nonprofit organizations have a hard time when it comes to event organizing. In order to deal with common problems like keeping track of the catering needs of several events or contacting large numbers of attendees, nonprofits need to either allocate large amounts of their budget for commercial event management software or work with cheaper and less professional options, like free e-vite systems.
 					</p>
-					<p>
-						EventWindow is an event management web app with the goal of solving this problem by being simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system that suits their needs. The base EventWindow app is designed to be easy to integrate into existing websites and extended with more features by anyone with web programming experience.
+					<p>EventWindow is an event management web app with the goal of solving this problem by being simple, extensible, and free. Crucially, the app is open source, allowing businesses to treat EventWindow as a baseline upon which to build an event management system that suits their needs. The base EventWindow app is designed to be easy to integrate into existing websites and extended with more features by anyone with web programming experience.
 					</p>
-					<p>
-						Out of the box, EventWindow has two core features:
-						<ul class='projects-text-list'>
-							<li>an event dashboard, showing a searchable timeline of upcoming events—intended as a tool for tracking resources and meeting the needs of each event, like room setup, cleaning, and audio-visual equipment.</li>
-							<li>event pages, which provide a stable link to each event. On an event's event page, event organizers can submit requests for resources for their event, which administrator users can approve or edit.</li>
-						</ul>
+					<p>Out of the box, EventWindow has two core features:</p>
+					<ul class='projects-text-list'>
+						<li>an event dashboard, showing a searchable timeline of upcoming events—intended as a tool for tracking resources and meeting the needs of each event, like room setup, cleaning, and audio-visual equipment.
+						</li>
+						<li>event pages, which provide a stable link to each event. On an event's event page, event organizers can submit requests for resources for their event, which administrator users can approve or edit.
+						</li>
+					</ul>
+					<p>The app is designed to interact with a minimal REST API, and can run on any server environment which implements one. (See the github documentation for more details about that.) The distribution includes an example server implementation using Node.js, Express, and MongoDB.
 					</p>
-					<p>
-						The app is designed to interact with a minimal REST API, and can run on any server environment which implements one. (See the github documentation for more details about that.) The distribution includes an example server implementation using Node.js, Express, and MongoDB.
-					</p>
-					<p class='projects-text-aside'> This project is in early development.
+					<p class='projects-text-aside'>This project is in early development.
 					</p>
 				</div>
 				<a class='button projects-github-link projects-eventwindow-button' href='https://github.com/mpingram/eventwindow' target='_blank'>

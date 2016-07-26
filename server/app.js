@@ -51,7 +51,7 @@ if (app.get('env').trim() === 'development'){
 
 
 // in production
-if (app.settings.env === 'production'){
+if (app.settings.env.trim() === 'production'){
 
 	// serve production version of app
 	app.use(express.static('./dist'));

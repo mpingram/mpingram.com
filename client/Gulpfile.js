@@ -29,12 +29,8 @@ gulp.task('sass', function(){
 		}).
 		// autoprefix css
 		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5% in US'] }) ]) ).
-		// minify css
-		pipe(cssmin()).
-		// rename minified css
-		pipe(rename({suffix:'.min'})).
 		// send to production dist dir
-		pipe(gulp.dest('../server/dist/styles')).
+		pipe(gulp.dest('app/styles')).
 		pipe(browserSync.reload({
 			stream: true
 		}));
@@ -46,6 +42,8 @@ gulp.task('useref', function(){
 		pipe(useref()).
 		// if javascript, minify it
 		pipe(gulpIf('*.js', uglify())).
+		// if css, minify it
+		pipe(gulpIf('*.css', cssmin())).
 		// send to production dist dir
 		pipe(gulp.dest('../server/dist'));
 });
