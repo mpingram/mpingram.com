@@ -21,9 +21,8 @@ router.post('/', (req, res) => {
 		from: 'Your Website <mailgun@mpingram.net>',
 		to: ['mpingram92@gmail.com', 'hi@mpingram.net'],
 		subject: `[MPINGRAM.COM] New message from ${formData.name}`,
-		text: `<p>U got a message!</p><br><br>
-Name: ${formData.name} <br>
-Email: ${formData.email}<br>
+		text: `Name: ${formData.name}
+Email: ${formData.email}
 Message: ${formData.message}`,
 	};
 

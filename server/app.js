@@ -32,7 +32,7 @@ app.use('/contact', contactFormRouter);
 // ------------
 
 // in development
-if (app.get('env') === 'development'){
+if (app.get('env').trim() === 'development'){
 
 	// use dev-only client directory as client side
 	app.use(express.static(path.join(__dirname, '../client')));
@@ -54,7 +54,7 @@ if (app.get('env') === 'development'){
 if (app.settings.env === 'production'){
 
 	// serve production version of app
-	app.use(express.static(path.join(__dirname, '/dist')));
+	app.use(express.static('./dist'));
 
 
 	// don't print stacktrace
