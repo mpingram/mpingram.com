@@ -66,9 +66,7 @@ $(document).ready( function init(){
 	var iconClickHandler = function(event){
 		var id = event.currentTarget.id;
 		if (id === 'about'){
-			if (!locals.svgLinesDrawn){
-				drawSVG();
-			}
+			drawAboutBoxSvg();
 		}
 		// identify popin box associated with icon id
 		locals.activeBox = $('#'+id+'-box'); 
@@ -106,126 +104,96 @@ $(document).ready( function init(){
 		}
 	};
 
-
-	// draw svg lines connecting skills to technologies
-	// in about-box
-	function drawSVG(){
+	// SVG LINE DRAWING
+	// ----------------------------
 
 
-		// draws SVG lines connecting element in
-		// the skill list with elements in the tech list
 
-		// store skills and technology jQuery elements
-		var skillItems = {};
-		var techItems = {};
-		var svgContainer = $('#svg-container');
-
-		// if the svgs are already on the page, delete them
-		if (locals.svgLinesDrawn){
-			svgContainer.empty();
+	function drawAboutBoxSvg(){
+		if(locals.svgLinesDrawn === true){
+			redrawAboutBoxSvg();
+		} else {
+			createAboutBoxSvg();
 		}
+	}
 
-		// match skills to technologies via IDs
-		// TODO: brittle, is there a smarter way?
+	function redrawAboutBoxSvg(){
+		svgLineDrawer.reinitialize();
+		drawLines();
+	} 
 
+	function createAboutBoxSvg(){
 
-		// create svg object and append it to DOM
-		var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-		svg.setAttributeNS(null, 'class','about-skills-svg');
-		svgContainer.append(svg);
-
-		function drawLine(positionObj, skillID){
-
-			var lineClass = skillID + '-line';
-
-			var svgLine = document.createElementNS('http://www.w3.org/2000/svg','line');
-			svgLine.setAttributeNS(null, 'class','about-skills-line' + ' ' + lineClass);
-			svgLine.setAttributeNS(null, 'stroke-width','1px');
-			//svgLine.setAttributeNS(null, 'stroke','#B7B7B7');
-
-			svgLine.setAttributeNS(null, 'x1', positionObj.x1);
-			svgLine.setAttributeNS(null, 'y1', positionObj.y1);
-			svgLine.setAttributeNS(null, 'x2', positionObj.x2);
-			svgLine.setAttributeNS(null, 'y2', positionObj.y2);
-			svg.appendChild(svgLine);
-
-		}
-
-
-		// stick tech jQuery element into container object, we'll need it soon.
+		// stick each tech jQuery element into container object, we'll need it soon.
+		locals.techElements = {};
 		$('#about-tech-column').find('.about-tech-item').each(function(index, elem){
-			techItems[elem.id] = $(this);
+			locals.techElements['$' + elem.id] = $(this);
 		});
 
 		// keep track of which techs map to which skills
 		locals.skillTechTable = {
 			'webApps': [
-				techItems.javascript,
-				techItems.angularJS,
-				techItems.jQuery,
-				techItems.html,
-				techItems.css,
+				locals.techElements.$javascript,
+				locals.techElements.$angularJS,
+				locals.techElements.$jQuery,
+				locals.techElements.$html,
+				locals.techElements.$css,
 			],
 			'restApi': [
-				techItems.javascript,
-				techItems.nodeJS,
-				techItems.expressJS,
+				locals.techElements.$javascript,
+				locals.techElements.$nodeJS,
+				locals.techElements.$expressJS,
 			],
 			'server': [
-				techItems.javascript,
-				techItems.nodeJS,
-				techItems.expressJS,
-				techItems.mongoDB,
-				techItems.mongoose,
-				techItems.mySQL,
+				locals.techElements.$javascript,
+				locals.techElements.$nodeJS,
+				locals.techElements.$expressJS,
+				locals.techElements.$mongoDB,
+				locals.techElements.$mongoose,
+				locals.techElements.$mySQL,
 			],
 			'webDeployment': [
-				techItems.git,
-				techItems.AWS,
-				techItems.taskRunners,
+				locals.techElements.$git,
+				locals.techElements.$AWS,
+				locals.techElements.$taskRunners,
 			],
 			'webDesign': [
-				techItems.html,
-				techItems.css,
-				techItems.illustrator, 
+				locals.techElements.$html,
+				locals.techElements.$css,
+				locals.techElements.$illustrator, 
 			],
 			'frontend': [
-				techItems.html,
-				techItems.css,
-				techItems.jQuery,
-				techItems.taskRunners,
+				locals.techElements.$html,
+				locals.techElements.$css,
+				locals.techElements.$jQuery,
+				locals.techElements.$taskRunners,
 			],
 		};
+		
+		// create svgLineDrawer instance
+		var $svgContainer = $('#svg-container');
+		svgLineDrawer = createSvgLineDrawer($svgContainer, 'about-skills-svg');
 
 
-		// iterate over skill items and draw the svgs we need.
+		drawLines();	
+	}
+
+	function drawLines(){
+
+		// iterate over skill elements and draw lines connecting them to associated tech elements
 		$('#about-skills-column').find('.about-skills-item').each(function(){
-			var skillItem = $(this);
-			var skillItemName = skillItem[0].id;
 
-			// stick skill jQuery element into container object, we'll need it to
-			// efficiently update the svg lines on window.resize events.
-			skillItems[skillItemName] = skillItem;
-			var skillPosition =  skillItem.position();
+			var $skillElement = $(this);
+			var skillname = $skillElement[0].id;
+			var associatedTechElements = locals.skillTechTable[skillname];
+			var lineClass = 'about-skills-line ' + skillname + '-line';
 
-
-			// get the array of tech item IDs associated with this skill
-			var technologies = locals.skillTechTable[skillItemName];
-
-			var positionObj = {};
-			positionObj.x1 = skillPosition.left + skillItem[0].clientWidth;
-			positionObj.y1 = skillPosition.top + skillItem[0].clientHeight*0.75;
-			for (var i=0;i<technologies.length;i++){
-
-				// get position of this tech element
-				var techItem = technologies[i];
-				var techPosition = techItem.position();
-				positionObj.x2 = techPosition.left;
-				positionObj.y2 = techPosition.top + techItem[0].clientHeight*0.75;
-
-				// draw svg line connecting skill element to tech element
-				drawLine(positionObj, skillItemName);
-			}
+			$.each(associatedTechElements, function(i, $techElement){
+				svgLineDrawer.drawLine(	[$skillElement,'mid-right'],
+										[$techElement, 'mid-left'],
+										null,
+										lineClass);
+			});
 		});
 
 		locals.svgLinesDrawn = true;
@@ -392,7 +360,7 @@ $(document).ready( function init(){
 	// -----------------------------
 	$(window).load(loadBandcampPlayer);
 	// redraw about-skill svg lines on window resize
-	window.onresize = drawSVG;
+	window.onresize = redrawAboutBoxSvg;
 	
 
 	// end EVENT HANDLERS
