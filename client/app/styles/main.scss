@@ -105,7 +105,7 @@ body{
 	align-self: center;
 	flex-direction: column;
 
-	transform: translateY(-20%);
+	transform: translateY(-10%);
 }
 
 
@@ -298,8 +298,9 @@ body{
 
 // ---------
 #icons-wrapper{
+
 	width: 100%;
-	position: absolute;
+	position: relative;
 	left: 0;
 }
 #icons{
@@ -909,21 +910,24 @@ body{
 
 // breakpoint at which boxes cover entire screen
 @media(max-width: 850px){
+
+	// center icons and centerpiece
+	#center-container{
+		transform: none;
+	}
+
 	.pull-tab{
 		display: block;
 	}
-	#centerpiece{
-		transform: translateY(-60%);
-	}
+
+
 	// hide centerpiece when contact-box
 	// is opened
 	#centerpiece.contact-active{
 		opacity: 0;
 	}
 
-	#icons-wrapper{
-		transform: translateY(-20%);
-	}
+
 
 	// shrink icons and sort
 	// them into a square.

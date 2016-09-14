@@ -1,8 +1,9 @@
 /**
  * Constructor for svgLineDrawer object.
- * Creates an svg element inside a container and exposes
- * methods for drawing svg lines connecting two html elements
- * and for erasing all drawn lines.
+ * Creates an svg element inside a container and exposes methods
+ * for drawing and erasing svg lines in a generated svg element.
+ *
+ * Dependencies: jQuery
  * 
  * @param {jQuery} $svgContainerElement - jQuery element which will contain svg element to be drawn into
  * @param {string} [svgElementId] - sets the name of the generated svg element
@@ -16,19 +17,16 @@ function createSvgLineDrawer($svgContainerElement, svgElementId){
 		svgElementId = '';
 	}
 	
-	// object to assemble
 	var svgLineDrawer = {};
-
 
 	/**
 	 * Initializes svg element
-	 * @returns {HTMLElement}
+	 * Side effects: generates svg element and appends it to container in DOM
 	 */
 	svgLineDrawer.init = function(){
 		svgLineDrawer.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 		svgLineDrawer.svg.setAttributeNS(null, 'id', svgElementId);
 		$svgContainerElement.append(svgLineDrawer.svg);
-		return svgLineDrawer.svg;
 	};
 
 	/**
@@ -113,6 +111,9 @@ function createSvgLineDrawer($svgContainerElement, svgElementId){
 		svgLineDrawer.svg.appendChild(svgLine);
 	};
 
+	/**
+	 * Removes everything in svg element.
+	 */
 	svgLineDrawer.eraseAll = function(){
 		$svgContainerElement.empty();
 	};
@@ -122,7 +123,7 @@ function createSvgLineDrawer($svgContainerElement, svgElementId){
 		svgLineDrawer.init();
 	};
 
-	// initialize svg element
+	// initialize svg element and store reference to its jQuery obj
 	svgLineDrawer.init();
 	return svgLineDrawer;
 }

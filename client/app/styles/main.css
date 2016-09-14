@@ -85,9 +85,9 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: translateY(-20%);
-      -ms-transform: translateY(-20%);
-          transform: translateY(-20%); }
+  -webkit-transform: translateY(-10%);
+      -ms-transform: translateY(-10%);
+          transform: translateY(-10%); }
 
 #centerpiece {
   visibility: visible;
@@ -259,7 +259,7 @@ body {
 
 #icons-wrapper {
   width: 100%;
-  position: absolute;
+  position: relative;
   left: 0; }
 
 #icons {
@@ -863,18 +863,14 @@ body {
             transform: translateY(-75%); } }
 
 @media (max-width: 850px) {
+  #center-container {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none; }
   .pull-tab {
     display: block; }
-  #centerpiece {
-    -webkit-transform: translateY(-60%);
-        -ms-transform: translateY(-60%);
-            transform: translateY(-60%); }
   #centerpiece.contact-active {
     opacity: 0; }
-  #icons-wrapper {
-    -webkit-transform: translateY(-20%);
-        -ms-transform: translateY(-20%);
-            transform: translateY(-20%); }
   #icons {
     transition: opacity 0.5s 0.5s ease, visibility 1.25s linear, -webkit-transform 1.25s ease;
     transition: transform 1.25s ease, opacity 0.5s 0.5s ease, visibility 1.25s linear;

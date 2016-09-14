@@ -5,7 +5,8 @@
   "description": "personal website",
   "main": "",
   "scripts": {
-    "test": "karma start test\\karma.conf.js"
+    "test": "karma start test\\karma.conf.js",
+    "start": "gulp"
   },
   "author": "Michael Ingram",
   "license": "ISC",
