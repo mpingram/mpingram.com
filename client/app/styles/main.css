@@ -85,9 +85,9 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: translateY(-20%);
-      -ms-transform: translateY(-20%);
-          transform: translateY(-20%); }
+  -webkit-transform: translateY(-10%);
+      -ms-transform: translateY(-10%);
+          transform: translateY(-10%); }
 
 #centerpiece {
   visibility: visible;
@@ -259,7 +259,7 @@ body {
 
 #icons-wrapper {
   width: 100%;
-  position: absolute;
+  position: relative;
   left: 0; }
 
 #icons {

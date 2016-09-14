@@ -105,7 +105,7 @@ body{
 	align-self: center;
 	flex-direction: column;
 
-	transform: translateY(-20%);
+	transform: translateY(-10%);
 }
 
 
@@ -298,8 +298,9 @@ body{
 
 // ---------
 #icons-wrapper{
+
 	width: 100%;
-	position: absolute;
+	position: relative;
 	left: 0;
 }
 #icons{
