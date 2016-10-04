@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'scrollbar';
 
 html{
 	width:100%;
@@ -16,6 +17,7 @@ a {
 }
 // remove styling from buttons
 button{
+	outline: initial;
 	border: none;
 	background: none;
 	margin: 0;
@@ -40,7 +42,10 @@ a:focus, .button:focus{
 	color: $lightest-grey;
 	width: 10em;
 	margin: 5% auto;
+
+	transition: background-color 100ms ease;
 }
+
 
 .unselectable {
     -webkit-touch-callout: none;
@@ -344,9 +349,17 @@ body{
 	outline-style: none;
 	margin: 10px 2%;	
 	text-align: center;
-}
 
-.toy:focus, .toy:hover{
+	transition: transform 200ms ease;
+}
+.toy:hover{
+	transform: scale(1.03);
+	text-decoration: underline;
+}
+.toy:active{
+	transform: scale(0.95);
+}
+.toy:focus{
 	text-decoration: underline;
 }
 
@@ -411,69 +424,8 @@ body{
 	-webkit-overflow-scrolling: touch;
 }
 
-
-
 .pull-tab{
-	// on non-mobile: hide pull-tabs
 	display: none;
-	position: absolute;
-	z-index: 1;
-	overflow: visible;
-	
-	background: white;
-	opacity: 0.5;
-	border-radius: 12px;
-}
-.pull-tab:after{
-	display: block;
-	//content: img('pull-tab-handle.svg');
-	position: relative;
-	background-color: white;
-	opacity: 1;
-	//border: 1px solid $light-grey;
-	border-radius: 5px;
-}
-#about-box-pull-tab, #projects-box-pull-tab{
-	top: 0;
-	height: 100%;
-	width: 1.25em;
-}
-#about-box-pull-tab:after, #projects-box-pull-tab:after{
-	content: '<';
-	width: 1em;
-	top: 50%;
-	transform: translateY(-50%);
-	padding: 1.5em 0.5em;
-	border-right: 1px solid $light-grey;
-	border-radius: 25%;
-}
-#about-box-pull-tab{
-	right: 0;
-}
-#projects-box-pull-tab{
-	transform: rotate(180deg);
-	left: 0;
-}
-#music-box-pull-tab, #websites-box-pull-tab{
-	width: 100%;
-	height: 1.25em;
-	border-bottom: 1px solid $light-grey;
-}
-#music-box-pull-tab:after, #websites-box-pull-tab:after{
-	content: 'V';
-	height: 4em;
-	width: 6em;
-	margin: 0 auto;
-	padding: 0.5em 1.5em;
-	border-bottom: 1px solid $light-grey;
-	border-radius: 25%;
-}
-#music-box-pull-tab{
-	top: 0;
-}
-#websites-box-pull-tab{
-	transform: rotate(180deg);
-	bottom: 0;
 }
 
 .bubble{
@@ -583,6 +535,8 @@ body{
 	top: 0;
 	left: 0;
 	z-index: 99;
+
+	transition: stroke 200ms ease;
 }
 .about-skills-line.highlight{
 	stroke: $grey;
@@ -914,11 +868,6 @@ body{
 		transform: none;
 	}
 
-	.pull-tab{
-		display: block;
-	}
-
-
 	// hide centerpiece when contact-box
 	// is opened
 	#centerpiece.contact-active{
@@ -945,7 +894,7 @@ body{
 		width: 5.5em;
 		// moves icon under icon button so that
 		// touch events work properly on iOS.
-		// TODO: hacky
+		// FIXME: hacky
 		z-index: -1;
 	}
 	#about{
@@ -1042,6 +991,8 @@ body{
 	#music-box{
 		bottom: -100%;
 		height: 100%;
+
+		padding-top: 4em;
 	}
 	#music-box.active{
 		transform: translateY(-100%);
@@ -1071,10 +1022,77 @@ body{
 		margin: 0 1.5%;
 	}
 
-}
+	// pull tabs
+	// -------------
+	.pull-tab{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		overflow: visible;
+		
+		background: white;
+		opacity: 0.5;
+		border-radius: 12px;
+	}
+	.pull-tab:after{
+		display: block;
+		//content: img('pull-tab-handle.svg');
+		position: relative;
+		background-color: white;
+		opacity: 1;
+		border-radius: 25%;
+	}
+	#about-box-pull-tab, #projects-box-pull-tab{
+		top: 0;
+		height: 100%;
+		width: 1.25em;
+	}
+	#about-box-pull-tab:after, #projects-box-pull-tab:after{
+		content: '<';
+		font-size: 130%;
+		direction: ltr;
+		height: 75px;
+		line-height: 75px;
+		width: 50px;
+		border-right: 1px solid $light-grey;
+
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+	}
+	#about-box-pull-tab{
+		transform: rotate(180deg);
+		right: 0;
+	}
+	#projects-box-pull-tab{
+		left: 0;
+	}
+	#music-box-pull-tab, #websites-box-pull-tab{
+		width: 100%;
+		height: 1.25em;
+		border-bottom: 1px solid $light-grey;
+	}
+	#music-box-pull-tab:after, #websites-box-pull-tab:after{
+		content: 'V';
+		height: 3em;
+		width: 6em;
+		margin: 0 auto;
+		padding: 0.5em 1.5em;
+		border-bottom: 1px solid $light-grey;
+		border-radius: 25%;
+	}
+	#music-box-pull-tab{
+		top: 0;
+	}
+	#websites-box-pull-tab{
+		transform: rotate(180deg);
+		bottom: 0;
+	}
+	// ---------end pull tabs --------
+
+} // end full-box-screen breakpoint
 
 // breakpoint for smaller phone screens
-// 1px above iPhone 5
 @media(max-width: 321px){
 	.toy{
 		margin-left: 1.3em;
