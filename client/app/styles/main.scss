@@ -425,6 +425,7 @@ body{
 	border-radius: 12px;
 }
 .pull-tab:after{
+	display: block;
 	//content: img('pull-tab-handle.svg');
 	position: relative;
 	background-color: white;
@@ -439,7 +440,7 @@ body{
 }
 #about-box-pull-tab:after, #projects-box-pull-tab:after{
 	content: '<';
-	width: 4em;
+	width: 1em;
 	top: 50%;
 	transform: translateY(-50%);
 	padding: 1.5em 0.5em;
@@ -461,6 +462,8 @@ body{
 #music-box-pull-tab:after, #websites-box-pull-tab:after{
 	content: 'V';
 	height: 4em;
+	width: 6em;
+	margin: 0 auto;
 	padding: 0.5em 1.5em;
 	border-bottom: 1px solid $light-grey;
 	border-radius: 25%;
@@ -589,18 +592,8 @@ body{
 .about-column{
 	align-self: center;
 }
-.circle-top{
-	transform: rotate(-20deg);
-}
-.circle-top > .about-tech-item{
-	transform: rotate(20deg);
-}
-.circle-bottom{
-	transform: rotate(20deg);
-}
-.circle-bottom > .about-tech-item{
-	transform: rotate(-20deg);
-}
+
+
 
 .about-skills-item, .about-tech-item {
 	display: block;
@@ -624,9 +617,14 @@ body{
 	font-weight: 400;
 	display: block;
 	background-color: $lighter-grey;
+
+	transition: background-color 200ms ease,
+							transform 200ms ease;
+
 }
 .about-tech-item.highlight{
-	background: $light-grey;
+	background-color: $light-grey;
+	transform: 	translateX(-5%) scale(1.01);
 }
 
 
@@ -801,9 +799,12 @@ body{
 	display: block;
 	text-align: left;
 	margin-left: 5%;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	width: 95%;
 	clear: both;
 	float: left;
+
 }
 
 .projects-wrapper{
@@ -814,6 +815,8 @@ body{
 
 	margin-top: 2%;
 	margin-left: 1.5em;
+
+	overflow-x: hidden;
 }
 .projects-bubble{
 }
@@ -821,7 +824,7 @@ body{
 	display: inline-block;
 	position: relative;
 	float: left;
-	margin: 2% 2% 0;
+	margin: 2% 2%;
 	padding: 1%;
 	border: 1px solid $lighter-grey;
 	border-radius: 12px;
@@ -893,12 +896,7 @@ body{
 		padding-bottom: 7px;
 		margin-bottom: 5%;
 	}
-	#about-tech-column > .circle-top, 
-	#about-tech-column > .circle-bottom,
-	.circle-bottom > .about-tech-item,
-	.circle-top > .about-tech-item {
-		transform: none;
-	}
+
 }
 // breakpoint at which contact-box touches
 // centerpiece on wide screen
@@ -1007,6 +1005,29 @@ body{
 	.about-text-bubble{
 		width: 90%;
 	}
+
+	.about-tech-item{
+		transition: background-color 600ms 800ms ease,
+								transform 400ms 800ms ease; 
+	}
+	.about-tech-item.highlight{
+		transform: translateX(-1.5%) scale(1.02);
+
+		transition: background-color 75ms ease,
+								transform 75ms ease;
+	}
+
+	.about-skills-line{
+		transition: stroke 300ms 800ms ease;
+	}
+	.about-skills-line.highlight{
+		transition: stroke 75ms ease;
+	}
+
+	.about-contact-wrapper{
+		margin-top: 1em;
+	}
+
 	#projects-box{
 		right: -100%;
 		width: 100%;

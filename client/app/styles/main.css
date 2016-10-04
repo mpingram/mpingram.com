@@ -377,6 +377,7 @@ body {
   border-radius: 12px; }
 
 .pull-tab:after {
+  display: block;
   position: relative;
   background-color: white;
   opacity: 1;
@@ -389,7 +390,7 @@ body {
 
 #about-box-pull-tab:after, #projects-box-pull-tab:after {
   content: '<';
-  width: 4em;
+  width: 1em;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -415,6 +416,8 @@ body {
 #music-box-pull-tab:after, #websites-box-pull-tab:after {
   content: 'V';
   height: 4em;
+  width: 6em;
+  margin: 0 auto;
   padding: 0.5em 1.5em;
   border-bottom: 1px solid #bfbfbf;
   border-radius: 25%; }
@@ -549,26 +552,6 @@ body {
       -ms-flex-item-align: center;
           align-self: center; }
 
-.circle-top {
-  -webkit-transform: rotate(-20deg);
-      -ms-transform: rotate(-20deg);
-          transform: rotate(-20deg); }
-
-.circle-top > .about-tech-item {
-  -webkit-transform: rotate(20deg);
-      -ms-transform: rotate(20deg);
-          transform: rotate(20deg); }
-
-.circle-bottom {
-  -webkit-transform: rotate(20deg);
-      -ms-transform: rotate(20deg);
-          transform: rotate(20deg); }
-
-.circle-bottom > .about-tech-item {
-  -webkit-transform: rotate(-20deg);
-      -ms-transform: rotate(-20deg);
-          transform: rotate(-20deg); }
-
 .about-skills-item, .about-tech-item {
   display: block;
   width: auto;
@@ -586,10 +569,16 @@ body {
   margin: 5px 0;
   font-weight: 400;
   display: block;
-  background-color: #d9d9d9; }
+  background-color: #d9d9d9;
+  transition: background-color 200ms ease, -webkit-transform 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease, -webkit-transform 200ms ease; }
 
 .about-tech-item.highlight {
-  background: #bfbfbf; }
+  background-color: #bfbfbf;
+  -webkit-transform: translateX(-5%) scale(1.01);
+      -ms-transform: translateX(-5%) scale(1.01);
+          transform: translateX(-5%) scale(1.01); }
 
 .about-experience-button {
   background-color: #a9c88f; }
@@ -774,6 +763,8 @@ body {
   display: block;
   text-align: left;
   margin-left: 5%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   width: 95%;
   clear: both;
   float: left; }
@@ -785,13 +776,14 @@ body {
   border: 1px solid #bfbfbf;
   border-radius: 12px;
   margin-top: 2%;
-  margin-left: 1.5em; }
+  margin-left: 1.5em;
+  overflow-x: hidden; }
 
 .projects-thumbnail {
   display: inline-block;
   position: relative;
   float: left;
-  margin: 2% 2% 0;
+  margin: 2% 2%;
   padding: 1%;
   border: 1px solid #d9d9d9;
   border-radius: 12px; }
@@ -847,14 +839,7 @@ body {
     width: 80%;
     padding-top: 7px;
     padding-bottom: 7px;
-    margin-bottom: 5%; }
-  #about-tech-column > .circle-top,
-  #about-tech-column > .circle-bottom,
-  .circle-bottom > .about-tech-item,
-  .circle-top > .about-tech-item {
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none; } }
+    margin-bottom: 5%; } }
 
 @media (max-height: 850px) {
   #centerpiece.contact-active {
@@ -945,6 +930,23 @@ body {
     height: 3em; }
   .about-text-bubble {
     width: 90%; }
+  .about-tech-item {
+    transition: background-color 600ms 800ms ease, -webkit-transform 400ms 800ms ease;
+    transition: background-color 600ms 800ms ease, transform 400ms 800ms ease;
+    transition: background-color 600ms 800ms ease, transform 400ms 800ms ease, -webkit-transform 400ms 800ms ease; }
+  .about-tech-item.highlight {
+    -webkit-transform: translateX(-1.5%) scale(1.02);
+        -ms-transform: translateX(-1.5%) scale(1.02);
+            transform: translateX(-1.5%) scale(1.02);
+    transition: background-color 75ms ease, -webkit-transform 75ms ease;
+    transition: background-color 75ms ease, transform 75ms ease;
+    transition: background-color 75ms ease, transform 75ms ease, -webkit-transform 75ms ease; }
+  .about-skills-line {
+    transition: stroke 300ms 800ms ease; }
+  .about-skills-line.highlight {
+    transition: stroke 75ms ease; }
+  .about-contact-wrapper {
+    margin-top: 1em; }
   #projects-box {
     right: -100%;
     width: 100%; }

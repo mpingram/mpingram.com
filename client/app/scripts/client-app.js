@@ -134,6 +134,7 @@ $(document).ready( function init(){
 		locals.skillTechTable = {
 			'webApps': [
 				locals.techElements.$javascript,
+				locals.techElements.$typescript,
 				locals.techElements.$angularJS,
 				locals.techElements.$jQuery,
 				locals.techElements.$html,
@@ -146,6 +147,7 @@ $(document).ready( function init(){
 			],
 			'server': [
 				locals.techElements.$javascript,
+				locals.techElements.$typescript,
 				locals.techElements.$nodeJS,
 				locals.techElements.$expressJS,
 				locals.techElements.$mongoDB,
@@ -165,6 +167,8 @@ $(document).ready( function init(){
 			'frontend': [
 				locals.techElements.$html,
 				locals.techElements.$css,
+				locals.techElements.$javascript,
+				locals.techElements.$typescript,
 				locals.techElements.$jQuery,
 				locals.techElements.$taskRunners,
 			],
@@ -212,6 +216,7 @@ $(document).ready( function init(){
 		for (var i=0;i<techItemsArray.length;i++){
 			techItemsArray[i].toggleClass('highlight');
 		}
+
 	}
 	// create iframe for bandcamp player
 	function loadBandcampPlayer(){
@@ -240,6 +245,10 @@ $(document).ready( function init(){
 		// update local variable, we've loaded the player
 		// locals.musicPlayerLoaded = true;
 	}
+
+
+
+
 
 	// II. EVENT HANDLERS
 	// ====================
@@ -341,6 +350,7 @@ $(document).ready( function init(){
 	$(centerContainer).on('dblclick', reset);
 
 
+
 	// contact-form submission event handler
 	var $contactForm = $('#contact-form');
 	$contactForm.on('submit', function(event){
@@ -358,6 +368,7 @@ $(document).ready( function init(){
 
 	// window event handlers
 	// -----------------------------
+	
 	$(window).load(loadBandcampPlayer);
 	// redraw about-skill svg lines on window resize
 	window.onresize = redrawAboutBoxSvg;
