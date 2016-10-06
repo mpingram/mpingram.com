@@ -1,7 +1,7 @@
+const logger = require('morgan');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
-const logger = require('morgan');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
@@ -17,7 +17,6 @@ const contactFormRouter = require('./routes/contact-form-route');
 // -------
 app.use(helmet());
 app.use(favicon(path.join(__dirname,'dist','favicon.ico')));
-app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -33,6 +32,9 @@ app.use('/contact', contactFormRouter);
 
 // in development
 if (app.get('env').trim() === 'development'){
+	
+	// log http requests
+	app.use(logger('dev'));
 
 	// use dev-only client directory as client side
 	app.use(express.static(path.join(__dirname, '../client')));
