@@ -37,6 +37,10 @@ $(document).ready( function init(){
 	// ------------------
 
 
+	// create svgLineDrawer instance
+	var $svgContainer = $('#svg-container');
+	svgLineDrawer = createSvgLineDrawer($svgContainer, 'about-skills-svg');
+
 
 
 	// I: HELPER FUNCTIONS
@@ -173,9 +177,7 @@ $(document).ready( function init(){
 			],
 		};
 		
-		// create svgLineDrawer instance
-		var $svgContainer = $('#svg-container');
-		svgLineDrawer = createSvgLineDrawer($svgContainer, 'about-skills-svg');
+
 
 
 		drawLines();	
