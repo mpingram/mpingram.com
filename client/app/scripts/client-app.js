@@ -104,11 +104,10 @@ $(document).ready( function init(){
 		}
 	};
 
+
+
 	// SVG LINE DRAWING
 	// ----------------------------
-
-
-
 	function drawAboutBoxSvg(){
 		if(locals.svgLinesDrawn === true){
 			redrawAboutBoxSvg();
@@ -252,9 +251,6 @@ $(document).ready( function init(){
 
 	// II. EVENT HANDLERS
 	// ====================
-
-	
-
 	
 	// hammerjs initialization and swipe handlers
 	// ----------------------
@@ -339,7 +335,6 @@ $(document).ready( function init(){
 	
 
 
-
 	// jquery click event handlers
 	// ---------------------------
 	var $document = $(document);
@@ -351,24 +346,44 @@ $(document).ready( function init(){
 
 
 
+
+	// contact form email
+	// ------------------------------------
+
 	// contact-form submission event handler
 	var $contactForm = $('#contact-form');
+
 	$contactForm.on('submit', function(event){
-		// stop the browser from trying to do the same thing
+		
+		// stop the browser from trying to submit the form itself
 		event.preventDefault();
+
+		// capture the form data
+		var formData = {};
+		$(this).serializeArray().forEach( function (input){
+			formData[ input.name ] = input.value;
+		});
+		console.log( formData );
+
 		// send the data
 		$.ajax({
-			type: 'POST',
-			url: 'contact',
-			data: $(this).serialize(),
+	    url: 'https://formspree.io/mpingram92@gmail.com', 
+	    method: 'POST',
+	    data: { 
+	    	name: formData.name,
+	    	_replyto: formData._replyto,
+	    	message: formData.message,
+	     },
+	    dataType: 'json'
 		});
-		// close the contact form
+		// page layout: close the contact form
 		reset();
 	});
 
 	// window event handlers
 	// -----------------------------
 	
+	// load bandcamp player once everything else is in place
 	$(window).load(loadBandcampPlayer);
 	// redraw about-skill svg lines on window resize
 	window.onresize = redrawAboutBoxSvg;
