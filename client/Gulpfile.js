@@ -78,7 +78,7 @@ gulp.task('em-browserSync', function(){
 });
 
 gulp.task('em-sass', function(){
-	return gulp.src('public/eventmanager/styles/*.scss').
+	return gulp.src('public/eventmanager/parent/styles/*.scss').
 		pipe(sass()).
 		on('error', function(err){
 			console.log(err.toString());
