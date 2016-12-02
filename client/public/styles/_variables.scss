@@ -20,8 +20,10 @@ $col-websites-accent-light: lighten($col-websites-accent, 5%);
 $col-projects-accent:		#208AAE;
 $col-projects-accent-light: lighten($col-projects-accent, 25%);	
 
-$grey-base:			#000;
-$grey:				lighten($grey-base, 65%);
-$light-grey: 		lighten($grey-base, 75%);
+$grey-base:				#000;
+$grey:						lighten($grey-base, 65%);
+$light-grey: 			lighten($grey-base, 75%);
 $lighter-grey: 		lighten($grey-base, 85%);
 $lightest-grey: 	lighten($grey-base, 97%);
+
+$col-border:			$light-grey;

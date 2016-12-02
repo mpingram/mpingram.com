@@ -1,7 +1,14 @@
 body {
-  width: 100vw;
-  height: 100vh;
-  font-family: "Source Sans Pro", sans-serif; }
+  max-width: 100vw;
+  max-height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300; }
+
+.button {
+  font-family: inherit;
+  font-weight: inherit;
+  background: none;
+  border: none; }
 
 .body-wrapper {
   width: 100%;
@@ -13,22 +20,143 @@ body {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+.parent-site-overlay {
+  -webkit-flex: 1 1 3em;
+      -ms-flex: 1 1 3em;
+          flex: 1 1 3em;
+  width: 100%;
+  z-index: 11; }
+
 .parent-site-header {
-  background-color: yellow;
-  -webkit-flex: 0 0 3em;
-      -ms-flex: 0 0 3em;
-          flex: 0 0 3em;
-  width: 100%; }
+  -webkit-flex-basis: 10%;
+      -ms-flex-preferred-size: 10%;
+          flex-basis: 10%;
+  background: #F6F6F0;
+  background: linear-gradient(7deg, #ffe2d5 55%, #ffcdb6);
+  border-bottom: 1px solid #a6a6a6;
+  box-shadow: 0px 0px 10px 0px #a6a6a6;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .parent-site-footer {
-  -webkit-flex: 0 0 3em;
-      -ms-flex: 0 0 3em;
-          flex: 0 0 3em;
-  width: 100%; }
+  -webkit-flex-basis: 2em;
+      -ms-flex-preferred-size: 2em;
+          flex-basis: 2em;
+  background: #F6F6F0;
+  background: linear-gradient(7deg, #ffcdb6 55%, #ffe2d5);
+  border-top: 1px solid #a6a6a6;
+  box-shadow: 0px 0px 10px 0px #a6a6a6; }
 
 .app {
-  -webkit-flex: 1 1 80%;
-      -ms-flex: 1 1 80%;
-          flex: 1 1 80%;
+  position: relative;
+  overflow: hidden;
+  -webkit-flex: 1 1 90%;
+      -ms-flex: 1 1 90%;
+          flex: 1 1 90%;
   width: 100%;
-  overflow: hidden; }
+  height: 90%; }
+
+.overlay-info {
+  margin-left: 1em; }
+
+#return-parent-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 100%;
+  font-weight: 400;
+  position: relative;
+  border: 1px solid #bfbfbf;
+  border-radius: 12px;
+  padding: 5px 10px;
+  transition: background-color 200ms ease, -webkit-transform 100ms ease;
+  transition: background-color 200ms ease, transform 100ms ease;
+  transition: background-color 200ms ease, transform 100ms ease, -webkit-transform 100ms ease; }
+
+#return-parent-button:hover {
+  background-color: #cccccc; }
+
+#return-parent-button:active {
+  background-color: #bfbfbf;
+  -webkit-transform: scale(0.97);
+      -ms-transform: scale(0.97);
+          transform: scale(0.97); }
+
+.back-arrow-icon {
+  position: relative;
+  height: 30px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid #bfbfbf;
+  border-radius: 100%; }
+
+.toggle-button {
+  position: relative;
+  box-sizing: initial;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 50px;
+  height: 18px;
+  border-radius: 12px;
+  border: 1px solid #bfbfbf;
+  transition: background-color 200ms ease; }
+
+.toggle-button.off::after {
+  content: 'off';
+  line-height: 18px;
+  vertical-align: center;
+  float: right; }
+
+.toggle-button.on::after {
+  content: 'on';
+  line-height: 18px;
+  vertical-align: center;
+  float: left; }
+
+.toggle-button-toggle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #bfbfbf;
+  border-radius: 100%;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease; }
+
+.toggle-button.on {
+  background-color: transparent; }
+
+.toggle-button.on > .toggle-button-toggle {
+  -webkit-transform: translateX(42px);
+      -ms-transform: translateX(42px);
+          transform: translateX(42px); }
+
+#commentary-toggle-button {
+  display: block;
+  margin: 0 auto; }
+
+.commentary-button-label {
+  font-size: 90%;
+  text-align: center;
+  margin-bottom: 4px; }

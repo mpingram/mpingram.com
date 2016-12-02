@@ -2,11 +2,19 @@
 
 
 body{
-	width: 100vw; // TODO: fix vh/vw measurements in app
-	height: 100vh;
+	max-width: 100vw; // TODO: fix vh/vw measurements in app
+	max-height: 100vh;
 
 	font-family: $sans;
+	font-weight: 300;
 
+}
+
+.button{
+	font-family: inherit;
+	font-weight: inherit;
+	background: none;
+	border: none;
 }
 
 .body-wrapper{
@@ -15,19 +23,156 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-.parent-site-header{
-	background-color: yellow;
-	flex: 0 0 3em;
+
+.parent-site-overlay{
+	flex: 1 1 3em;
 	width: 100%;
+	z-index: 11;
+
+}
+
+.parent-site-header{
+	flex-basis: 10%;
+
+	background: $col-bg;
+	background: linear-gradient( 7deg, lighten($col-highlight,7%) 55% , lighten($col-highlight, 1%) );
+	border-bottom: 1px solid $grey;
+
+	box-shadow: 0px 0px 10px 0px $grey;
+
+
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+
 }
 
 .parent-site-footer{
-	flex: 0 0 3em;
-	width: 100%;
+	flex-basis: 2em;
+
+	background: $col-bg;
+	background: linear-gradient( 7deg, lighten($col-highlight, 1%) 55% , lighten($col-highlight,7%) );
+	border-top: 1px solid $grey;
+
+	box-shadow: 0px 0px 10px 0px $grey;
+
 }
 
 .app{
-	flex: 1 1 80%;
-	width: 100%;
+	position: relative;
 	overflow: hidden;
+	flex: 1 1 90%;
+	width: 100%;
+	height: 90%;
+}
+
+
+
+// Header styling
+.overlay-info{
+	margin-left: 1em;
+}
+#return-parent-button{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	font-size: 100%;
+	font-weight: 400;
+
+	position: relative;
+	border: 1px solid $col-border;
+	border-radius: 12px;
+
+	padding: 5px 10px;
+
+	transition: background-color 200ms ease,
+							transform 100ms ease;
+}
+
+#return-parent-button:hover{
+	background-color: lighten( $light-grey, 5% );
+}
+
+#return-parent-button:active{
+	background-color: $light-grey;
+	transform: scale(0.97);
+}
+
+.back-arrow-icon{
+	position: relative;
+	height: 30px;
+	transform: rotate(180deg);
+	margin-right: 5px;
+
+	padding: 5px;
+
+	border: 1px solid $col-border;
+	border-radius: 100%;
+}
+
+
+// toggle button styling
+// --------------------------
+.toggle-button{
+	position: relative;
+	box-sizing: initial;
+	//background: $light-grey;
+	background-color: rgba(0,0,0,0.05);
+	width: 50px;
+	height: 18px;
+	border-radius: 12px;
+	border: 1px solid $col-border;
+
+	transition: background-color 200ms ease;
+}
+
+.toggle-button.off::after{
+	content: 'off';
+	line-height: 18px;
+	vertical-align: center;
+	float: right;
+}
+.toggle-button.on::after{
+	content: 'on';
+	line-height: 18px;
+	vertical-align: center;
+	float: left;
+}
+
+.toggle-button-toggle{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 18px;
+	height: 18px;
+	background-color: rgba(255,255,255,0.3);
+	border: 1px solid $col-border;
+	border-radius: 100%;
+
+	transition: transform 200ms ease;
+}
+
+.toggle-button.on{
+	background-color: rgba(0,0,0,0);
+}
+.toggle-button.on > .toggle-button-toggle {
+	transform: translateX(42px);
+}
+
+// -------------------
+
+
+.commentary-button-container{
+}
+#commentary-toggle-button{
+	display: block;
+	margin: 0 auto;
+}
+.commentary-button-label{
+	font-size: 90%;
+	text-align: center;
+	margin-bottom: 4px;
 }
