@@ -1,0 +1,29 @@
+
+<div class='day-header-container' (click)='dayHeaderClickHandler()' [class.inactive]='eventListIsEmpty | async'>
+	<div class='day-inline date' >
+	{{ day.format('MMMM D, YYYY') }}
+	</div>
+	<div class='day-inline num-events'>
+		<span class='text-emphasis'> {{ ( eventList | async )?.length || 0 }} </span>
+		<span class='text-small'> {{ ( eventList | async )?.length !== 1 ? 'events' : 'event' }}</span>
+	</div>
+
+	<div (click)='toggleDropdownState( $event )' class='collapse-button-container' [class.inactive]='eventListIsEmpty | async' [class.expand-less]='eventListOpen' >
+		<i class='collapse-button material-icons md-dark' [class.point-up]='eventListOpen'>expand_more</i>
+	</div>
+
+</div>
+
+
+<div class='day-events-container' *ngIf='!(eventListIsEmpty | async)' [@openClosed]='animationStateFrom(eventListOpen)'>
+
+	<em-event-list-item 
+	*ngFor='let event of ( eventList | async )'
+	[event]='event'
+	(click)='toggleFocusedEvent( event )'
+	[class.focused]='isFocusedEvent( event )' >
+		
+	</em-event-list-item>
+
+</div>
+

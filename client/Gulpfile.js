@@ -20,7 +20,7 @@ const autoprefixer = require('autoprefixer');
 
 // compile sass
 gulp.task('sass', function(){
-	return gulp.src('app/styles/**/*.scss').
+	return gulp.src('public/styles/**/*.scss').
 		pipe(sass()).
 		on('error', function(err){
 			console.log(err.toString());
@@ -30,7 +30,7 @@ gulp.task('sass', function(){
 		// autoprefix css
 		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5% in US'] }) ]) ).
 		// send to production dist dir
-		pipe(gulp.dest('app/styles')).
+		pipe(gulp.dest('public/styles')).
 		pipe(browserSync.reload({
 			stream: true
 		}));
@@ -38,7 +38,7 @@ gulp.task('sass', function(){
 
 // concatenate and minify scripts
 gulp.task('useref', function(){
-	return gulp.src('app/*.html').
+	return gulp.src('public/*.html').
 		pipe(useref()).
 		// if javascript, minify it
 		pipe(gulpIf('*.js', uglify())).
@@ -50,7 +50,7 @@ gulp.task('useref', function(){
 
 // minify images
 gulp.task('imagemin', function(){
-	return gulp.src('app/images/*').
+	return gulp.src('public/images/*').
 		pipe(imagemin()).
 		pipe(gulp.dest('../server/dist/images'));
 });
@@ -58,15 +58,43 @@ gulp.task('imagemin', function(){
 
 // move bower dependencies over
 gulp.task('moveBowerComponents', function(){
-	return gulp.src('app/bower_components/**/*.*', {base:'./app'}).
+	return gulp.src('public/bower_components/**/*.*', {base:'./public'}).
 		pipe(gulp.dest('../server/dist'));
 });
 
 // move the fucking favicon
 gulp.task('moveFavicon', function(){
-	return gulp.src('app/favicon.ico').
+	return gulp.src('public/favicon.ico').
 		pipe(gulp.dest('../server/dist'));
 });
+
+
+gulp.task('em-browserSync', function(){
+	browserSync.init({
+		server:{
+			baseDir:'./public/eventmanager'
+		}
+	});
+});
+
+gulp.task('em-sass', function(){
+	return gulp.src('public/eventmanager/styles/*.scss').
+		pipe(sass()).
+		on('error', function(err){
+			console.log(err.toString());
+			browserSync.notify(err.message, 3000);
+			this.emit('end');
+		}).
+		// autoprefix css
+		pipe( postcss ([ autoprefixer ({ browsers: ['> 0.5% in US'] }) ]) ).
+		// send to production dist dir
+		pipe(gulp.dest('public/eventmanager/parent/styles')).
+		pipe(browserSync.reload({
+			stream: true
+		}));
+});
+
+
 
 // live reload browser
 gulp.task('browserSync', function(){
@@ -74,8 +102,10 @@ gulp.task('browserSync', function(){
 		open: 'ui',
 		server: {
 			// development server
-			baseDir: './app'
-		}
+			baseDir: './public',
+
+		},
+
 	});
 });
 
@@ -89,10 +119,16 @@ gulp.task('clean:dist', function(){
 // high-level tasks
 // ==================
 
+gulp.task('em-watch', ['em-browserSync', 'em-sass'], function(){
+	gulp.watch('public/eventmanager/parent/**/*.scss', ['em-sass']);
+	gulp.watch('public/eventmanager/parent/**/*.js', browserSync.reload);
+	gulp.watch('public/eventmanager/index.html', browserSync.reload);
+});
+
 gulp.task('watch', ['browserSync','sass'], function(){
-	gulp.watch('app/styles/**/*.scss', ['sass']);
-	gulp.watch('app/scripts/**/*.js', browserSync.reload);
-	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch('public/styles/**/*.scss', ['sass']);
+	gulp.watch('public/scripts/**/*.js', browserSync.reload);
+	gulp.watch('public/*.html', browserSync.reload);
 });
 
 
@@ -104,4 +140,9 @@ gulp.task('build', function(callback){
 // compile sass, launch server, and watch
 gulp.task('default', function(callback){
 	runSequence( ['sass','browserSync','watch'], callback);
+});
+
+
+gulp.task('em', function(callback){
+	runSequence( ['em-sass', 'em-browserSync', 'em-watch'], callback);
 });

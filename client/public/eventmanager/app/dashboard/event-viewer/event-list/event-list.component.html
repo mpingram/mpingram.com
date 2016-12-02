@@ -1,0 +1,19 @@
+<!-- <div class='event-list-header'>
+	<div class='searchbar-container'>
+		<i class='material-icons'>search</i>
+		<input id='event-searchbar'>
+	</div>
+
+	<div class='settings-icon-container'>
+		<i class='material-icons'>settings</i>
+	</div>
+</div>
+-->
+
+
+<div class='event-list-scroll'>
+
+	<em-event-list-day *ngFor='let day of days' [day]='day' [class.focused-day]='isFocusedDay( day )'></em-event-list-day>
+
+</div>
+

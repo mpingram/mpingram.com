@@ -1,0 +1,30 @@
+<div class='block event-type-color-bar-container'>
+	<div class='event-type-color-bar' [style.background-color]='eventTypeColor'>
+	</div>
+</div>
+<div class='block event-name'>
+	<div class='horizontal-block event-title'>
+	{{event.name}}
+	</div>
+	<div class='horizontal-block float-left event-organizer text-light'>
+	{{event.organizer}}
+	</div>
+</div>
+
+<div class='block event-link' (click)='openEventDetail( $event )'>
+	<i class='event-link-icon material-icons md-dark'>chevron_right</i>
+</div>
+
+<div class='block event-info'>
+	<div class='horizontal-block event-time'>
+		<span class='event-time-start'>{{dateToClockTime(event.start)}}</span>
+		<span class='text-light'>{{dateToAMPM(event.start)}}</span>
+		-
+		<span class='event-time-end'>{{dateToClockTime(event.end)}}</span>
+		<span class='text-light'>{{dateToAMPM(event.end)}}</span>
+	</div>
+	<div class='horizontal-block event-resource'>
+		<span class='text-light'>Room</span> {{event.primaryResource}}
+	</div>
+</div>
+<div class='block event-status'></div>

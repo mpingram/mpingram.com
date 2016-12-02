@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ 
+  <head>
+  	<base href="/">
+    <meta charset="utf-8">
+    <title>Event Manager</title>
+    <meta name="description" content="Event and Hospitality Planning App">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- load parent overlay styles -->
+    <link href="parent/styles/overlay.css">
+
+    <!-- load styles -->
+    <link href="app/shared/styles/resets.css" rel="stylesheet">
+    <link href="app/shared/styles/main.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- load libraries -->
+    <script src="angular-dependencies.min.js"></script>
+
+
+    <!-- configure systemJS -->
+    <script src="systemjs.config.min.js"></script>
+
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+
+      
+  </head>
+
+
+	<body>
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an outdated browser. Some of the content on this website (and many others!) may not display properly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+		<div class='parent-site-header'>
+		Foo
+		</div>
+
+		<div class='app-container'>
+		<!-- Event manager encapsulated app -->
+			<em-app> Loading... </em-app>
+		<!-- end event manager app -->
+		</div>
+		
+		<div class='parent-site-footer'>
+		Bar
+		</div>
+
+
+		<!-- load parent overlay script -->
+		<script src='parent/scripts/overlay.js'></script>
+		
+	</body>
+</html>

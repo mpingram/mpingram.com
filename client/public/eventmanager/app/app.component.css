@@ -1,0 +1,94 @@
+/* Coolors Exported Palette - coolors.co/cca9a9-ed4912-707d84-fffaff-277a96 */
+.em-app-container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.header {
+  -webkit-flex: 0 0 3em;
+      -ms-flex: 0 0 3em;
+          flex: 0 0 3em;
+  width: 100vw;
+  position: relative;
+  border-bottom: 2px solid #CCC;
+  background-color: #F1F5F5;
+  margin-bottom: 1%; }
+
+.header > h3 {
+  margin: auto;
+  line-height: 40px;
+  padding-bottom: 0; }
+
+.footer {
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  position: relative;
+  font-size: 85%;
+  color: #666;
+  height: 5%;
+  width: 100%;
+  bottom: 0px;
+  border-top: 1px solid #EEE;
+  padding: 5px 10px;
+  margin-top: 2px; }
+
+.footer-content {
+  padding-left: 2%; }
+
+em-dashboard {
+  -webkit-flex: 1 0 40em;
+      -ms-flex: 1 0 40em;
+          flex: 1 0 40em; }
+
+.content {
+  padding: 0 1em 1em;
+  height: 87%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden; }
+
+.icon {
+  width: 1em;
+  height: 1em; }
+
+.box {
+  position: relative;
+  float: left;
+  border: 2px solid #BCCBD1;
+  border-radius: 4px;
+  margin-left: 2px; }
+  .box h4 {
+    padding: 5px 5px;
+    margin: 0;
+    border-bottom: 2px solid #9DBCC9;
+    border-radius: 4px;
+    background-color: #F1F5F5; }
+
+.navbar-links {
+  float: left; }
+
+/* Responsive: Portrait tablets and up*/
+@media screen and (min-width: 768px) {
+  .header {
+    margin-bottom: 10px; } }

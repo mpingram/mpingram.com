@@ -1,0 +1,11 @@
+<div class='event-type' [style.background-color]='getColorOf(event.type)'>
+{{ event.type }}
+</div>
+
+<div class='event-time'>
+	{{ event.start.format('h:mma') }} - {{ event.end.format('h:mma') }}
+</div>
+
+<div class='event-name'>
+	{{ event.name }}
+</div>

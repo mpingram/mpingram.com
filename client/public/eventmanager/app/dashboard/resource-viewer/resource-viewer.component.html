@@ -1,0 +1,24 @@
+<div class='resource-header-container'>
+
+	<div class='nav-buttons-container'>
+
+		<button class='nav-button' (click)='prevDay()'>
+			<i class='nav-button-icon nav-prev-day material-icons md-18'>chevron_left</i> 
+		</button>
+
+		<button [ngClass]='{ "disabled": currentDayIsToday }' class='nav-button' (click)='goToToday();'>
+			<i class='nav-button-icon nav-today material-icons md-18'>today</i>
+		</button>
+
+		<button class='nav-button' (click)='nextDay()'>
+			<i class='nav-button-icon nav-next-day material-icons md-18'>chevron_right</i>
+		</button>
+	</div>
+
+	<div class='datepicker'>
+	{{ date.format('dddd, MMMM DD, YYYY') }}
+	</div>
+
+</div>
+
+<em-resource-scheduler [date]='date' [resources]='resources'></em-resource-scheduler>

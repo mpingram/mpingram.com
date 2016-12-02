@@ -1,0 +1,103 @@
+/* Coolors Exported Palette - coolors.co/cca9a9-ed4912-707d84-fffaff-277a96 */
+:host {
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  border: 1px solid #c4c4c4; }
+
+.time-axis-column {
+  -webkit-flex: 0 0 50px;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  border-right: 1px solid #c4c4c4;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  box-shadow: 1px 0px 1px #c4c4c4;
+  z-index: 1; }
+
+.time-axis-column-heading {
+  -webkit-flex: 0 0 40px;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
+  height: 40px; }
+
+.time-axis-body {
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto; }
+
+.timeslot {
+  border-top: 1px solid #c4c4c4; }
+
+.resource-columns-wrapper {
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+
+.column {
+  position: relative;
+  border-right: 1px solid #c4c4c4;
+  -webkit-flex: 0 0 84px;
+      -ms-flex: 0 0 84px;
+          flex: 0 0 84px;
+  width: 84px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.column-heading {
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+  border-bottom: 1px solid #c4c4c4;
+  box-shadow: 0px 1px 1px #c4c4c4;
+  z-index: 1;
+  text-align: center;
+  padding-top: 4px; }
+
+.column-body {
+  position: relative;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  background-color: #fcfcfc; }
+
+.column-time-slot {
+  z-index: -1;
+  width: 100%;
+  border-bottom: 1px dotted #CCC; }
+
+.column-time-slot.strong-line {
+  border-style: dashed; }

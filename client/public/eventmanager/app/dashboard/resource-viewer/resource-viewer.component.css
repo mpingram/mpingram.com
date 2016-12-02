@@ -1,0 +1,80 @@
+/* Coolors Exported Palette - coolors.co/cca9a9-ed4912-707d84-fffaff-277a96 */
+:host {
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-family: "Helvetica", sans-serif;
+  margin-left: 1em; }
+
+.resource-header-container {
+  height: 40px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
+
+.nav-buttons-container {
+  margin-right: 1em; }
+
+.nav-button {
+  background: #eeeeee;
+  border: 1px outset #CCC;
+  border-radius: 2px;
+  transition: background 200ms ease, -webkit-transform 100ms ease;
+  transition: background 200ms ease, transform 100ms ease;
+  transition: background 200ms ease, transform 100ms ease, -webkit-transform 100ms ease; }
+
+.nav-button:not(.disabled):hover {
+  background: #e2e2e2; }
+
+.nav-button:not(.disabled):hover > .nav-next-day {
+  -webkit-transform: translateX(5%);
+      -ms-transform: translateX(5%);
+          transform: translateX(5%); }
+
+.nav-button:not(.disabled):hover > .nav-prev-day {
+  -webkit-transform: translateX(-5%);
+      -ms-transform: translateX(-5%);
+          transform: translateX(-5%); }
+
+.nav-button:not(.disabled):active {
+  background: #fbfbfb;
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95); }
+
+.nav-button.disabled {
+  border-style: inset;
+  background: #FDFDFD; }
+
+.nav-button.disabled > i {
+  color: #777777; }
+
+.nav-button-icon {
+  display: block;
+  padding: 2px;
+  vertical-align: center;
+  transition: -webkit-transform 100ms ease;
+  transition: transform 100ms ease;
+  transition: transform 100ms ease, -webkit-transform 100ms ease; }
