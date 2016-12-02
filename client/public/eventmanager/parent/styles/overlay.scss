@@ -2,27 +2,21 @@
 
 
 body{
-
-	width: 100%;
-	height: 100%;
+	width: 100vw; // TODO: fix vh/vw measurements in app
+	height: 100vh;
 
 	font-family: $sans;
+
 }
 
 .body-wrapper{
-
 	width: 100%;
 	height: 100%;
-
-
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: stretch;
-
+	flex-direction: column;
 }
 .parent-site-header{
-	background-color: red;
+	background-color: yellow;
 	flex: 0 0 3em;
 	width: 100%;
 }
@@ -32,7 +26,8 @@ body{
 	width: 100%;
 }
 
-.app-container{
-	flex: 1 1 auto;
+.app{
+	flex: 1 1 80%;
 	width: 100%;
+	overflow: hidden;
 }
