@@ -8,6 +8,7 @@ body{
 	font-family: $sans;
 	font-weight: 300;
 
+	overflow: hidden;
 }
 
 .button{
@@ -93,11 +94,11 @@ body{
 }
 
 #return-parent-button:hover{
-	background-color: lighten( $light-grey, 5% );
+	background-color: rgba( 0,0,0,0.1);
 }
 
 #return-parent-button:active{
-	background-color: $light-grey;
+	background-color: rgba( 0,0,0,0.2);
 	transform: scale(0.97);
 }
 
@@ -175,4 +176,82 @@ body{
 	font-size: 90%;
 	text-align: center;
 	margin-bottom: 4px;
+}
+
+// commentary
+// ====================
+
+#overlay-commentary-container{
+	position: static;
+	overflow: visible;
+	height: 0px;
+	width: 0px;
+}
+
+.commentary-bubble{
+
+	background: $col-highlight;
+	background: rgba(240,240,240, 0.4);
+
+	border: 2px solid darken( $grey, 20% );
+	border-radius: 15px;
+
+	display: block;
+	position: absolute;
+	z-index: 21;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+
+	transition: width 200ms ease,
+							height 200ms ease;
+
+	box-shadow: 5px 5px 10px 0px #777;
+}
+
+.commentary-bubble:hover{
+	width: 400px;
+	height: 200px;
+
+	transition: width 200ms ease,
+							height 300ms ease;
+}
+
+.commentary-bubble::before{
+
+	background: $col-highlight;
+	background: rgba(255,202,177, 1);
+
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+	content: 'i';
+	font-weight: 400;
+	font-size: 95%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	vertical-align: center;
+	line-height: 30px;
+
+	border-right: 2px solid darken( $grey, 20% );
+	border-bottom: 2px solid darken( $grey, 20% );
+
+	border-radius: 12px;
+}
+
+.commentary-message{
+	display: block;
+
+	background: $col-highlight;
+	background: rgba(255,202,177, 0.9);
+
+}
+
+.commentary-link{
+	display: block;
+
+	background: $col-highlight;
+	background: rgba(255,202,177, 0.9);
 }
