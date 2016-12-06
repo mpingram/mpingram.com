@@ -33,7 +33,7 @@ body{
 }
 
 .parent-site-header{
-	flex-basis: 10%;
+	flex-basis: 90px;
 
 	background: $col-bg;
 	background: linear-gradient( 7deg, lighten($col-highlight,7%) 55% , lighten($col-highlight, 1%) );
@@ -41,13 +41,12 @@ body{
 
 	box-shadow: 0px 0px 10px 0px $grey;
 
-
-
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
 
+	margin-bottom: 1em;
 }
 
 .parent-site-footer{
@@ -73,7 +72,7 @@ body{
 
 // Header styling
 .overlay-info{
-	margin-left: 1em;
+	margin-left: 2em;
 }
 #return-parent-button{
 	display: flex;
@@ -162,7 +161,6 @@ body{
 .toggle-button.on > .toggle-button-toggle {
 	transform: translateX(42px);
 }
-
 // -------------------
 
 
@@ -178,6 +176,15 @@ body{
 	margin-bottom: 4px;
 }
 
+.overlay-message{
+	font-size: 100%;
+	background-color: $light-grey;
+	background-color: rgba(0,0,0,0.02);
+	padding: 1em;
+	border: 1px solid $col-border;
+	border-radius: 12px;
+}
+
 // commentary
 // ====================
 
@@ -191,7 +198,7 @@ body{
 .commentary-bubble{
 
 	background: $col-highlight;
-	background: rgba(240,240,240, 0.4);
+	background: rgba(240,240,240, 0.7);
 
 	border: 2px solid darken( $grey, 20% );
 	border-radius: 15px;
@@ -203,24 +210,24 @@ body{
 	width: 32px;
 	height: 32px;
 
-	transition: width 200ms ease,
-							height 200ms ease;
+	transition: width 200ms ease;
 
 	box-shadow: 5px 5px 10px 0px #777;
 }
 
-.commentary-bubble:hover{
-	width: 400px;
-	height: 200px;
 
-	transition: width 200ms ease,
-							height 300ms ease;
+.commentary-bubble:hover{
+
+	width: 400px;
+	height: auto;
+
+	transition: width 200ms ease;
 }
 
 .commentary-bubble::before{
 
 	background: $col-highlight;
-	background: rgba(255,202,177, 1);
+	background: lighten( rgba(255,202,177, 1), 5% );
 
 	display: block;
 	position: relative;
@@ -230,7 +237,7 @@ body{
 	font-weight: 400;
 	font-size: 95%;
 	width: 30px;
-	height: 30px;
+	min-height: 30px;
 	text-align: center;
 	vertical-align: center;
 	line-height: 30px;
@@ -244,14 +251,52 @@ body{
 .commentary-message{
 	display: block;
 
+	padding: 1em;
+	margin: 10px;
+	line-height: 115%;
+	border-radius: 12px;
+
+	border: 1px solid $col-border;
+
 	background: $col-highlight;
-	background: rgba(255,202,177, 0.9);
+	background: lighten( rgba(255,202,177, 0.9), 10% );
 
 }
 
 .commentary-link{
+	text-decoration: none;
 	display: block;
 
-	background: $col-highlight;
-	background: rgba(255,202,177, 0.9);
+	font-weight: 300;
+	font-size: 125%;
+	color: $lightest-grey;
+
+	text-align: center;
+
+	padding: 0.75em;
+	padding-left: 1em;
+
+	margin: 1em 10px 1.5em;
+	border-radius: 12px;
+
+	background-color: $col-websites-accent-light;
+
+	transition: transform 200ms ease,
+							background-color 200ms ease;
+}
+
+.commentary-link::before{
+	content: '>>';
+	margin-right: 0.5em;
+	line-height: 12px;
+	vertical-align: center;
+
+}
+.commentary-link:hover{
+	transform: scale( 1.01 );
+	background-color: darken( $col-websites-accent-light, 2% );
+}
+
+.commentary-link:active{
+	transform: scale( 0.9 );
 }
