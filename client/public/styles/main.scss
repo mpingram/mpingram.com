@@ -32,6 +32,8 @@ a:focus, .button:focus{
 
 
 .button{
+	cursor: pointer;
+
 	font-family: $sans;
 	outline: none;
 	display: block;
@@ -41,7 +43,7 @@ a:focus, .button:focus{
 
 	color: $lightest-grey;
 	width: 10em;
-	margin: 5% auto;
+	//margin: 5% auto;
 
 	transition: background-color 100ms ease;
 }
@@ -698,18 +700,43 @@ body{
 .websites-box-innner-wrapper{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
+	align-items: stretch;
+}
+
+.websites-contact-wrapper{
+	flex: 0 1 2em;
+	width: auto;
+	margin-bottom: 2em;
+	align-self: center;
+}
+
+.websites-contact-heading-wrapper{
+	float: left;
+	margin: 0 1em 0 0;
+}
+
+.websites-contact-heading{
+	display: block;
+	margin: 0 auto;
+	font-weight: 300;
+}
+.websites-contact-subheading{
+	display: block;
+	margin: 0 auto;
+	font-weight: 300;
 }
 
 .websites-contact-button{
+	padding: 2%;
+	align-self: center;
+	position: relative;
+	display: block;
 	color: darken($col-websites-accent, 10%);
-	min-width: 12em;
-	max-width: auto;
 	border: 3px solid $col-websites-accent;
-	padding: 0.5em;
-	font-size: 130%;
+	width: 10em;
+	font-size: 100%;
 	font-weight: 400;
-	margin: 1emgu auto;
 }
 .websites-contact-button:hover{
 	background-color: $col-websites-accent;
@@ -721,6 +748,87 @@ body{
 }
 
 
+.websites-portfolio-wrapper{
+	flex: 1 1 90%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.websites-portfolio-item{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	flex: 0 0 350px;
+	height: 250px;
+
+	border-radius: 4px;
+	//border: 3px solid $col-websites-accent;
+
+	box-shadow: 2px 2px 4px 0 #777;
+	
+}
+
+
+.portfolio-image{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+
+	transition: filter 250ms ease;
+}
+
+
+#cn3-portfolio-image{
+	background-image: url('/images/cn3-screenshot.png');
+}
+
+#em-portfolio-image{
+	background-image: url('/images/em-screenshot.png');
+}
+
+.websites-portfolio-item:hover > .portfolio-image{	
+	filter: blur(4px) brightness(0.95);
+}
+
+.websites-portfolio-item:hover > .portfolio-item-overlay {
+	transform: none;
+	opacity: 1;
+}
+
+
+.portfolio-item-overlay{
+	background: rgba( 255, 255, 255, 0.55);
+	border-radius: 12px;
+	padding: 1em;
+	font-weight: 300;
+	font-size: 115%;
+	opacity: 0;
+}
+
+.portforlio-item-name{
+	position: relative;
+}
+
+.portfolio-item-action-button{
+	margin-top: 1em;
+	background-color: $col-websites-accent;
+	transition: background-color 200ms ease,
+							transform 200ms ease;
+}
+.portfolio-item-action-button:hover{
+	background-color: darken( $col-websites-accent, 5% );
+	transform: scale(1.05);
+}
+.portfolio-item-action-button:active{
+	transform: scale(0.99);
+}
 
 #projects-box{
 	right: -50%;
@@ -821,6 +929,8 @@ body{
 .projects-github-link:active{
 	background-color: darken($col-projects-accent, 5%);		
 }
+
+
 
 
 
@@ -1005,7 +1115,15 @@ body{
 	#websites-box.active{
 		transform: translateY(100%);
 	}
-	
+
+	.websites-contact-heading-wrapper{
+		float: none;
+		margin: 0 auto;
+	}
+	.websites-contact-button{
+		float: none;
+		margin: 0 auto;
+	}
 
 	// ------------
 	// adjust text size and spacing

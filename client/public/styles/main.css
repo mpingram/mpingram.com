@@ -35,6 +35,7 @@ a:focus, .button:focus {
   text-decoration: underline; }
 
 .button {
+  cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
   outline: none;
   display: block;
@@ -42,7 +43,6 @@ a:focus, .button:focus {
   border-radius: 5px;
   color: #f7f7f7;
   width: 10em;
-  margin: 5% auto;
   transition: background-color 100ms ease; }
 
 .unselectable {
@@ -674,19 +674,49 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+
+.websites-contact-wrapper {
+  -webkit-flex: 0 1 2em;
+      -ms-flex: 0 1 2em;
+          flex: 0 1 2em;
+  width: auto;
+  margin-bottom: 2em;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+
+.websites-contact-heading-wrapper {
+  float: left;
+  margin: 0 1em 0 0; }
+
+.websites-contact-heading {
+  display: block;
+  margin: 0 auto;
+  font-weight: 300; }
+
+.websites-contact-subheading {
+  display: block;
+  margin: 0 auto;
+  font-weight: 300; }
 
 .websites-contact-button {
+  padding: 2%;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  position: relative;
+  display: block;
   color: #f46134;
-  min-width: 12em;
-  max-width: auto;
   border: 3px solid #F78764;
-  padding: 0.5em;
-  font-size: 130%;
-  font-weight: 400;
-  margin: 1emgu auto; }
+  width: 10em;
+  font-size: 100%;
+  font-weight: 400; }
 
 .websites-contact-button:hover {
   background-color: #F78764;
@@ -695,6 +725,98 @@ body {
 .websites-contact-button:active {
   background-color: #f6744c;
   border-color: #f6744c; }
+
+.websites-portfolio-wrapper {
+  -webkit-flex: 1 1 90%;
+      -ms-flex: 1 1 90%;
+          flex: 1 1 90%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.websites-portfolio-item {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex: 0 0 350px;
+      -ms-flex: 0 0 350px;
+          flex: 0 0 350px;
+  height: 250px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 0 #777; }
+
+.portfolio-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: -webkit-filter 250ms ease;
+  transition: filter 250ms ease;
+  transition: filter 250ms ease, -webkit-filter 250ms ease; }
+
+#cn3-portfolio-image {
+  background-image: url("/images/cn3-screenshot.png"); }
+
+#em-portfolio-image {
+  background-image: url("/images/em-screenshot.png"); }
+
+.websites-portfolio-item:hover > .portfolio-image {
+  -webkit-filter: blur(4px) brightness(0.95);
+          filter: blur(4px) brightness(0.95); }
+
+.websites-portfolio-item:hover > .portfolio-item-overlay {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  opacity: 1; }
+
+.portfolio-item-overlay {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  padding: 1em;
+  font-weight: 300;
+  font-size: 115%;
+  opacity: 0; }
+
+.portforlio-item-name {
+  position: relative; }
+
+.portfolio-item-action-button {
+  margin-top: 1em;
+  background-color: #F78764;
+  transition: background-color 200ms ease, -webkit-transform 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease;
+  transition: background-color 200ms ease, transform 200ms ease, -webkit-transform 200ms ease; }
+
+.portfolio-item-action-button:hover {
+  background-color: #f6744c;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05); }
+
+.portfolio-item-action-button:active {
+  -webkit-transform: scale(0.99);
+      -ms-transform: scale(0.99);
+          transform: scale(0.99); }
 
 #projects-box {
   right: -50%;
@@ -939,6 +1061,12 @@ body {
     -webkit-transform: translateY(100%);
         -ms-transform: translateY(100%);
             transform: translateY(100%); }
+  .websites-contact-heading-wrapper {
+    float: none;
+    margin: 0 auto; }
+  .websites-contact-button {
+    float: none;
+    margin: 0 auto; }
   #centerpiece {
     font-size: 90%; }
   #centerpiece.contact-active {

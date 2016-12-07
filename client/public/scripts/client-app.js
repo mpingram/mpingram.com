@@ -20,7 +20,6 @@ $(document).ready( function init(){
 	locals.musicPlayerLoaded = false;
 
 
-
 	// --------------------
 	var $icons = $('#icons');
 	var $centerpiece = $('#centerpiece');
@@ -68,6 +67,7 @@ $(document).ready( function init(){
 
 	// handle clicks on icons
 	var iconClickHandler = function(event){
+
 		var id = event.currentTarget.id;
 		if (id === 'about'){
 			drawAboutBoxSvg();
@@ -121,18 +121,19 @@ $(document).ready( function init(){
 	}
 
 	function redrawAboutBoxSvg(){
-		svgLineDrawer.reinitialize();
-		drawLines();
+		if ( locals.svgLinesDrawn === true ){
+			svgLineDrawer.reinitialize();
+			drawLines();		
+		}
 	} 
 
-	function createAboutBoxSvg(){
 
+	function createAboutBoxSvg(){
 		// stick each tech jQuery element into container object, we'll need it soon.
 		locals.techElements = {};
 		$('#about-tech-column').find('.about-tech-item').each(function(index, elem){
 			locals.techElements['$' + elem.id] = $(this);
 		});
-
 		// keep track of which techs map to which skills
 		locals.skillTechTable = {
 			'webApps': [
@@ -176,10 +177,6 @@ $(document).ready( function init(){
 				locals.techElements.$taskRunners,
 			],
 		};
-		
-
-
-
 		drawLines();	
 	}
 
@@ -365,7 +362,6 @@ $(document).ready( function init(){
 		$(this).serializeArray().forEach( function (input){
 			formData[ input.name ] = input.value;
 		});
-		console.log( formData );
 
 		// send the data
 		$.ajax({
